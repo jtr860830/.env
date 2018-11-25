@@ -35,9 +35,6 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTFILE=~/.backup/zhistory
 
-# Homebrew
-export HOMEBREW_GITHUB_API_TOKEN="c6ee8af2fa4f74daec7200b4f6d7c3f3a3a2b7b8"
-
 # Source completion zstyle
 source ~/.config/zshell/zstyle-completion
 
