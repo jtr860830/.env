@@ -1,9 +1,6 @@
 # Terminal
 export TERM="xterm-256color-italic"
 
-# Vi-mode
-bindkey -v
-
 # Editor
 export VISUAL="vim"
 export EDITOR="$VISUAL"
