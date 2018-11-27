@@ -1,5 +1,5 @@
 # Source powerlevel9k configuration
-source ~/.config/env/powerlevel9k
+source ~/.config/env/Zshell/powerlevel9k
 
 # Plugin manager
 export ZPLUG_HOME=/usr/local/opt/zplug
@@ -37,7 +37,7 @@ export SAVEHIST=10000
 export HISTFILE=~/.backup/zhistory
 
 # Source completion zstyle
-source ~/.config/zshell/zstyle-completion
+source ~/.config/env/Zshell/zstyle-completion
 
 # zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
