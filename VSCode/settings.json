@@ -1,0 +1,44 @@
+{
+  // General settings
+  "workbench.startupEditor": "none",
+  "workbench.colorTheme": "Material Theme High Contrast",
+  "workbench.iconTheme": "eq-material-theme-icons",
+  "workbench.statusBar.feedback.visible": false,
+  "editor.fontFamily": "Hasklug Nerd Font",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 14,
+  "editor.lineHeight": 24,
+  "editor.tabSize": 2,
+  "explorer.decorations.badges": false,
+
+  // Terminal
+  "terminal.integrated.fontFamily": "Hasklug Nerd Font",
+  "terminal.external.osxExec": "iTerm.app",
+
+  // Vim
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.hlsearch": true,
+  "vim.easymotion": true,
+  "vim.easymotionMarkerFontFamily": "SauceCodePro Nerd Font",
+
+  // Git
+  "git.autofetch": true,
+
+  // Golang
+  "go.autocompleteUnimportedPackages": true,
+
+  // Rust
+  "[rust]": {
+    "editor.tabSize": 4
+  },
+
+  // JavaScript
+  "eslint.packageManager": "yarn",
+
+  // Python
+  "python.pythonPath": "/usr/local/bin/python3",
+  "[python]": {
+    "editor.tabSize": 4
+  }
+}
