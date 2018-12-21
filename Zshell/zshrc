@@ -1,5 +1,5 @@
 # Source powerlevel9k configuration
-source ~/.config/env/Zshell/powerlevel9k
+source ~/.config/env/Zshell/powerlevel9k.zsh
 
 # Plugin manager
 export ZPLUG_HOME=/usr/local/opt/zplug
