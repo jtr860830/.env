@@ -1,6 +1,9 @@
 # Terminal
 export TERM="xterm-256color-italic"
 
+# Language
+export LANG="en_US.UTF-8"
+
 # Editor
 export VISUAL="vim"
 export EDITOR="$VISUAL"

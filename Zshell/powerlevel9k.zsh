@@ -12,8 +12,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(
   status
   root_indicator
   background_jobs
-  time
-  battery
 )
 
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
