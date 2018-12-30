@@ -39,6 +39,7 @@
   // Python
   "python.pythonPath": "/usr/local/bin/python3",
   "python.jediPath": "/usr/local/lib/python3.7/site-packages",
+  "python.linting.flake8Path": "/usr/local/bin/flake8",
   "python.linting.pylintEnabled": false,
   "python.linting.flake8Enabled": true,
   "[python]": {
