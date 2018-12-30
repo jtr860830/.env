@@ -1,6 +1,3 @@
-# Terminal
-export TERM="xterm-256color-italic"
-
 # Language
 export LANG="en_US.UTF-8"
 
