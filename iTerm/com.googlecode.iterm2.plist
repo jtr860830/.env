@@ -296,7 +296,7 @@
 	<key>NSWindow Frame SessionsPreferences</key>
 	<string>424 188 606 469 0 0 1920 1080 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>469 493 796 486 0 0 1920 1080 </string>
+	<string>469 419 958 470 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
 	<string>0 0 1920 1080 0 0 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
@@ -1232,7 +1232,7 @@
 			<key>HotKey Alternate Shortcuts</key>
 			<array/>
 			<key>HotKey Characters</key>
-			<string> </string>
+			<string> </string>
 			<key>HotKey Characters Ignoring Modifiers</key>
 			<string> </string>
 			<key>HotKey Key Code</key>
@@ -1240,7 +1240,7 @@
 			<key>HotKey Modifier Activation</key>
 			<integer>0</integer>
 			<key>HotKey Modifier Flags</key>
-			<integer>262144</integer>
+			<integer>131072</integer>
 			<key>HotKey Window Animates</key>
 			<true/>
 			<key>HotKey Window AutoHides</key>
@@ -1654,6 +1654,8 @@
 	<integer>0</integer>
 	<key>NoSyncPermissionToShowTip</key>
 	<true/>
+	<key>NoSyncSuppressClipboardAccessDeniedWarning</key>
+	<true/>
 	<key>NoSyncTimeOfFirstLaunchOfVersionWithTip</key>
 	<real>545644696.42799103</real>
 	<key>NoSyncTipsDisabled</key>
@@ -1716,7 +1718,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2018-12-27T16:42:24Z</date>
+	<date>2018-12-31T16:42:35Z</date>
 	<key>SUSendProfileInfo</key>
 	<false/>
 	<key>SmartPlacement</key>
