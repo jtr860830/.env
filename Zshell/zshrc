@@ -1,4 +1,4 @@
-# Source powerlevel9k configuration
+# Powerlevel9k configuration
 source ~/.config/env/Zshell/powerlevel9k.zsh
 
 # Plugin manager
