@@ -27,6 +27,7 @@ zplug load --verbose
 
 # Source my environment
 source ~/.config/env/profile
+source ~/.config/env/Zshell/zstyle-completion
 
 # Vi-mode
 bindkey -v
@@ -36,8 +37,12 @@ export HISTSIZE=10000
 export SAVEHIST=10000
 export HISTFILE=~/.backup/zhistory
 
-# Source completion zstyle
-source ~/.config/env/Zshell/zstyle-completion
+# Z jump around
+source /usr/local/etc/profile.d/z.sh
+export _Z_DATA=~/.backup/z
+
+# Command-line fuzzy finder
+[ -f ~/.backup/fzf.zsh ] && source ~/.backup/fzf.zsh
 
 # zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
