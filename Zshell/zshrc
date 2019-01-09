@@ -11,6 +11,7 @@ source $ZPLUG_HOME/init.zsh
   zplug "zsh-users/zsh-autosuggestions"
   zplug "zsh-users/zsh-history-substring-search"
   zplug "zdharma/fast-syntax-highlighting"
+  zplug "rupa/z", use:z.sh
   zplug "hlissner/zsh-autopair", defer:2
 
   # Install plugins if there are plugins that have not been installed
@@ -38,11 +39,7 @@ export SAVEHIST=10000
 export HISTFILE=~/.backup/zhistory
 
 # Z jump around
-source /usr/local/etc/profile.d/z.sh
 export _Z_DATA=~/.backup/z
-
-# Command-line fuzzy finder
-[ -f ~/.backup/fzf.zsh ] && source ~/.backup/fzf.zsh
 
 # zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
@@ -50,3 +47,6 @@ bindkey '^[[B' history-substring-search-down
 
 # zsh-autopair
 autopair-init
+
+# Command-line fuzzy finder
+[ -f ~/.backup/fzf.zsh ] && source ~/.backup/fzf.zsh
