@@ -20,7 +20,7 @@
   "vim.neovimPath": "/usr/local/bin/nvim",
   "vim.hlsearch": true,
   "vim.easymotion": true,
-  "vim.easymotionMarkerFontFamily": "SauceCodePro Nerd Font",
+  "vim.easymotionMarkerFontFamily": "Hasklug Nerd Font",
 
   // Git
   "git.autofetch": true,
