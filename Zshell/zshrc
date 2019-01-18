@@ -26,10 +26,6 @@ source $ZPLUG_HOME/init.zsh
 zplug load --verbose
 # End plugin manager
 
-# Source my environment
-source ~/.config/env/profile
-source ~/.config/env/Zshell/zstyle-completion
-
 # Vi-mode
 bindkey -v
 
@@ -50,3 +46,7 @@ autopair-init
 
 # Command-line fuzzy finder
 [ -f ~/.backup/fzf.zsh ] && source ~/.backup/fzf.zsh
+
+# Source general environment
+source ~/.config/env/profile
+source ~/.config/env/Zshell/zstyle-completion
