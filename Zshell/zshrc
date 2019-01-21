@@ -7,11 +7,11 @@ source $ZPLUG_HOME/init.zsh
 
   # Plugins
   zplug "bhilburn/powerlevel9k", use:powerlevel9k.zsh-theme
-  zplug "zsh-users/zsh-completions"
-  zplug "zsh-users/zsh-autosuggestions"
-  zplug "zsh-users/zsh-history-substring-search"
   zplug "zdharma/fast-syntax-highlighting"
-  zplug "rupa/z", use:z.sh
+  zplug "zsh-users/zsh-autosuggestions"
+  zplug "zsh-users/zsh-completions"
+  zplug "zsh-users/zsh-history-substring-search"
+  zplug "skywind3000/z.lua"
   zplug "hlissner/zsh-autopair", defer:2
 
   # Install plugins if there are plugins that have not been installed
@@ -35,7 +35,9 @@ export SAVEHIST=10000
 export HISTFILE=~/.backup/zhistory
 
 # Z jump around
-export _Z_DATA=~/.backup/z
+eval "$(lua $ZPLUG_HOME/repos/skywind3000/z.lua/z.lua --init zsh)"
+export _ZL_DATA=~/.backup/z
+export _ZL_MATCH_MODE=1
 
 # zsh-history-substring-search
 bindkey '^[[A' history-substring-search-up
