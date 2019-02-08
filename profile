@@ -5,11 +5,12 @@ export LANG=en_US.UTF-8
 export VISUAL=vim
 export EDITOR=$VISUAL
 
-# GNU core
-export PATH=/usr/local/opt/coreutils/libexec/gnubin:$PATH
-
-# GNU MANPATH
+# GNU core and tools
+export PATH=/usr/local/opt/binutils/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+
+# Dotnet
+export PATH=~/.dotnet/tools:/usr/local/share/dotnet:$PATH
 
 # Ruby
 export PATH=/usr/local/opt/ruby/bin:$PATH
@@ -18,7 +19,7 @@ export PATH=/usr/local/opt/ruby/bin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 # Golang
-export GOPATH=$HOME/.go
+export GOPATH=~/.go
 export GOBIN=$GOPATH/bin
 export PATH=$GOBIN:$PATH
 
