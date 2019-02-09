@@ -6,22 +6,26 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 # GNU core and tools
-export PATH=/usr/local/opt/binutils/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
-export MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
+PATH=/usr/local/opt/binutils/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
 # Dotnet
-export PATH=~/.dotnet/tools:/usr/local/share/dotnet:$PATH
+PATH=~/.dotnet/tools:/usr/local/share/dotnet:$PATH
 
 # Ruby
-export PATH=/usr/local/opt/ruby/bin:$PATH
+PATH=/usr/local/opt/ruby/bin:$PATH
 
 # Rust
-export PATH=$HOME/.cargo/bin:$PATH
+PATH=$HOME/.cargo/bin:$PATH
 
 # Golang
 export GOPATH=~/.go
 export GOBIN=$GOPATH/bin
-export PATH=$GOBIN:$PATH
+PATH=$GOBIN:$PATH
+
+# Export unique Paths
+export -U PATH
+export -U MANPATH
 
 # Alias
 alias ls="exa --group-directories-first"
