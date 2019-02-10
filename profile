@@ -15,8 +15,11 @@ PATH=~/.dotnet/tools:/usr/local/share/dotnet:$PATH
 # Ruby
 PATH=/usr/local/opt/ruby/bin:$PATH
 
+# PHP
+PATH=~/.composer/vendor/bin:$PATH
+
 # Rust
-PATH=$HOME/.cargo/bin:$PATH
+PATH=~/.cargo/bin:$PATH
 
 # Golang
 export GOPATH=~/.go
