@@ -23,7 +23,7 @@ source $ZPLUG_HOME/init.zsh
   fi
 
 # Source plugins
-zplug load --verbose
+zplug load
 # End plugin manager
 
 # Vi-mode
