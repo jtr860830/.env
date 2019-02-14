@@ -1,3 +1,8 @@
+# Environment variables
+export ENV_HOME=~/.config/env
+export ZENV_HOME=$ENV_HOME/Zshell
+export ZPLUGIN_HOME=$ZENV_HOME/plugins
+
 # Vi-mode
 bindkey -v
 
@@ -7,25 +12,25 @@ export SAVEHIST=10000
 export HISTFILE=~/.backup/zhistory
 
 # Powerlevel9k configuration
-source ~/.config/env/Zshell/powerlevel9k.zsh
-source ~/.config/env/Zshell/plugins/powerlevel9k/powerlevel9k.zsh-theme
+source $ZENV_HOME/powerlevel9k.zsh
+source $ZPLUGIN_HOME/powerlevel9k/powerlevel9k.zsh-theme
 
 # Completions
-fpath=(~/.config/env/Zshell/plugins/zsh-completions/src $fpath)
+fpath=($ZPLUGIN_HOME/zsh-completions/src $fpath)
 
 # Autosuggestions 
-source ~/.config/env/Zshell/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+source $ZPLUGIN_HOME/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # History substring search
-source ~/.config/env/Zshell/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
+source $ZPLUGIN_HOME/zsh-history-substring-search/zsh-history-substring-search.zsh
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
 
 # Fast syntax highlighting
-source ~/.config/env/Zshell/plugins/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source $ZPLUGIN_HOME/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # Z jump around
-eval "$(lua $HOME/.config/env/Zshell/plugins/z.lua/z.lua --init zsh)"
+eval "$(lua $ZPLUGIN_HOME/z.lua/z.lua --init zsh)"
 export _ZL_DATA=~/.backup/z
 export _ZL_MATCH_MODE=1
 
@@ -33,5 +38,8 @@ export _ZL_MATCH_MODE=1
 [ -f ~/.backup/fzf.zsh ] && source ~/.backup/fzf.zsh
 
 # Source general environment
-source ~/.config/env/profile
-source ~/.config/env/Zshell/zstyle-completion
+source $ENV_HOME/profile
+source $ZENV_HOME/zstyle-completion
+
+autoload -Uz compinit
+compinit -d ~/.backup/zcompdump
