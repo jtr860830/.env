@@ -1118,7 +1118,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FuraCodeNerdFontComplete-Retina 14</string>
+			<string>FuraCodeNerdFontComplete-Regular 14</string>
 			<key>Option Key Sends</key>
 			<integer>2</integer>
 			<key>Prompt Before Closing 2</key>
@@ -1882,7 +1882,7 @@
 			<key>Non-ASCII Ligatures</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>FuraCodeNerdFontComplete-Retina 14</string>
+			<string>FuraCodeNerdFontComplete-Regular 14</string>
 			<key>Only The Default BG Color Uses Transparency</key>
 			<true/>
 			<key>Option Key Sends</key>
