@@ -4,7 +4,7 @@
   "workbench.colorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.statusBar.feedback.visible": false,
-  "editor.fontFamily": "Hasklug Nerd Font",
+  "editor.fontFamily": "FuraCode Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.lineHeight": 24,
@@ -12,7 +12,7 @@
   "explorer.decorations.badges": false,
 
   // Terminal
-  "terminal.integrated.fontFamily": "Hasklug Nerd Font",
+  "terminal.integrated.fontFamily": "FuraCode Nerd Font",
   "terminal.external.osxExec": "iTerm.app",
 
   // Vim
@@ -20,7 +20,6 @@
   "vim.neovimPath": "/usr/local/bin/nvim",
   "vim.hlsearch": true,
   "vim.easymotion": true,
-  "vim.easymotionMarkerFontFamily": "Hasklug Nerd Font",
 
   // Git
   "git.autofetch": true,
