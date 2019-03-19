@@ -41,5 +41,9 @@ export _ZL_MATCH_MODE=1
 source $ENV_HOME/profile
 source $ZENV_HOME/zstyle-completion
 
+# Compinit
 autoload -Uz compinit
 compinit -d ~/.backup/zcompdump
+
+# Google cloud
+source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
