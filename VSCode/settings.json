@@ -25,7 +25,14 @@
   "git.autofetch": true,
 
   // Golang
-  "go.autocompleteUnimportedPackages": true,
+  "go.useLanguageServer": true,
+  "go.alternateTools": {
+    "go-langserver": "gopls",
+  },
+  "go.languageServerExperimentalFeatures": {
+    "format": true,
+    "autoComplete": true
+  },
 
   // Rust
   "[rust]": {
