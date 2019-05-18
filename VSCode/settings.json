@@ -9,7 +9,9 @@
   "editor.fontSize": 14,
   "editor.lineHeight": 24,
   "editor.tabSize": 2,
+  "editor.suggestSelection": "first",
   "explorer.decorations.badges": false,
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
   // Terminal
   "terminal.integrated.fontFamily": "FuraCode Nerd Font",
