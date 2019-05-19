@@ -4,13 +4,13 @@
   "workbench.colorTheme": "One Dark Pro",
   "workbench.iconTheme": "material-icon-theme",
   "workbench.statusBar.feedback.visible": false,
+  "breadcrumbs.enabled": true,
   "editor.fontFamily": "FuraCode Nerd Font",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.lineHeight": 24,
   "editor.tabSize": 2,
   "editor.suggestSelection": "first",
-  "explorer.decorations.badges": false,
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
   // Terminal
