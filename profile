@@ -9,6 +9,9 @@ export EDITOR=$VISUAL
 PATH=/usr/local/opt/binutils/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
+# LLVM
+PATH=/usr/local/opt/llvm/bin:$PATH
+
 # Dotnet
 PATH=~/.dotnet/tools:/usr/local/share/dotnet:$PATH
 
