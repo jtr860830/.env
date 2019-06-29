@@ -34,7 +34,9 @@ export -U PATH
 export -U MANPATH
 
 # Alias
-alias ls="exa --group-directories-first"
+alias ls=exa
+alias ll="exa -l"
+alias la="exa -la"
 alias vi=nvim
 alias vim=nvim
 alias ssh="TERM=xterm-256color ssh"
