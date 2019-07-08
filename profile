@@ -5,15 +5,15 @@ export LANG=en_US.UTF-8
 export VISUAL=vim
 export EDITOR=$VISUAL
 
+# System PATH
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
+
 # GNU core and tools
-PATH=/usr/local/opt/binutils/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
+PATH=/usr/local/opt/make/libexec/gnubin:/usr/local/opt/binutils/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
 MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
 
 # LLVM
 PATH=/usr/local/opt/llvm/bin:$PATH
-
-# Dotnet
-PATH=~/.dotnet/tools:/usr/local/share/dotnet:$PATH
 
 # Ruby
 PATH=/usr/local/opt/ruby/bin:$PATH
