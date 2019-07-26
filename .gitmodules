@@ -1,18 +1,18 @@
 [submodule "Zshell/plugins/powerlevel9k"]
 	path = Zshell/plugins/powerlevel9k
-	url = https://github.com/bhilburn/powerlevel9k.git
+	url = git@github.com:Powerlevel9k/powerlevel9k.git
 [submodule "Zshell/plugins/zsh-completions"]
 	path = Zshell/plugins/zsh-completions
-	url = https://github.com/zsh-users/zsh-completions.git
+	url = git@github.com:zsh-users/zsh-completions.git
 [submodule "Zshell/plugins/zsh-autosuggestions"]
 	path = Zshell/plugins/zsh-autosuggestions
-	url = https://github.com/zsh-users/zsh-autosuggestions.git
+	url = git@github.com:zsh-users/zsh-autosuggestions.git
 [submodule "Zshell/plugins/zsh-history-substring-search"]
 	path = Zshell/plugins/zsh-history-substring-search
-	url = https://github.com/zsh-users/zsh-history-substring-search.git
+	url = git@github.com:zsh-users/zsh-history-substring-search.git
 [submodule "Zshell/plugins/fast-syntax-highlighting"]
 	path = Zshell/plugins/fast-syntax-highlighting
-	url = https://github.com/zdharma/fast-syntax-highlighting.git
+	url = git@github.com:zdharma/fast-syntax-highlighting.git
 [submodule "Zshell/plugins/z.lua"]
 	path = Zshell/plugins/z.lua
-	url = https://github.com/skywind3000/z.lua.git
+	url = git@github.com:skywind3000/z.lua.git
