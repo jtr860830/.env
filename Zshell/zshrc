@@ -1,15 +1,5 @@
-# Environment variables
-export ENV_HOME=~/.config/env
-export ZENV_HOME=$ENV_HOME/Zshell
-export ZPLUGIN_HOME=$ZENV_HOME/plugins
-
 # Vi-mode
 bindkey -v
-
-# Command history
-export HISTSIZE=10000
-export SAVEHIST=10000
-export HISTFILE=~/.temp/zhistory
 
 # Powerlevel9k configuration
 source $ZENV_HOME/powerlevel9k.zsh
@@ -37,13 +27,17 @@ export _ZL_MATCH_MODE=1
 # Command-line fuzzy finder
 [ -f ~/.temp/fzf.zsh ] && source ~/.temp/fzf.zsh
 
-# Source general environment
-source $ENV_HOME/profile
-source $ZENV_HOME/zstyle-completion
-
 # Compinit
+source $ZENV_HOME/zstyle-completion
 autoload -Uz compinit
 compinit -d ~/.temp/zcompdump
 
 # Google cloud
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+
+# Alias
+alias ls=exa
+alias ll="exa -l"
+alias la="exa -la"
+alias vi=nvim
+alias vim=nvim
