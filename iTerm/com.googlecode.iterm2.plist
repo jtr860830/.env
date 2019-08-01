@@ -1804,7 +1804,7 @@
 			<key>Thin Strokes</key>
 			<integer>4</integer>
 			<key>Title Components</key>
-			<integer>776</integer>
+			<integer>520</integer>
 			<key>Transparency</key>
 			<real>0.0</real>
 			<key>Unlimited Scrollback</key>
@@ -2572,7 +2572,7 @@
 			<key>Terminal Type</key>
 			<string>xterm-256color</string>
 			<key>Title Components</key>
-			<integer>776</integer>
+			<integer>520</integer>
 			<key>Transparency</key>
 			<real>0.29999999999999999</real>
 			<key>Unlimited Scrollback</key>
@@ -2610,14 +2610,14 @@
 		<key>screenFrame</key>
 		<string>{{0, 0}, {1920, 1080}}</string>
 		<key>topLeft</key>
-		<string>{636, 862}</string>
+		<string>{635, 862}</string>
 	</dict>
 	<key>NoSyncHaveWarnedAboutPasteConfirmationChange</key>
 	<true/>
 	<key>NoSyncInstallationId</key>
 	<string>B7490C73-1FB0-40D6-8B05-89ABDB6DC238</string>
 	<key>NoSyncLaunchExperienceControllerRunCount</key>
-	<integer>9</integer>
+	<integer>15</integer>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile_selection</key>
