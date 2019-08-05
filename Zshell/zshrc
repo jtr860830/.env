@@ -2,8 +2,8 @@
 bindkey -v
 
 # Powerlevel9k configuration
-source $ZENV_HOME/powerlevel9k.zsh
-source $ZPLUGIN_HOME/powerlevel9k/powerlevel9k.zsh-theme
+source $ZENV_HOME/powerlevel10k.zsh
+source $ZPLUGIN_HOME/powerlevel10k/powerlevel10k.zsh-theme
 
 # Completions
 fpath=($ZPLUGIN_HOME/zsh-completions/src $fpath)
