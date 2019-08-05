@@ -3,7 +3,6 @@ POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(
   user
   dir
   dir_writable
-  virtualenv
   vcs
   vi_mode
 )
