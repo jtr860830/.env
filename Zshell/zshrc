@@ -2,7 +2,7 @@
 bindkey -v
 
 # Powerlevel9k configuration
-source $ZENV_HOME/powerlevel10k.zsh
+source $ZENV_HOME/p10k.zsh
 source $ZPLUGIN_HOME/powerlevel10k/powerlevel10k.zsh-theme
 
 # Completions

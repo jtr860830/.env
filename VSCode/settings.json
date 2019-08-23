@@ -1,9 +1,6 @@
 {
   // General settings
   "workbench.startupEditor": "none",
-  "workbench.colorTheme": "One Dark Pro",
-  "workbench.iconTheme": "material-icon-theme",
-  "workbench.statusBar.feedback.visible": false,
   "breadcrumbs.enabled": true,
   "editor.fontFamily": "FuraCode Nerd Font",
   "editor.fontLigatures": true,
@@ -12,6 +9,10 @@
   "editor.tabSize": 2,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+
+  // Theme
+  "workbench.colorTheme": "Material Theme Ocean High Contrast",
+  "workbench.iconTheme": "eq-material-theme-icons-ocean",
 
   // Terminal
   "terminal.integrated.fontFamily": "FuraCode Nerd Font",
@@ -40,9 +41,6 @@
   "[rust]": {
     "editor.tabSize": 4
   },
-
-  // JavaScript
-  "eslint.packageManager": "yarn",
 
   // Python
   "python.pythonPath": "/usr/local/bin/python3",
