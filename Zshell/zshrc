@@ -36,7 +36,7 @@ compinit -d ~/.temp/zcompdump
 source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
 
 # Alias
-alias ls=exa
+alias ls=lsd
 alias ll="lsd -l"
 alias la="lsd -la"
 alias vi=nvim
