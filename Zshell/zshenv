@@ -4,27 +4,14 @@ export LANG=en_US.UTF-8
 # Command history
 export HISTSIZE=10000
 export SAVEHIST=10000
-export HISTFILE=~/.temp/zhistory
+export HISTFILE=~/.config/zsh/zhistory
 
 # Editor
 export VISUAL=vim
 export EDITOR=$VISUAL
 
 # System PATH
-PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin
-
-# GNU core and tools
-PATH=/usr/local/opt/make/libexec/gnubin:/usr/local/opt/binutils/bin:/usr/local/opt/coreutils/libexec/gnubin:$PATH
-MANPATH=/usr/local/opt/coreutils/libexec/gnuman:$MANPATH
-
-# LLVM
-PATH=/usr/local/opt/llvm/bin:$PATH
-
-# Ruby
-PATH=/usr/local/opt/ruby/bin:$PATH
-
-# PHP
-PATH=~/.composer/vendor/bin:$PATH
+PATH=/usr/local/bin:/usr/local/sbin:/usr/bin
 
 # Golang
 export GOPATH=~/.go
@@ -33,10 +20,6 @@ PATH=$GOBIN:$PATH
 
 # Rust
 PATH=~/.cargo/bin:$PATH
-
-# Export unique PATH
-export -U PATH
-export -U MANPATH
 
 # Plugin directory
 export ENV_HOME=~/.config/env

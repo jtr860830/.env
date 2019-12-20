@@ -21,21 +21,22 @@ source $ZPLUGIN_HOME/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zs
 
 # Z jump around
 eval "$(lua $ZPLUGIN_HOME/z.lua/z.lua --init zsh)"
-export _ZL_DATA=~/.temp/z
+export _ZL_DATA=~/.config/zsh/z
 export _ZL_MATCH_MODE=1
 
 # Command-line fuzzy finder
-[ -f ~/.temp/fzf.zsh ] && source ~/.temp/fzf.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 # Compinit
 source $ZENV_HOME/zstyle-completion
 autoload -Uz compinit
-compinit -d ~/.temp/zcompdump
-
-# Google cloud
-source /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/completion.zsh.inc
+compinit -d ~/.config/zsh/zcompdump
 
 # Alias
+alias sudo='sudo '
+alias pac=pacman
+alias aur=yay
 alias ls=lsd
 alias ll="lsd -l"
 alias la="lsd -la"

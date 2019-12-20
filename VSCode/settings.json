@@ -1,18 +1,20 @@
 {
   // General settings
   "workbench.startupEditor": "none",
+  "window.menuBarVisibility": "toggle",
   "breadcrumbs.enabled": true,
-  "editor.fontFamily": "FuraCode Nerd Font",
+  "editor.fontFamily": "Noto Sans Mono",
   "editor.fontLigatures": true,
   "editor.fontSize": 14,
   "editor.lineHeight": 24,
   "editor.tabSize": 2,
+  "editor.insertSpaces": false,
   "editor.suggestSelection": "first",
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
 
   // Theme
-  "workbench.colorTheme": "Material Theme Ocean High Contrast",
-  "workbench.iconTheme": "eq-material-theme-icons-ocean",
+  "workbench.colorTheme": "Material Theme High Contrast",
+  "workbench.iconTheme": "eq-material-theme-icons",
 
   // Terminal
   "terminal.integrated.fontFamily": "FuraCode Nerd Font",
@@ -20,7 +22,7 @@
 
   // Vim
   "vim.enableNeovim": true,
-  "vim.neovimPath": "/usr/local/bin/nvim",
+  "vim.neovimPath": "/usr/bin/nvim",
   "vim.hlsearch": true,
   "vim.easymotion": true,
 
@@ -30,7 +32,7 @@
   // Golang
   "go.useLanguageServer": true,
   "go.alternateTools": {
-    "go-langserver": "gopls",
+    "go-langserver": "gopls"
   },
   "go.languageServerExperimentalFeatures": {
     "format": true,
