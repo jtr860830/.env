@@ -34,7 +34,7 @@ autoload -Uz compinit
 compinit -d ~/.config/zsh/zcompdump
 
 # Alias
-alias sudo='sudo '
+alias sudo="sudo "
 alias pac=pacman
 alias aur=yay
 alias ls=lsd
