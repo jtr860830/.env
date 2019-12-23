@@ -1,18 +1,18 @@
-[submodule "Zshell/plugins/zsh-completions"]
-	path = Zshell/plugin/zsh-completions
+[submodule "shell/plugins/zsh-completions"]
+	path = shell/plugin/zsh-completions
 	url = git@github.com:zsh-users/zsh-completions.git
-[submodule "Zshell/plugins/zsh-autosuggestions"]
-	path = Zshell/plugin/zsh-autosuggestions
+[submodule "shell/plugins/zsh-autosuggestions"]
+	path = shell/plugin/zsh-autosuggestions
 	url = git@github.com:zsh-users/zsh-autosuggestions.git
-[submodule "Zshell/plugins/zsh-history-substring-search"]
-	path = Zshell/plugin/zsh-history-substring-search
+[submodule "shell/plugins/zsh-history-substring-search"]
+	path = shell/plugin/zsh-history-substring-search
 	url = git@github.com:zsh-users/zsh-history-substring-search.git
-[submodule "Zshell/plugins/fast-syntax-highlighting"]
-	path = Zshell/plugin/fast-syntax-highlighting
+[submodule "shell/plugins/fast-syntax-highlighting"]
+	path = shell/plugin/fast-syntax-highlighting
 	url = git@github.com:zdharma/fast-syntax-highlighting.git
-[submodule "Zshell/plugins/z.lua"]
-	path = Zshell/plugin/z.lua
+[submodule "shell/plugins/z.lua"]
+	path = shell/plugin/z.lua
 	url = git@github.com:skywind3000/z.lua.git
-[submodule "Zshell/plugin/powerlevel10k"]
-	path = Zshell/plugin/powerlevel10k
+[submodule "shell/plugin/powerlevel10k"]
+	path = shell/plugin/powerlevel10k
 	url = git@github.com:romkatv/powerlevel10k.git
