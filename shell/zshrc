@@ -36,8 +36,7 @@ compinit -d ~/.config/zsh/zcompdump
 
 # Alias
 alias sudo="sudo "
-alias pac=pacman
-alias aur=yay
+alias pac=yay
 alias ls=lsd
 alias ll="lsd -l"
 alias la="lsd -la"
