@@ -13,6 +13,12 @@ export EDITOR=$VISUAL
 # System PATH
 PATH=/usr/local/bin:/usr/local/sbin:/usr/bin
 
+# Node.js Python etc.
+PATH=~/.local/bin:$PATH
+
+# Ruby
+PATH=~/.gem/ruby/2.7.0/bin:$PATH
+
 # Golang
 export GOPATH=~/.go
 export GOBIN=$GOPATH/bin
