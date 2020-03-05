@@ -20,9 +20,8 @@ bindkey '^[[B' history-substring-search-down
 source $ZPLUGIN_HOME/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # Z jump around
-eval "$(lua $ZPLUGIN_HOME/z.lua/z.lua --init zsh)"
+eval "$(lua $ZPLUGIN_HOME/z.lua/z.lua --init zsh enhanced)"
 export _ZL_DATA=~/.config/zsh/z
-export _ZL_MATCH_MODE=1
 
 # Command-line fuzzy finder
 source /usr/share/fzf/key-bindings.zsh
