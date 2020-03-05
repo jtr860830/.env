@@ -19,10 +19,6 @@ bindkey '^[[B' history-substring-search-down
 # Fast syntax highlighting
 source $ZPLUGIN_HOME/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
-# Z jump around
-eval "$(lua $ZPLUGIN_HOME/z.lua/z.lua --init zsh enhanced)"
-export _ZL_DATA=~/.config/zsh/z
-
 # Command-line fuzzy finder
 source /usr/share/fzf/key-bindings.zsh
 source /usr/share/fzf/completion.zsh
@@ -32,6 +28,10 @@ source $ZENV_HOME/zstyle-completion
 bindkey "${terminfo[kcbt]}" reverse-menu-complete
 autoload -Uz compinit
 compinit -d ~/.config/zsh/zcompdump
+
+# Z jump around
+eval "$(lua $ZPLUGIN_HOME/z.lua/z.lua --init zsh enhanced)"
+export _ZL_DATA=~/.config/zsh/z
 
 # Alias
 alias sudo="sudo "
