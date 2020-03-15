@@ -10,11 +10,8 @@ export HISTFILE=~/.config/zsh/zhistory
 export VISUAL=vim
 export EDITOR=$VISUAL
 
-# System PATH
-PATH=/usr/local/bin:/usr/local/sbin:/usr/bin
-
-# Node.js Python etc.
-PATH=~/.local/bin:$PATH
+# System and user PATH
+PATH=~/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
 
 # Golang
 export GOPATH=~/.go
