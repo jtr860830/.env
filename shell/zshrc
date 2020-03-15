@@ -32,10 +32,6 @@ compinit -d ~/.config/zsh/zcompdump
 eval "$(lua $ZPLUGIN_HOME/z.lua/z.lua --init zsh enhanced)"
 export _ZL_DATA=~/.config/zsh/z
 
-# Node version manager
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
 # Alias
 alias sudo="sudo "
 alias ls=lsd
