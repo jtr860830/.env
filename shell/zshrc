@@ -6,7 +6,7 @@ source $ZENV_HOME/p10k.zsh
 source $ZPLUGIN_HOME/powerlevel10k/powerlevel10k.zsh-theme
 
 # Completions
-fpath=($ZPLUGIN_HOME/zsh-completions/src $fpath)
+fpath=($ZPLUGIN_HOME/zsh-completions/src /usr/share/zsh/vendor-completions $fpath)
 
 # Autosuggestions 
 source $ZPLUGIN_HOME/zsh-autosuggestions/zsh-autosuggestions.zsh
