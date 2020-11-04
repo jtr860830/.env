@@ -20,7 +20,8 @@ bindkey '^[[B' history-substring-search-down
 source $ZPLUGIN_HOME/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 
 # Command-line fuzzy finder
-source /usr/share/fzf/shell/key-bindings.zsh
+source /usr/share/fzf/key-bindings.zsh
+source /usr/share/fzf/completion.zsh
 
 # Compinit
 source $ZENV_HOME/zstyle-completion
@@ -39,3 +40,5 @@ alias ll="lsd -l"
 alias la="lsd -la"
 alias vi=nvim
 alias vim=nvim
+alias pac=pacman
+alias aur=yay
