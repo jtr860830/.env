@@ -11,7 +11,7 @@ export VISUAL=vim
 export EDITOR=$VISUAL
 
 # System and user PATH
-PATH=~/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin
+PATH=~/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
 
 # Golang
 export GOPATH=~/.go
@@ -21,7 +21,8 @@ PATH=$GOBIN:$PATH
 # Rust
 PATH=~/.cargo/bin:$PATH
 
-# Plugin directory
+# Extra
+export XDG_CONFIG_HOME=~/.config
 export ENV_HOME=~/.config/env
 export ZENV_HOME=$ENV_HOME/shell
 export ZPLUGIN_HOME=$ZENV_HOME/plugin
