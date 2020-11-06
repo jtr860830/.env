@@ -14,10 +14,12 @@ export EDITOR=$VISUAL
 PATH=~/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
 
 # Python
-PATH=~/.pyenv/plugins/pyenv-virtualenv/shims:~/.pyenv/shims:~/.pyenv/bin:$PATH
+PATH=~/.pyenv/bin:$PATH
+eval "$(pyenv init -)"
 
 # Node
-PATH=~/.nodenv/shims:~/.nodenv/bin:$PATH
+PATH=~/.nodenv/bin:$PATH
+eval "$(nodenv init -)"
 
 # Golang
 export GOPATH=~/.go
