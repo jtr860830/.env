@@ -26,11 +26,11 @@ source /usr/share/fzf/shell/key-bindings.zsh
 source $ZENV_HOME/zstyle-completion
 bindkey "${terminfo[kcbt]}" reverse-menu-complete
 autoload -Uz compinit
-compinit -d ~/.config/zsh/zcompdump
+compinit -d ~/.local/share/zsh/zcompdump
 
 # Z jump around
 eval "$(lua $ZPLUGIN_HOME/z.lua/z.lua --init zsh enhanced)"
-export _ZL_DATA=~/.config/zsh/z
+export _ZL_DATA=~/.local/share/zsh/z
 
 # Alias
 alias sudo="sudo "
