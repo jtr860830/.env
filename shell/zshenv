@@ -33,11 +33,17 @@ export RUSTUP_HOME=~/.local/rustup
 export CARGO_HOME=~/.local/cargo
 PATH=$CARGO_HOME/bin:$PATH
 
-# Config file location
+# XDG base directory
 export XDG_CONFIG_HOME=~/.config
+export XDG_CACHE_HOME=~/.cache
+export XDG_DATA_HOME=~/.local/share
 
 # HTTPie
 export HTTPIE_CONFIG_DIR=$XDG_CONFIG_HOME/httpie
+
+# Vagrant
+export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
+export VAGRANT_ALIAS_FILE=$XDG_DATA_HOME/vagrant/aliases
 
 # Custom
 export ENV_HOME=$XDG_CONFIG_HOME/env
