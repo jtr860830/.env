@@ -37,5 +37,5 @@ alias sudo="sudo "
 alias ls=lsd
 alias ll="lsd -l"
 alias la="lsd -la"
-alias vi=nvim
-alias vim=nvim
+alias vi=lvim
+alias vim=lvim
