@@ -48,5 +48,4 @@ export VAGRANT_ALIAS_FILE=$XDG_DATA_HOME/vagrant/aliases
 
 # Custom
 export ENV_HOME=$XDG_CONFIG_HOME/env
-export ZENV_HOME=$ENV_HOME/shell
-export ZPLUGIN_HOME=$ZENV_HOME/plugin
+export ZENV_HOME=$ENV_HOME/zsh
