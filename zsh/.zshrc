@@ -15,7 +15,7 @@ autoload -Uz _zinit
 bindkey -v
 
 # Powerlevel9k configuration
-source $ZENV_HOME/p10k.zsh
+source $ZCUSTOM_HOME/p10k.zsh
 zinit ice depth"1"
 zinit light romkatv/powerlevel10k
 
@@ -40,7 +40,7 @@ zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/comple
 zinit snippet https://raw.githubusercontent.com/junegunn/fzf/master/shell/key-bindings.zsh
 
 # Compinit
-source $ZENV_HOME/zstyle-completion
+source $ZCUSTOM_HOME/zstyle-completion
 bindkey "${terminfo[kcbt]}" reverse-menu-complete
 autoload -Uz compinit
 compinit -d $XDG_DATA_HOME/zsh/zcompdump
@@ -48,6 +48,28 @@ compinit -d $XDG_DATA_HOME/zsh/zcompdump
 # Z.lua
 export _ZL_DATA=$XDG_DATA_HOME/zsh/z
 zinit load skywind3000/z.lua
+
+# Developer
+## Python
+export PYENV_ROOT=$XDG_DATA_HOME/pyenv
+PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init --path)"
+eval "$(pyenv init -)"
+
+## Node
+export NODENV_ROOT=$XDG_DATA_HOME/nodenv
+PATH=$NODENV_ROOT/bin:$PATH
+eval "$(nodenv init -)"
+
+## Golang
+export GOPATH=$XDG_DATA_HOME/go
+export GOBIN=$GOPATH/bin
+PATH=$GOBIN:$PATH
+
+## Rust
+export RUSTUP_HOME=$XDG_DATA_HOME/rustup
+export CARGO_HOME=$XDG_DATA_HOME/cargo
+PATH=$CARGO_HOME/bin:$PATH
 
 # Alias
 alias sudo="sudo "

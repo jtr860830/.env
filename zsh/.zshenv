@@ -18,27 +18,6 @@ export EDITOR=$VISUAL
 # System and user PATH
 PATH=~/.local/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin
 
-# Python
-export PYENV_ROOT=$XDG_DATA_HOME/pyenv
-PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init --path)"
-eval "$(pyenv init -)"
-
-# Node
-export NODENV_ROOT=$XDG_DATA_HOME/nodenv
-PATH=$NODENV_ROOT/bin:$PATH
-eval "$(nodenv init -)"
-
-# Golang
-export GOPATH=$XDG_DATA_HOME/go
-export GOBIN=$GOPATH/bin
-PATH=$GOBIN:$PATH
-
-# Rust
-export RUSTUP_HOME=$XDG_DATA_HOME/rustup
-export CARGO_HOME=$XDG_DATA_HOME/cargo
-PATH=$CARGO_HOME/bin:$PATH
-
 # HTTPie
 export HTTPIE_CONFIG_DIR=$XDG_CONFIG_HOME/httpie
 
@@ -47,5 +26,4 @@ export VAGRANT_HOME=$XDG_DATA_HOME/vagrant
 export VAGRANT_ALIAS_FILE=$XDG_DATA_HOME/vagrant/aliases
 
 # Custom
-export ENV_HOME=$XDG_CONFIG_HOME/env
-export ZENV_HOME=$ENV_HOME/zsh
+export ZCUSTOM_HOME=$XDG_CONFIG_HOME/zsh
