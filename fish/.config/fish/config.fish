@@ -1,5 +1,7 @@
-# Language
+# General
 set LANG en_US.UTF-8
+set VISUAL lvim
+set EDITOR $VISUAL
 
 # Path
 set PATH /usr/local/bin /usr/local/sbin /usr/bin /usr/sbin /bin /sbin
@@ -18,19 +20,8 @@ set -Ux XDG_CONFIG_HOME $HOME/.config
 set -Ux XDG_CACHE_HOME $HOME/.cache
 set -Ux XDG_DATA_HOME $HOME/.local/share
 
-# Editor
-set VISUAL lvim
-set EDITOR $VISUAL
-
-# HTTPie
-set -x HTTPIE_CONFIG_DIR $XDG_CONFIG_HOME/httpie
-
-# Vagrant
-set -x VAGRANT_HOME $XDG_DATA_HOME/vagrant
-set -x VAGRANT_ALIAS_FILE $XDG_DATA_HOME/vagrant/aliases
-
-# n
-set -x N_PREFIX $HOME/.local
+# terminfo
+set -Ux TERMINFO $XDG_DATA_HOME/terminfo
 
 # Golang
 set -x GOPATH $XDG_DATA_HOME/go
@@ -40,8 +31,22 @@ set fish_user_paths $GOBIN $fish_user_paths
 # Rust
 set -x RUSTUP_HOME $XDG_DATA_HOME/rustup
 set -x CARGO_HOME $XDG_DATA_HOME/cargo
-set fish_user_paths $CARGO_HOME/bin $fish_user_paths	
-	
+set fish_user_paths $CARGO_HOME/bin $fish_user_paths
+
+# Node.js
+set -x N_PREFIX $HOME/.local
+set -x NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
+
+# Docker
+set -x DOCKER_CONFIG $XDG_CONFIG_HOME/docker
+
+# HTTPie
+set -x HTTPIE_CONFIG_DIR $XDG_CONFIG_HOME/httpie
+
+# Vagrant
+set -x VAGRANT_HOME $XDG_DATA_HOME/vagrant
+set -x VAGRANT_ALIAS_FILE $XDG_DATA_HOME/vagrant/aliases
+
 # Alias
 alias ls=lsd
 alias ll="lsd -l"
