@@ -1,13 +1,16 @@
--- general
+-- Vim
+---- general
 vim.opt.expandtab = false
 
+-- LunarVim
+---- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
-lvim.colorscheme = "onedarker"
 lvim.leader = "space"
-lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
-lvim.builtin.dashboard.active = true
-lvim.builtin.terminal.active = true
+
+---- builtin
+lvim.builtin.alpha.active = true
+lvim.builtin.notify.active = true
 lvim.builtin.nvimtree.setup.view.side = "left"
 lvim.builtin.nvimtree.show_icons.git = 0
 lvim.builtin.treesitter.ensure_installed = {
@@ -27,26 +30,9 @@ lvim.builtin.treesitter.ensure_installed = {
 lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
--- linters
-local linters = require("lvim.lsp.null-ls.linters")
-linters.setup({
-  {
-    exe = "eslint",
-    filetypes = { "javascript" }
-  }
-})
-
--- formatters
-local formatters = require("lvim.lsp.null-ls.formatters")
-formatters.setup({
-  {
-    exe = "eslint",
-    filetypes = { "javascript" }
-  }
-})
-
--- additional plugin
+---- additional plugins
 lvim.plugins = {
+	{ "olimorris/onedarkpro.nvim" },
   { "editorconfig/editorconfig-vim" },
   {
     "ray-x/lsp_signature.nvim",
@@ -61,3 +47,38 @@ lvim.plugins = {
     event = "InsertEnter",
   }
 }
+
+---- theme
+local theme = require("onedarkpro")
+theme.setup({
+	styles = {
+		comments = "italic"
+	},
+	options = {
+		bold = true,
+		italic = true,
+		cursorline = true,
+		transparency = true,
+		window_unfocussed_color = true
+	}
+})
+lvim.colorscheme = "onedarkpro"
+
+---- linters
+local linters = require("lvim.lsp.null-ls.linters")
+linters.setup({
+  {
+    exe = "eslint",
+    filetypes = { "javascript" }
+  }
+})
+
+---- formatters
+local formatters = require("lvim.lsp.null-ls.formatters")
+formatters.setup({
+  {
+    exe = "eslint",
+    filetypes = { "javascript" }
+  }
+})
+

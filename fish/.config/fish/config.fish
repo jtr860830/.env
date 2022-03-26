@@ -35,6 +35,7 @@ set fish_user_paths $CARGO_HOME/bin $fish_user_paths
 
 # Node.js
 set -x N_PREFIX $HOME/.local
+set -x COREPACK_HOME $XDG_DATA_HOME/corepack
 set -x NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
 
 # Docker
