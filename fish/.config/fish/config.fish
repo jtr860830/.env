@@ -38,6 +38,9 @@ set -x N_PREFIX $HOME/.local
 set -x COREPACK_HOME $XDG_DATA_HOME/corepack
 set -x NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
 
+# SSH
+set -x SSH_AUTH_SOCK ~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock
+
 # Docker
 set -x DOCKER_CONFIG $XDG_CONFIG_HOME/docker
 
