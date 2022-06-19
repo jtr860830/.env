@@ -31,7 +31,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 
 ---- additional plugins
 lvim.plugins = {
-	{ "olimorris/onedarkpro.nvim" },
+  { "olimorris/onedarkpro.nvim" },
   { "editorconfig/editorconfig-vim" },
   {
     "ray-x/lsp_signature.nvim",
@@ -50,16 +50,16 @@ lvim.plugins = {
 ---- theme
 local theme = require("onedarkpro")
 theme.setup({
-	styles = {
-		comments = "italic"
-	},
-	options = {
-		bold = true,
-		italic = true,
-		cursorline = true,
-		transparency = true,
-		window_unfocussed_color = true
-	}
+  styles = {
+    comments = "italic"
+  },
+  options = {
+    bold = true,
+    italic = true,
+    cursorline = true,
+    transparency = true,
+    window_unfocussed_color = true
+  }
 })
 lvim.colorscheme = "onedarkpro"
 
