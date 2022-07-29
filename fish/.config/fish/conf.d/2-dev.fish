@@ -1,5 +1,6 @@
 # Node.js
 set -x N_PREFIX $HOME/.local
+set -x NODE_REPL_HISTORY $XDG_DATA_HOME/node_repl_history
 set -x COREPACK_HOME $XDG_DATA_HOME/corepack
 set -x NPM_CONFIG_USERCONFIG $XDG_CONFIG_HOME/npm/npmrc
 
