@@ -1,6 +1,7 @@
 tap "homebrew/bundle"
 tap "homebrew/cask"
 tap "homebrew/cask-fonts"
+tap "homebrew/cask-versions"
 tap "homebrew/core"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
@@ -22,8 +23,6 @@ brew "go"
 brew "htop"
 # Handy way to save and run project-specific commands
 brew "just"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # Pager program similar to more
 brew "less"
 # Clone of ls with colorful output, file type icons, and more
@@ -36,8 +35,14 @@ brew "n"
 brew "neovim"
 # Development kit for the Java programming language
 brew "openjdk"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Wrapper around ripgrep that adds multiple rich file types
+brew "ripgrep-all"
 # Rust toolchain installer
 brew "rustup-init"
 # Cross-shell prompt for astronauts
@@ -48,6 +53,8 @@ brew "stow"
 brew "tmux"
 # Command-line unarchiving tools supporting multiple formats
 brew "unar"
+# Internet file retriever
+brew "wget"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # Password manager that keeps all passwords secure behind one password
@@ -62,15 +69,19 @@ cask "bartender"
 cask "discord"
 # App to build and share containerized applications and microservices
 cask "docker"
+cask "font-fira-code-nerd-font"
+cask "font-jetbrains-mono-nerd-font"
 cask "font-sauce-code-pro-nerd-font"
 # Web browser
 cask "google-chrome"
-# IDE for Java development - community edition
-cask "intellij-idea-ce"
+# HTTP and GraphQL Client
+cask "insomnia"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
 # VPN client for secure internet access and private browsing
 cask "nordvpn"
+# Team communication and collaboration software
+cask "slack"
 # Messaging app with a focus on speed and security
 cask "telegram"
 # Open-source code editor
