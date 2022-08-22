@@ -58,7 +58,7 @@ theme.setup({
     italic = true,
     cursorline = true,
     transparency = true,
-    window_unfocussed_color = true
+    window_unfocused_color = true
   }
 })
 lvim.colorscheme = "onedarkpro"
