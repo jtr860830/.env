@@ -61,6 +61,7 @@ theme.setup({
     window_unfocused_color = true
   }
 })
+lvim.builtin.lualine.options.theme = "onedarkpro"
 lvim.colorscheme = "onedarkpro"
 
 ---- linters
@@ -80,4 +81,3 @@ formatters.setup({
     filetypes = { "javascript" }
   }
 })
-
