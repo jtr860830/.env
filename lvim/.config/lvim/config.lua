@@ -79,5 +79,9 @@ formatters.setup({
   {
     exe = "eslint",
     filetypes = { "javascript" }
+  },
+  {
+    exe = "black",
+    filetypes = { "python" }
   }
 })
