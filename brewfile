@@ -5,6 +5,8 @@ tap "homebrew/cask-versions"
 tap "homebrew/core"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
+brew "clang-format"
 # Get a file from an HTTP, HTTPS or FTP server
 brew "curl"
 # Secure runtime for JavaScript and TypeScript
@@ -13,6 +15,10 @@ brew "deno"
 brew "ncurses"
 # User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
+# Command-line fuzzy finder written in Go
+brew "fzf"
+# GNU compiler collection
+brew "gcc"
 # Distributed revision control system
 brew "git"
 # Syntax-highlighting pager for git and diff output
@@ -21,6 +27,10 @@ brew "git-delta"
 brew "go"
 # Improved top (interactive process viewer)
 brew "htop"
+# Calculate various network masks, etc. from a given IP address
+brew "ipcalc"
+# CLI wrapper for basic network utilities on macOS - ip command
+brew "iproute2mac"
 # Handy way to save and run project-specific commands
 brew "just"
 # Kubernetes CLI To Manage Your Clusters In Style!
@@ -29,6 +39,8 @@ brew "k9s"
 brew "lazygit"
 # Pager program similar to more
 brew "less"
+# Next-gen compiler infrastructure
+brew "llvm"
 # Clone of ls with colorful output, file type icons, and more
 brew "lsd"
 # Powerful, lightweight programming language
@@ -39,10 +51,16 @@ brew "n"
 brew "neovim"
 # Development kit for the Java programming language
 brew "openjdk"
-# Interpreted, interactive, object-oriented programming language
-brew "python@3.9"
 # OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
+# Cryptography and SSL/TLS Toolkit
+brew "openssl@3"
+# Modern Python package manager with PEP 582 support
+brew "pdm"
+# Execute binaries from Python packages in isolated environments
+brew "pipx"
+# Interpreted, interactive, object-oriented programming language
+brew "python@3.9"
 # Search tool like grep and The Silver Searcher
 brew "ripgrep"
 # Wrapper around ripgrep that adds multiple rich file types
@@ -53,12 +71,18 @@ brew "rustup-init"
 brew "starship"
 # Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
+# Command-line packet analyzer
+brew "tcpdump"
+# User interface to the TELNET protocol
+brew "telnet"
 # Terminal multiplexer
 brew "tmux"
 # Command-line unarchiving tools supporting multiple formats
 brew "unar"
 # Internet file retriever
 brew "wget"
+# Programming language designed for robustness, optimality, and clarity
+brew "zig"
 # Shell extension to navigate your filesystem faster
 brew "zoxide"
 # Password manager that keeps all passwords secure behind one password
@@ -75,7 +99,9 @@ cask "bartender"
 cask "discord"
 # App to build and share containerized applications and microservices
 cask "docker"
+# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
+# Developer targeted fonts with a high number of glyphs
 cask "font-jetbrains-mono-nerd-font"
 cask "font-sauce-code-pro-nerd-font"
 # Web browser
@@ -84,6 +110,10 @@ cask "google-chrome"
 cask "insomnia"
 # Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
+# JetBrains tools manager
+cask "jetbrains-toolbox"
+# Native desktop app for Messenger (formerly Facebook Messenger)
+cask "messenger"
 # VPN client for secure internet access and private browsing
 cask "nordvpn"
 # Team communication and collaboration software
