@@ -95,6 +95,8 @@ cask "alfred"
 cask "alt-tab"
 # Menu bar icon organizer
 cask "bartender"
+# API documentation browser and code snippet manager
+cask "dash"
 # Voice and text chat software
 cask "discord"
 # App to build and share containerized applications and microservices
@@ -116,6 +118,8 @@ cask "jetbrains-toolbox"
 cask "messenger"
 # VPN client for secure internet access and private browsing
 cask "nordvpn"
+# Email client
+cask "readdle-spark"
 # Team communication and collaboration software
 cask "slack"
 # Messaging app with a focus on speed and security
