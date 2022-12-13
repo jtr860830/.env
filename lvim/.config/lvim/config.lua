@@ -1,6 +1,5 @@
 -- Vim
 ---- general
-vim.opt.expandtab = false
 
 -- LunarVim
 ---- general
