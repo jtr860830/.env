@@ -30,7 +30,7 @@ lvim.builtin.treesitter.highlight.enabled = true
 ---- additional plugins
 lvim.plugins = {
   { "olimorris/onedarkpro.nvim" },
-  { "editorconfig/editorconfig-vim" },
+  { "gpanders/editorconfig.nvim" },
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
@@ -56,11 +56,11 @@ theme.setup({
     italic = true,
     cursorline = true,
     transparency = true,
-    window_unfocused_color = true
+    highlight_inactive_windows = true
   }
 })
-lvim.builtin.lualine.options.theme = "onedarkpro"
-lvim.colorscheme = "onedarkpro"
+lvim.builtin.lualine.options.theme = "onedark"
+lvim.colorscheme = "onedark"
 
 ---- linters
 local linters = require("lvim.lsp.null-ls.linters")
