@@ -55,7 +55,6 @@ theme.setup({
     bold = true,
     italic = true,
     cursorline = true,
-    transparency = true,
     highlight_inactive_windows = true
   }
 })

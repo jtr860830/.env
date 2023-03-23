@@ -1,6 +1,6 @@
 # General
 set LANG en_US.UTF-8
-set VISUAL lvim
+set VISUAL nvim
 set EDITOR $VISUAL
 
 # Path
