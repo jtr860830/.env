@@ -19,6 +19,10 @@ eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
 
 # Alias
-alias ls=lsd
-alias vi=nvim
-alias vim=nvim
+alias sudo="sudo "
+alias rm="rm -i"
+alias mv="mv -i"
+alias cp="cp -i"
+alias ls="lsd"
+alias vi="nvim"
+alias vim="nvim"

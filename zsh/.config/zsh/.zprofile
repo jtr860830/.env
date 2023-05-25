@@ -7,7 +7,7 @@ export MANPATH="/opt/homebrew/share/man${MANPATH+:$MANPATH}:";
 export INFOPATH="/opt/homebrew/share/info:${INFOPATH:-}";
 
 # Golang
-PATH=$GOBIN:$PATH
+PATH="$GOBIN:$PATH"
 
 # Rust
-PATH=$CARGO_HOME/bin:$PATH
+PATH="$CARGO_HOME/bin:$PATH"
