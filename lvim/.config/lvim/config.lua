@@ -40,7 +40,7 @@ lvim.plugins = {
   },
   {
     "tzachar/cmp-tabnine",
-    run = "./install.sh",
+    build = "./install.sh",
     event = "InsertEnter",
   }
 }
