@@ -10,6 +10,12 @@ export HOMEBREW_PREFIX="/opt/homebrew";
 export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
 
+# Zi
+typeset -A ZI
+ZI[HOME_DIR]="$XDG_DATA_HOME/zi"
+ZI[BIN_DIR]="$HOME/.local/bin"
+export ZPFX="$HOME/.local"
+
 # Node.js
 export N_PREFIX="$HOME/.local"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"

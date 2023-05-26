@@ -11,3 +11,6 @@ PATH="$GOBIN:$PATH"
 
 # Rust
 PATH="$CARGO_HOME/bin:$PATH"
+
+# User
+PATH="$HOME/.local/bin:$HOME/.local/sbin:$PATH"
