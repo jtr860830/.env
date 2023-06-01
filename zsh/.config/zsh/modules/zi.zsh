@@ -12,6 +12,8 @@ autoload -Uz _zi
 zicompinit # <- https://wiki.zshell.dev/docs/guides/commands
 zi light-mode for \
   z-shell/z-a-meta-plugins \
-  @annexes @zsh-users+fast # <- https://wiki.zshell.dev/ecosystem/category/-annexes
+  @annexes @romkatv @zsh-users+fast # <- https://wiki.zshell.dev/ecosystem/category/-annexes
 # examples here -> https://wiki.zshell.dev/community/gallery/collection
 zicompinit # <- https://wiki.zshell.dev/docs/guides/commands
+zi has'zoxide' wait lucid for \
+  z-shell/zsh-zoxide
