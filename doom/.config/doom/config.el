@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets. It is optional.
-(setq user-full-name "John Doe"
-      user-mail-address "john@doe.com")
+(setq user-full-name "Josh Hsieh"
+      user-mail-address "work@josh-hsieh.tw")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom:
 ;;
@@ -23,7 +23,17 @@
 ;;
 ;;(setq doom-font (font-spec :family "Fira Code" :size 12 :weight 'semi-light)
 ;;      doom-variable-pitch-font (font-spec :family "Fira Sans" :size 13))
-;;
+
+(setq doom-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
+      doom-variable-pitch-font (font-spec :family "JetBrainsMono Nerd Font" :size 13)
+      doom-big-font (font-spec :family "JetBrainsMono Nerd Font" :size 24))
+(after! doom-themes
+  (setq doom-themes-enable-bold t
+        doom-themes-enable-italic t))
+(custom-set-faces!
+  '(font-lock-comment-face :slant italic)
+  '(font-lock-keyword-face :slant italic))
+
 ;; If you or Emacs can't find your font, use 'M-x describe-font' to look them
 ;; up, `M-x eval-region' to execute elisp code, and 'M-x doom/reload-font' to
 ;; refresh your font settings. If Emacs still can't find your font, it likely
@@ -40,7 +50,7 @@
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
-(setq org-directory "~/org/")
+(setq org-directory "~/Documents/org/")
 
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
