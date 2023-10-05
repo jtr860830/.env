@@ -3,6 +3,9 @@ tap "homebrew/bundle"
 tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
+tap "oven-sh/bun"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
@@ -17,6 +20,8 @@ brew "curl"
 brew "deno"
 # Bash, Zsh and Fish completion for Docker
 brew "docker-completion"
+# Command-line tool for DigitalOcean
+brew "doctl"
 # Modern replacement for 'ls'
 brew "exa"
 # Simple, fast and user-friendly alternative to find
@@ -65,6 +70,8 @@ brew "mosh"
 brew "n"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Port scanning utility for large networks
+brew "nmap"
 # Development kit for the Java programming language
 brew "openjdk"
 # OpenBSD freely-licensed SSH connectivity tools
@@ -101,9 +108,11 @@ brew "zoxide"
 brew "zsh"
 # A CLI for building apps using Cloud Native Buildpacks
 brew "buildpacks/tap/pack"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
-# Command-line helper for the 1Password password manager
+# Command-line interface for 1Password
 cask "1password-cli"
 # Application launcher and productivity software
 cask "alfred"
@@ -145,6 +154,10 @@ cask "orbstack"
 cask "postman"
 # Email client
 cask "readdle-spark"
+# Move and resize windows using keyboard shortcuts or snap areas
+cask "rectangle"
+# End-to-end encrypted email, calendar, documents, and files support
+cask "skiff"
 # Team communication and collaboration software
 cask "slack"
 # Native GUI tool for relational databases
@@ -153,8 +166,8 @@ cask "tableplus"
 cask "telegram"
 # Open-source code editor
 cask "visual-studio-code"
-# GPU-accelerated cross-platform terminal emulator and multiplexer
-cask "wezterm"
+# Rust-based terminal
+cask "warp"
 # Video communication and virtual meeting platform
 cask "zoom"
 vscode "aaron-bond.better-comments"
@@ -166,6 +179,7 @@ vscode "EditorConfig.EditorConfig"
 vscode "esbenp.prettier-vscode"
 vscode "GitHub.copilot"
 vscode "GitHub.remotehub"
+vscode "github.vscode-github-actions"
 vscode "golang.go"
 vscode "GraphQL.vscode-graphql"
 vscode "GraphQL.vscode-graphql-syntax"
@@ -212,4 +226,6 @@ vscode "usernamehw.errorlens"
 vscode "VisualStudioExptTeam.intellicode-api-usage-examples"
 vscode "VisualStudioExptTeam.vscodeintellicode"
 vscode "vscodevim.vim"
+vscode "withfig.fig"
 vscode "zhuangtongfa.material-theme"
+vscode "zxh404.vscode-proto3"
