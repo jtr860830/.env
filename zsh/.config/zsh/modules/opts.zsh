@@ -25,4 +25,5 @@ setopt pushd_ignore_dups      # Don't push multiple copies directory onto the di
 setopt pushd_minus            # Swap the meaning of cd +1 and cd -1 to the opposite.
 
 # S-Tab for reverse-menu-complete
-bindkey "${terminfo[kcbt]}" reverse-menu-complete
+bindkey '\t' menu-select "$terminfo[kcbt]" menu-select
+bindkey -M menuselect '\t' menu-complete "$terminfo[kcbt]" reverse-menu-complete

@@ -1,4 +1,4 @@
 .zcompdump
-.zsh_history
 .zcompcache
-.zi
+.zsh_history
+.zsh_sessions

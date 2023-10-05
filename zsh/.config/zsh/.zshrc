@@ -1,4 +1,4 @@
-source $ZDOTDIR/modules/zinit.zsh
+source $ZDOTDIR/modules/znap.zsh
 source $ZDOTDIR/modules/p10k.zsh
 source $ZDOTDIR/modules/opts.zsh
 source $ZDOTDIR/modules/aliases.zsh
