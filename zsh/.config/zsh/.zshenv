@@ -37,3 +37,6 @@ export TERMINFO="$XDG_DATA_HOME/terminfo"
 
 # Docker
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
+
+# Vagrant
+export VAGRANT_HOME="$XDG_DATA_HOME/vagrant"
