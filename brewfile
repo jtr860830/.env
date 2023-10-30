@@ -4,171 +4,99 @@ tap "homebrew/cask-fonts"
 tap "homebrew/cask-versions"
 tap "homebrew/services"
 tap "oven-sh/bun"
-# Bourne-Again SHell, a UNIX command interpreter
 brew "bash"
-# Clone of cat(1) with syntax highlighting and Git integration
-brew "bat"
-# Formatting tools for C, C++, Obj-C, Java, JavaScript, TypeScript
-brew "clang-format"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
-# Cryptography and SSL/TLS Toolkit
 brew "openssl@3"
-# Get a file from an HTTP, HTTPS or FTP server
+brew "bat"
+brew "clang-format"
+brew "coreutils"
 brew "curl"
-# Secure runtime for JavaScript and TypeScript
 brew "deno"
-# Bash, Zsh and Fish completion for Docker
-brew "docker-completion"
-# Command-line tool for DigitalOcean
 brew "doctl"
-# Modern replacement for 'ls'
-brew "exa"
-# Simple, fast and user-friendly alternative to find
+brew "fastfetch"
 brew "fd"
-# Text-based UI library
 brew "ncurses"
-# User-friendly command-line shell for UNIX-like operating systems
 brew "fish"
-# Command-line fuzzy finder written in Go
 brew "fzf"
-# GNU compiler collection
+brew "fzy"
 brew "gcc"
-# Distributed revision control system
 brew "git"
-# Syntax-highlighting pager for git and diff output
 brew "git-delta"
-# Open source programming language to build simple/reliable/efficient software
 brew "go"
-# Improved top (interactive process viewer)
 brew "htop"
-# Calculate various network masks, etc. from a given IP address
+brew "iftop"
 brew "ipcalc"
-# CLI wrapper for basic network utilities on macOS - ip command
 brew "iproute2mac"
-# Handy way to save and run project-specific commands
+brew "jq"
 brew "just"
-# Kubernetes CLI To Manage Your Clusters In Style!
 brew "k9s"
-# Kubernetes command-line interface
 brew "kubernetes-cli"
-# Simple terminal UI for git commands
 brew "lazygit"
-# Pager program similar to more
 brew "less"
-# Next-gen compiler infrastructure
 brew "llvm"
-# Clone of ls with colorful output, file type icons, and more
 brew "lsd"
-# Powerful, lightweight programming language
 brew "lua"
-# Utility for directing compilation
 brew "make"
-# Remote terminal application
 brew "mosh"
-# Node version management
 brew "n"
-# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Port scanning utility for large networks
 brew "nmap"
-# Development kit for the Java programming language
 brew "openjdk"
-# OpenBSD freely-licensed SSH connectivity tools
 brew "openssh"
-# Execute binaries from Python packages in isolated environments
 brew "pipx"
-# Interpreted, interactive, object-oriented programming language
+brew "procs"
 brew "python@3.9"
-# Search tool like grep and The Silver Searcher
 brew "ripgrep"
-# Wrapper around ripgrep that adds multiple rich file types
 brew "ripgrep-all"
-# Rust toolchain installer
 brew "rustup-init"
-# Cross-shell prompt for astronauts
 brew "starship"
-# Organize software neatly under a single directory tree (e.g. /usr/local)
 brew "stow"
-# Command-line packet analyzer
 brew "tcpdump"
-# User interface to the TELNET protocol
 brew "telnet"
-# Terminal multiplexer
 brew "tmux"
-# Command-line unarchiving tools supporting multiple formats
 brew "unar"
-# Internet file retriever
+brew "util-linux"
 brew "wget"
-# Programming language designed for robustness, optimality, and clarity
 brew "zig"
-# Shell extension to navigate your filesystem faster
 brew "zoxide"
-# UNIX shell (command interpreter)
 brew "zsh"
-# A CLI for building apps using Cloud Native Buildpacks
 brew "buildpacks/tap/pack"
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
 brew "oven-sh/bun/bun"
-# Password manager that keeps all passwords secure behind one password
 cask "1password"
-# Command-line interface for 1Password
 cask "1password-cli"
-# Application launcher and productivity software
 cask "alfred"
-# Enable Windows-like alt-tab
 cask "alt-tab"
-# Menu bar icon organizer
+cask "arc"
 cask "bartender"
-# API documentation browser and code snippet manager
+cask "burp-suite"
 cask "dash"
-# Voice and text chat software
 cask "discord"
-# Productivity app
 cask "dropzone"
-# Text editor
-cask "emacs"
-# Developer targeted fonts with a high number of glyphs
 cask "font-caskaydia-cove-nerd-font"
-# Developer targeted fonts with a high number of glyphs
 cask "font-fira-code-nerd-font"
-# Developer targeted fonts with a high number of glyphs
+cask "font-hack-nerd-font"
 cask "font-jetbrains-mono-nerd-font"
-# Developer targeted fonts with a high number of glyphs
+cask "font-maple"
 cask "font-sauce-code-pro-nerd-font"
-# Web browser
 cask "google-chrome"
-# HTTP and GraphQL Client
 cask "insomnia"
-# Terminal emulator as alternative to Apple's Terminal app
 cask "iterm2"
-# Blocks all Keyboard and TouchBar input
 cask "keyboardcleantool"
-# Native desktop app for Messenger (formerly Facebook Messenger)
 cask "messenger"
-# VPN client for secure internet access and private browsing
-cask "nordvpn"
-# Replacement for Docker Desktop
 cask "orbstack"
-# Collaboration platform for API development
+cask "parallels"
+cask "parallels-access"
+cask "parallels-toolbox"
 cask "postman"
-# Email client
 cask "readdle-spark"
-# Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
-# End-to-end encrypted email, calendar, documents, and files support
 cask "skiff"
-# Team communication and collaboration software
 cask "slack"
-# Native GUI tool for relational databases
 cask "tableplus"
-# Messaging app with a focus on speed and security
 cask "telegram"
-# Open-source code editor
+cask "utm"
+cask "vagrant"
 cask "visual-studio-code"
-# Rust-based terminal
-cask "warp"
-# Video communication and virtual meeting platform
+cask "wireshark"
 cask "zoom"
 vscode "aaron-bond.better-comments"
 vscode "christian-kohler.path-intellisense"
@@ -178,6 +106,7 @@ vscode "eamodio.gitlens"
 vscode "EditorConfig.EditorConfig"
 vscode "esbenp.prettier-vscode"
 vscode "GitHub.copilot"
+vscode "GitHub.copilot-chat"
 vscode "GitHub.remotehub"
 vscode "github.vscode-github-actions"
 vscode "golang.go"
@@ -221,6 +150,7 @@ vscode "rust-lang.rust-analyzer"
 vscode "streetsidesoftware.code-spell-checker"
 vscode "styra.vscode-styra"
 vscode "TabNine.tabnine-vscode"
+vscode "tsandall.opa"
 vscode "twxs.cmake"
 vscode "usernamehw.errorlens"
 vscode "VisualStudioExptTeam.intellicode-api-usage-examples"
