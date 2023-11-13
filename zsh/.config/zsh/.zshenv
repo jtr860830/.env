@@ -32,6 +32,9 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 # SSH
 export SSH_AUTH_SOCK="~/Library/Group\ Containers/2BUA8C4S2C.com.1password/t/agent.sock"
 
+# Wget
+export WGETRC="$XDG_CONFIG_HOME/wgetrc"
+
 # Terminal
 export TERMINFO="$XDG_DATA_HOME/terminfo"
 

@@ -6,8 +6,6 @@ ZPLUGINS_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/plugins"
 source $ZPLUGINS_HOME/znap/znap.zsh
 
 # setup plugins
-znap install zsh-users/zsh-completions
-
 znap source romkatv/powerlevel10k
 znap source zdharma-continuum/fast-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
