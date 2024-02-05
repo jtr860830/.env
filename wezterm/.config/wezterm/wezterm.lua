@@ -13,6 +13,7 @@ end
 -- This is where you actually apply your config choices
 config.window_decorations = "RESIZE"
 config.tab_bar_at_bottom = true
+config.hide_tab_bar_if_only_one_tab = true
 config.color_scheme = "OneDark (base16)"
 config.line_height = 1.2
 config.font = wezterm.font("MonaspiceNe NF")
