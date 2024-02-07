@@ -14,7 +14,7 @@ end
 config.window_decorations = "RESIZE"
 config.tab_bar_at_bottom = true
 config.hide_tab_bar_if_only_one_tab = true
-config.color_scheme = "OneDark (base16)"
+config.color_scheme = "onedarkpro_onedark"
 config.line_height = 1.2
 config.font = wezterm.font("MonaspiceNe NF")
 config.font_size = 14
