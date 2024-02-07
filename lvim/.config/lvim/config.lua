@@ -208,6 +208,8 @@ lvim.plugins = {
     },
     config = function(_, opts)
       require("onedarkpro").setup(opts)
+      lvim.builtin.lualine.options.theme = "onedark"
+      lvim.colorscheme = "onedark"
     end,
   },
   {
@@ -216,17 +218,22 @@ lvim.plugins = {
     dependencies = {
       "MunifTanjim/nui.nvim",
       "rcarriga/nvim-notify",
-    }
+    },
+    config = function()
+      require "noice".setup()
+    end
   },
   {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
-    config = function() require "lsp_signature".on_attach() end,
+    config = function()
+      require "lsp_signature".on_attach()
+    end,
   },
   {
     "folke/trouble.nvim",
     cmd = "TroubleToggle",
-    init = function()
+    config = function()
       lvim.builtin.which_key.mappings["t"] = {
         name = "Diagnostics",
         t = { "<cmd>TroubleToggle<cr>", "trouble" },
@@ -239,8 +246,6 @@ lvim.plugins = {
     end
   },
 }
-lvim.builtin.lualine.options.theme = "onedark"
-lvim.colorscheme = "onedark"
 
 -- linters
 require("lvim.lsp.null-ls.linters").setup({
