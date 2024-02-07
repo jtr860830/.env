@@ -210,19 +210,11 @@ lvim.plugins = {
       require("onedarkpro").setup(opts)
     end,
   },
-  -- lazy.nvim
   {
     "folke/noice.nvim",
     event = "VeryLazy",
-    opts = {
-      -- add any options here
-    },
     dependencies = {
-      -- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
       "MunifTanjim/nui.nvim",
-      -- OPTIONAL:
-      --   `nvim-notify` is only needed, if you want to use the notification view.
-      --   If not available, we use `mini` as the fallback
       "rcarriga/nvim-notify",
     }
   },
@@ -230,6 +222,21 @@ lvim.plugins = {
     "ray-x/lsp_signature.nvim",
     event = "BufRead",
     config = function() require "lsp_signature".on_attach() end,
+  },
+  {
+    "folke/trouble.nvim",
+    cmd = "TroubleToggle",
+    init = function()
+      lvim.builtin.which_key.mappings["t"] = {
+        name = "Diagnostics",
+        t = { "<cmd>TroubleToggle<cr>", "trouble" },
+        w = { "<cmd>TroubleToggle workspace_diagnostics<cr>", "workspace" },
+        d = { "<cmd>TroubleToggle document_diagnostics<cr>", "document" },
+        q = { "<cmd>TroubleToggle quickfix<cr>", "quickfix" },
+        l = { "<cmd>TroubleToggle loclist<cr>", "loclist" },
+        r = { "<cmd>TroubleToggle lsp_references<cr>", "references" },
+      }
+    end
   },
 }
 lvim.builtin.lualine.options.theme = "onedark"
