@@ -1,7 +1,6 @@
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.leader = "space"
-lvim.builtin.alpha.active = true
 lvim.builtin.treesitter.ensure_installed = {
   "bash",
   "c",
