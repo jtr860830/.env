@@ -1,6 +1,4 @@
-local M = {}
-
-M = {
+local M = {
   "neovim/nvim-lspconfig",
   config = function()
     require("nvchad.configs.lspconfig").defaults()

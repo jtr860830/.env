@@ -1,6 +1,4 @@
-local M = {}
-
-M = {
+local M = {
   "lukas-reineke/indent-blankline.nvim",
   opts = {
     indent = { char = "▎" },
