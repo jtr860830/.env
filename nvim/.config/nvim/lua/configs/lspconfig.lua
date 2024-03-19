@@ -4,19 +4,17 @@ local on_attach = configs.on_attach
 local on_init = configs.on_init
 local capabilities = configs.capabilities
 
-local lspconfig = require "lspconfig"
 local servers = {
-  "clangd",
-  "gopls",
-  "jsonls",
-  "tsserver",
-  "rust_analyzer",
+  clangd = {},
+  gopls = {},
+  jsonls = {},
+  tsserver = {},
+  rust_analyzer = {},
 }
 
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_init = on_init,
-    on_attach = on_attach,
-    capabilities = capabilities,
-  }
+for name, config in pairs(servers) do
+  config.on_init = on_init
+  config.on_attach = on_attach
+  config.capabilities = capabilities
+  require("lspconfig")[name].setup(config)
 end

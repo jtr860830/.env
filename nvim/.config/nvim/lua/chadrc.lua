@@ -6,9 +6,7 @@ M.ui = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
   },
-  statusline = {
-    theme = "vscode_colored",
-  },
+  statusline = { theme = "vscode_colored" },
 }
 
 return M
