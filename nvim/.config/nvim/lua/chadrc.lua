@@ -10,6 +10,7 @@ M.ui = {
     Comment = { italic = true },
     ["@comment"] = { italic = true },
   },
+  cmp = { lspkind_text = false },
   statusline = { theme = "vscode_colored" },
 }
 
