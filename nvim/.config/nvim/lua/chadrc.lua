@@ -17,6 +17,7 @@ M.base46 = {
   integrations = {
     "lspsaga",
     "notify",
+    "trouble",
     "vim-illuminate",
   },
 }

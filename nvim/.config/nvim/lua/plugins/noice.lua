@@ -1,10 +1,10 @@
 local M = {
   "folke/noice.nvim",
-  event = "VeryLazy",
   dependencies = {
     "MunifTanjim/nui.nvim",
     "rcarriga/nvim-notify",
   },
+  event = "VeryLazy",
   config = function ()
     require "configs.noice"
   end
