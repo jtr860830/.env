@@ -6,7 +6,12 @@ local capabilities = configs.capabilities
 
 local servers = {
   biome = {},
-  clangd = {},
+  clangd = {
+    cmd = {
+      "clangd",
+      "--offset-encoding=utf-16"
+    },
+  },
   gopls = {},
   pyright = {},
   rust_analyzer = {},
