@@ -8,7 +8,6 @@ local servers = {
   biome = {},
   clangd = {},
   gopls = {},
-  jsonls = {},
   pyright = {},
   rust_analyzer = {},
   tsserver = {},
