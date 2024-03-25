@@ -8,8 +8,9 @@ local servers = {
   clangd = {},
   gopls = {},
   jsonls = {},
-  tsserver = {},
+  pyright = {},
   rust_analyzer = {},
+  tsserver = {},
 }
 
 for name, config in pairs(servers) do
