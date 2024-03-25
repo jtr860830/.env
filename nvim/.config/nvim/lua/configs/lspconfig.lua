@@ -5,6 +5,7 @@ local on_init = configs.on_init
 local capabilities = configs.capabilities
 
 local servers = {
+  biome = {},
   clangd = {},
   gopls = {},
   jsonls = {},
