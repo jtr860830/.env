@@ -6,7 +6,6 @@ ZPLUGINS_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zsh/plugins"
 source $ZPLUGINS_HOME/znap/znap.zsh
 
 # setup plugins
-znap source romkatv/powerlevel10k
 znap source zdharma-continuum/fast-syntax-highlighting
 znap source zsh-users/zsh-autosuggestions
 znap source marlonrichert/zsh-autocomplete
@@ -15,3 +14,5 @@ znap source marlonrichert/zcolors
 znap source ajeetdsouza/zoxide
 
 znap eval zcolors "zcolors ${(q)LS_COLORS}"
+znap eval starship "starship init zsh --print-full-init"
+znap prompt
