@@ -17,10 +17,11 @@ export HOMEBREW_CELLAR="/opt/homebrew/Cellar";
 export HOMEBREW_REPOSITORY="/opt/homebrew";
 
 # Node.js
-export VOLTA_HOME="$XDG_DATA_HOME/volta"
 export NODE_REPL_HISTORY="$XDG_DATA_HOME/node_repl_history"
 export COREPACK_HOME="$XDG_DATA_HOME/corepack"
 export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export VOLTA_HOME="$XDG_DATA_HOME/volta"
+export VOLTA_FEATURE_PNPM=1
 
 # Golang
 export GOPATH="$XDG_DATA_HOME/go"
