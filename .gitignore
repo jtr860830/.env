@@ -1,3 +1,2 @@
 tmux/.config/tmux/plugins/*
-tmux/.config/tmux/resurrect/*
 zsh/**/*.zwc
