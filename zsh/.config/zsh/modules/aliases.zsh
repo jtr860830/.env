@@ -1,5 +1,5 @@
 alias sudo="sudo "
-alias ls="lsd"
+alias ls="eza --icons=auto --color=auto"
 alias vi="nvim"
 alias vim="nvim"
 alias wget="wget --hsts-file='$XDG_CACHE_HOME/wget-hsts'"
