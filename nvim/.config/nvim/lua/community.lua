@@ -23,4 +23,5 @@ return {
   { import = "astrocommunity.pack.sql" },
   { import = "astrocommunity.pack.typescript-all-in-one" },
   { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.pack.zig" },
 }
