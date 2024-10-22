@@ -43,6 +43,10 @@ export TERMINFO="$XDG_DATA_HOME/terminfo"
 # Docker
 export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 
+# Kubernetes
+export KUBECONFIG="$XDG_CONFIG_HOME/kube"
+export KUBECACHEDIR="$XDG_CACHE_HOME/kube"
+
 # Vagrant
 export VAGRANT_HOME="$XDG_DATA_HOME/vagrant"
 export VAGRANT_DEFAULT_PROVIDER="parallels"
