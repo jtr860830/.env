@@ -14,6 +14,7 @@ end
 config.window_decorations = "RESIZE"
 config.cursor_blink_rate = 0
 config.enable_tab_bar = false
+config.max_fps = 120
 config.color_scheme = "onedarkpro_onedark"
 config.line_height = 1.2
 config.font = wezterm.font("MonaspiceNe NF")
