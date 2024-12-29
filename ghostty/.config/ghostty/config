@@ -1,6 +1,9 @@
 # macOS titlebar style
 macos-titlebar-style = hidden
 
+# quit after the last surface is closed
+quit-after-last-window-closed = true
+
 # font settings
 font-family = "MonaspiceNe NF"
 font-size = 14
