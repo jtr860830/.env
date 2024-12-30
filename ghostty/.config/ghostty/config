@@ -1,6 +1,12 @@
 # macOS titlebar style
 macos-titlebar-style = hidden
 
+# window options
+window-padding-balance = true
+
+# auto hide mouse
+mouse-hide-while-typing = true
+
 # quit after the last surface is closed
 quit-after-last-window-closed = true
 
