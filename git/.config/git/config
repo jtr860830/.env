@@ -1,6 +1,7 @@
 [user]
 	name = Josh Hsieh
 	email = josh.hsieh@linux.com
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMeXnA4jq76uzsTYRaIjeXkKM0pk5ARHLrzRbYeczax/
 [color]
 	ui = true
 [core]
@@ -89,3 +90,9 @@
 	repo = /Users/jtr860830/.local/share/zsh/plugins/romkatv/powerlevel10k
 	repo = /Users/jtr860830/.local/share/zsh/plugins/zdharma-continuum/fast-syntax-highlighting
 	repo = /Users/jtr860830/.local/share/zsh/plugins/zsh-users/zsh-autosuggestions
+[gpg]
+	format = ssh
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+[commit]
+	gpgsign = true
