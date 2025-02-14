@@ -1,4 +1,5 @@
-# macOS titlebar style
+# macOS options
+macos-icon = glass
 macos-titlebar-style = hidden
 
 # window options
