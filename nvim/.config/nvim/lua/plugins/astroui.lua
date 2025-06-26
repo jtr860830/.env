@@ -1,3 +1,5 @@
+if true then return {} end -- WARN: REMOVE THIS LINE TO ACTIVATE THIS FILE
+
 -- AstroUI provides the basis for configuring the AstroNvim User Interface
 -- Configuration documentation can be found with `:h astroui`
 -- NOTE: We highly recommend setting up the Lua Language Server (`:LspInstall lua_ls`)
@@ -9,7 +11,7 @@ return {
   ---@type AstroUIOpts
   opts = {
     -- change colorscheme
-    colorscheme = "onedark",
+    colorscheme = "astrodark",
     -- AstroUI allows you to easily modify highlight groups easily for any and all colorschemes
     highlights = {
       init = { -- this table overrides highlights in all themes
@@ -32,20 +34,6 @@ return {
       LSPLoading8 = "⠧",
       LSPLoading9 = "⠇",
       LSPLoading10 = "⠏",
-    },
-    status = {
-      colors = {
-        bg = "#2e323b",
-        section_bg = "#2e323b",
-        tabline_bg = "#2e323b",
-        tabline_fg = "#2e323b",
-        buffer_bg = "#2e323b",
-        buffer_overflow_bg = "#2e323b",
-        tab_close_bg = "#2e323b",
-      },
-      separators = {
-        breadcrumbs = "   ",
-      },
     },
   },
 }
