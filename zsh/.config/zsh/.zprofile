@@ -13,4 +13,4 @@ PATH="$GOBIN:$PATH"
 PATH="$CARGO_HOME/bin:$PATH"
 
 # User
-PATH="$HOME/.local/bin:$HOME/.local/sbin:$PATH"
+PATH="$HOME/.local/bin:$PATH"
