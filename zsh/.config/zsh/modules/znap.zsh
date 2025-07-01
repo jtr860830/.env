@@ -15,6 +15,5 @@ znap source ajeetdsouza/zoxide
 
 znap eval zcolors "zcolors ${(q)LS_COLORS}"
 znap eval mise "mise activate zsh"
-znap eval thefuck "thefuck --alias"
 znap eval starship "starship init zsh --print-full-init"
 znap prompt
