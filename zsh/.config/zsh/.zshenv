@@ -48,3 +48,6 @@ export KUBECACHEDIR="$XDG_CACHE_HOME/kube"
 # Vagrant
 export VAGRANT_HOME="$XDG_DATA_HOME/vagrant"
 export VAGRANT_DEFAULT_PROVIDER="parallels"
+
+# Tart
+export TART_HOME="$XDG_CACHE_HOME/tart"
