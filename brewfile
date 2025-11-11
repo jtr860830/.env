@@ -1,6 +1,5 @@
 tap "buildpacks/tap"
 tap "cirruslabs/cli"
-tap "d12frosted/emacs-plus"
 brew "atac"
 brew "ncurses"
 brew "bash"
