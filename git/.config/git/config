@@ -2,25 +2,6 @@
 	name = Josh Hsieh
 	email = josh.hsieh@linux.com
 	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMeXnA4jq76uzsTYRaIjeXkKM0pk5ARHLrzRbYeczax/
-[color]
-	ui = true
-[core]
-	editor = nvim
-	pager = delta
-[alias]
-	co = commit
-	lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
-[pull]
-	rebase = true
-[interactive]
-	diffFilter = delta --color-only
-[delta]
-	features = side-by-side line-numbers decorations
-	whitespace-error-style = 22 reverse
-[delta "decorations"]
-	commit-decoration-style = bold yellow box ul
-	file-style = bold yellow ul
-	file-decoration-style = none
 [init]
 	defaultBranch = main
 [gpg]
@@ -29,3 +10,23 @@
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 [commit]
 	gpgsign = true
+[core]
+	editor = nvim
+	pager = delta
+[pull]
+	rebase = true
+[alias]
+	co = commit
+	lg = log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --
+[color]
+	ui = true
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	syntax-theme = TwoDark
+	features = side-by-side line-numbers decorations
+	whitespace-error-style = 22 reverse
+[delta "decorations"]
+	commit-decoration-style = bold yellow box ul
+	file-style = bold yellow ul
+	file-decoration-style = none
