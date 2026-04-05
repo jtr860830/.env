@@ -48,5 +48,5 @@ export KUBECACHEDIR="$XDG_CACHE_HOME/kube"
 # Tart
 export TART_HOME="$XDG_CACHE_HOME/tart"
 
-# Codex
-export CODEX_HOME="$XDG_CACHE_HOME/codex"
+# Claude
+export CLAUDE_CONFIG_DIR="$XDG_CONFIG_HOME/claude"
