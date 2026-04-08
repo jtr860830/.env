@@ -68,10 +68,10 @@ abbr -a vi  nvim
 abbr -a vim nvim
 
 if status is-interactive
+  # Vim mode
+  fish_vi_key_bindings
   # zoxide
   zoxide init fish | source
-  # init starship prompt
-  starship init fish | source
   # load theme
   source $XDG_CONFIG_HOME/fish/themes/onedarkpro_onedark.fish
 end
