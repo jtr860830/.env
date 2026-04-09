@@ -51,6 +51,9 @@ set -gx DOCKER_CONFIG "$XDG_CONFIG_HOME/docker"
 set -gx KUBECONFIG "$XDG_CONFIG_HOME/kube"
 set -gx KUBECACHEDIR "$XDG_CACHE_HOME/kube"
 
+# Lima
+set -gx LIMA_HOME "$XDG_DATA_HOME/lima"
+
 # Tart
 set -gx TART_HOME "$XDG_CACHE_HOME/tart"
 
