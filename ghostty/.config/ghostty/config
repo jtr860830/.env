@@ -8,7 +8,7 @@ selection-clear-on-copy = true
 macos-icon = glass
 macos-titlebar-style = hidden
 theme = onedarkpro_onedark
-adjust-cell-height = 20%
+adjust-cell-height = 25%
 
 ## font
 font-family = "Maple Mono NF CN"
