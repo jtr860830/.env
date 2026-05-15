@@ -11,19 +11,10 @@ theme = onedarkpro_onedark
 adjust-cell-height = 20%
 
 ## font
-font-family = "MonaspiceNe NF"
+font-family = "Maple Mono NF CN"
 font-size = 14
 font-feature = calt
-font-feature = ss01
-font-feature = ss02
-font-feature = ss03
-font-feature = ss04
-font-feature = ss05
-font-feature = ss06
-font-feature = ss07
-font-feature = ss08
-font-feature = ss09
-font-feature = liga
+font-feature = ss11
 
 # keybinds
 keybind = ctrl+a>shift+;=toggle_command_palette
