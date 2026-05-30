@@ -1,0 +1,56 @@
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
+    # CLI essentials
+    bat eza fd fzf fzy ripgrep ripgrep-all zoxide
+    tealdeer tokei cloc gdu erdtree unar
+    fastfetch atac
+
+    # System monitoring
+    bottom htop procs hwatch iftop
+
+    # Network
+    curl wget xh mosh nmap tcpdump ipcalc inetutils
+
+    # Data
+    jq fx
+
+    # Build & dev tools
+    just bear gnumake gnused
+
+    # Languages & runtimes
+    go rustup zig
+    lua
+    nodejs deno uv
+    python312 python313
+    jdk
+
+    # Editors
+    helix
+
+    # Git
+    gh jj
+
+    # Container & Kubernetes
+    docker docker-buildx docker-compose docker-credential-helpers
+    colima podman skopeo crane podlet
+    kubectl kubernetes-helm kind k6 clusterctl
+
+    # Lima
+    lima
+
+    # GUI apps
+    _1password-gui
+    discord element-desktop google-chrome slack
+    telegram-desktop wireshark zed-editor
+    ghostty rustdesk tailscale
+    _1password-cli claude-code burpsuite firefox
+
+    # Multimedia
+    ffmpeg mpv
+
+    # Misc
+    hugo buf slides mdp
+    openvpn mas less
+    llvm clang-tools
+  ];
+}
