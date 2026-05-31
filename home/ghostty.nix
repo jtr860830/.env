@@ -1,12 +1,14 @@
-{ ... }: {
+{ pkgs, lib, ... }: {
   xdg.configFile."ghostty/config".text = ''
     window-padding-balance = true
     mouse-hide-while-typing = true
     quit-after-last-window-closed = true
     selection-clear-on-copy = true
 
-    macos-icon = glass
-    macos-titlebar-style = hidden
+    ${lib.optionalString pkgs.stdenv.isDarwin ''
+      macos-icon = glass
+      macos-titlebar-style = hidden
+    ''}
     theme = onedarkpro_onedark
     adjust-cell-height = 24%
 

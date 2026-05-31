@@ -100,6 +100,8 @@
     TART_HOME     = "${config.xdg.cacheHome}/tart";
 
     CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
-    SSH_AUTH_SOCK     = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
+    SSH_AUTH_SOCK = if pkgs.stdenv.isDarwin
+      then "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+      else "${config.home.homeDirectory}/.1password/agent.sock";
   };
 }

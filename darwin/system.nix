@@ -1,8 +1,8 @@
-{ ... }: {
+{ hostname, ... }: {
   networking = {
-    hostName = "pro-darwin";
-    computerName = "pro-darwin";
-    localHostName = "pro-darwin";
+    hostName      = hostname;
+    computerName  = hostname;
+    localHostName = hostname;
   };
 
   system.defaults = {
