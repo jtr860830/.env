@@ -8,5 +8,5 @@
   };
 
   xdg.configFile."nvim".source =
-    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.env/nvim";
+    config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/.config/env/nvim";
 }
