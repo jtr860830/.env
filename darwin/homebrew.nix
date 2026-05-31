@@ -1,7 +1,10 @@
 { ... }: {
   homebrew = {
     enable = true;
-    onActivation.cleanup = "none";
+    onActivation = {
+      cleanup = "zap";
+      extraFlags = [ "--force-cleanup" ];
+    };
 
     casks = [
       "1password"
