@@ -1,17 +1,27 @@
 { ... }: {
   homebrew = {
     enable = true;
-    onActivation.cleanup = "none";
+    onActivation.cleanup = "zap";
 
     casks = [
-      "ghostty"
-      "rustdesk"
+      "1password"
       "burp-suite"
       "claude"
       "dash"
+      "discord"
+      "element"
+      "firefox"
+      "ghostty"
+      "google-chrome"
       "iina"
       "k6-studio"
       "keyboardcleantool"
+      "rustdesk"
+      "slack"
+      "tailscale-app"
+      "telegram"
+      "wireshark-app"
+      "zed"
     ];
 
     masApps = {

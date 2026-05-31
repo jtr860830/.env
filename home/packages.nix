@@ -30,6 +30,12 @@
     # Git
     gh jj
 
+    # Security
+    _1password-cli
+
+    # AI
+    claude-code
+
     # Container & Kubernetes
     docker docker-buildx docker-compose docker-credential-helpers
     colima podman skopeo crane podlet
@@ -37,13 +43,6 @@
 
     # Lima
     lima
-
-    # GUI apps
-    _1password-gui
-    discord element-desktop google-chrome slack
-    telegram-desktop wireshark zed-editor
-    tailscale
-    _1password-cli claude-code firefox
 
     # Multimedia
     ffmpeg mpv
