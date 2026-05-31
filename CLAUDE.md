@@ -4,50 +4,49 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Repository Overview
 
-Personal dotfiles repository for macOS (ARM). Configs are symlinked into `~/.config/` (XDG-compliant layout) — the repo lives at `~/.env` and symlinks are managed manually or via `stow`.
+Personal system configuration repository for macOS (ARM). Managed entirely with **nix-darwin + home-manager**. Repo lives at `~/.config/env`. No stow, no brewfile.
 
 ## Structure
 
-| Directory | Tool | Notes |
-|-----------|------|-------|
-| `fish/` | Fish shell | Primary shell; uses `pure` prompt via Fisher |
-| `zsh/` | Zsh | Legacy; kept for reference |
-| `nvim/` | Neovim | AstroNvim v6+ with Lazy.nvim |
-| `tmux/` | Tmux | Modular: `conf.d/{opts,keybindings,theme}.conf` |
-| `ghostty/` | Ghostty terminal | Maple Mono NF CN font, One Dark Pro theme |
-| `git/` | Git | Delta pager, 1Password SSH signing |
-| `brewfile` | Homebrew | Single source of truth for all packages |
+| Path | Purpose |
+|------|---------|
+| `flake.nix` | Entry point; defines `darwinConfigurations."pro-darwin"` |
+| `darwin/` | macOS system-level config (system defaults, homebrew, security) |
+| `home/` | home-manager modules (fish, git, tmux, ghostty, ssh, neovim, packages) |
+| `nvim/` | Neovim config (AstroNvim v6+); symlinked to `~/.config/nvim` via home-manager |
+
+## Applying Changes
+
+```sh
+darwin-rebuild switch --flake ~/.config/env
+```
+
+## Nix Quirks
+
+- `environment.shells = [ pkgs.fish ]` is **required** alongside `programs.fish.enable = true` — nix-darwin does not auto-add fish to `/etc/shells`
+- Touch ID for sudo: `security.pam.services.sudo_local.touchIdAuth = true`
+- nvim is symlinked via `mkOutOfStoreSymlink` (temporary until nvim is fully nix-managed): `home/neovim.nix`
 
 ## Neovim
 
-Built on **AstroNvim v6+**. Plugin customizations live in `nvim/.config/nvim/lua/plugins/`. The lock file `lazy-lock.json` pins exact plugin versions — update it intentionally with `:Lazy update` inside nvim.
+Built on **AstroNvim v6+** with Lazy.nvim. Plugin customizations live in `nvim/lua/plugins/`. Linting configs (`selene.toml`, `.stylua.toml`, `.luarc.json`, `.neoconf.json`) are at `nvim/`.
 
-Linting configs at repo root (`selene.toml`, `.stylua.toml`, `.luarc.json`, `.neoconf.json`) apply to the nvim Lua files themselves.
+Update plugins intentionally with `:Lazy update` inside nvim (updates `nvim/lazy-lock.json`).
 
 ## Homebrew
 
-`brewfile` is the authoritative list of all installed packages (taps, brews, casks, go installs, cargo installs, npm packages). To apply changes:
-
-```sh
-brew bundle --file=brewfile
-```
-
-To update the brewfile to match current system state:
-
-```sh
-brew bundle dump --file=brewfile --force
-```
+Casks and Mac App Store apps are declared in `darwin/homebrew.nix`. `cleanup = "zap"` is intentional — removes anything not listed.
 
 ## Git Conventions
 
 - Commit style: `type: description` (e.g. `feat:`, `chore:`, `fix:`)
-- Git signs commits via 1Password SSH agent (key: ED25519)
+- Git signs commits via 1Password SSH agent (ED25519)
 - Default branch is `main`; this repo uses `master`
 
 ## Theme Consistency
 
-One Dark Pro (`onedarkpro_onedark`) is used across all tools: Neovim (`theme.lua`), Tmux (`conf.d/theme.conf`), Fish (`onedarkpro_onedark.fish`), and Ghostty config.
+One Dark Pro (`onedarkpro_onedark`) across all tools: Neovim (`nvim/lua/plugins/theme.lua`), Tmux (inline in `home/tmux.nix`), Fish (inline in `home/fish.nix`), Ghostty (`home/ghostty.nix`).
 
 ## Key Keybinding Patterns
 
-Consistent vim-style navigation (`hjkl`) across Tmux panes and Ghostty splits. Ghostty uses `Ctrl+A` as prefix for split management. Tmux prefix is `Ctrl+B`.
+Consistent vim-style navigation (`hjkl`) across Tmux panes and Ghostty splits. Ghostty uses `Ctrl+A` as prefix. Tmux prefix is `Ctrl+B`.
