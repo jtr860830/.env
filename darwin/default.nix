@@ -17,7 +17,7 @@
     reattach    = true;
   };
 
-  fonts.packages = [ pkgs.maple-mono."NF-CN" ];
+  fonts.packages = [ pkgs.maple-mono.NF-CN-unhinted ];
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.hostPlatform        = "aarch64-darwin";
