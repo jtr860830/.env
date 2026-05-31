@@ -2,7 +2,7 @@
   home.packages = with pkgs; [
     # CLI essentials
     bat eza fd fzf fzy ripgrep ripgrep-all zoxide
-    tealdeer tokei cloc gdu erdtree unar
+    tealdeer tokei cloc gdu erdtree unar rm-improved
     fastfetch atac
 
     # System monitoring
