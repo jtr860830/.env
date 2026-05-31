@@ -1,9 +1,12 @@
 { ... }: {
   homebrew = {
     enable = true;
-    onActivation.cleanup = "zap";
+    onActivation.cleanup = "none";
 
     casks = [
+      "ghostty"
+      "rustdesk"
+      "burp-suite"
       "claude"
       "dash"
       "iina"

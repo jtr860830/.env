@@ -12,7 +12,24 @@
       wget = ''command wget --hsts-file="$XDG_CACHE_HOME/wget-hsts" $argv'';
     };
 
+    shellAbbrs = {
+      vi  = "nvim";
+      vim = "nvim";
+    };
+
     interactiveShellInit = ''
+      set -gx PATH \
+        $HOME/.local/bin \
+        ${config.xdg.dataHome}/go/bin \
+        ${config.xdg.dataHome}/cargo/bin \
+        /etc/profiles/per-user/${config.home.username}/bin \
+        /nix/var/nix/profiles/default/bin \
+        /usr/local/bin \
+        /usr/bin \
+        /bin \
+        /usr/sbin \
+        /sbin
+
       fish_vi_key_bindings
       zoxide init fish | source
 
@@ -62,7 +79,6 @@
 
   home.sessionVariables = {
     LANG     = "en_US.UTF-8";
-    MANPAGER = "nvim +Man!";
     TERMINFO = "${config.xdg.dataHome}/terminfo";
 
     NODE_REPL_HISTORY     = "${config.xdg.dataHome}/node_repl_history";
@@ -86,11 +102,5 @@
     CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
     SSH_AUTH_SOCK     = "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock";
   };
-
-  home.sessionPath = [
-    "${config.home.homeDirectory}/.local/bin"
-    "${config.xdg.dataHome}/go/bin"
-    "${config.xdg.dataHome}/cargo/bin"
-  ];
 
 }

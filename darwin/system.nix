@@ -37,7 +37,5 @@
       FXDefaultSearchScope = "SCcf";
       FXRemoveOldTrashItems = true;
     };
-
   };
-
 }

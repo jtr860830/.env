@@ -7,11 +7,13 @@
 
     plugins = with pkgs.tmuxPlugins; [
       open
-      { plugin = yank;
+      {
+        plugin = yank;
         extraConfig = "set -g @yank_with_mouse on";
       }
       tmux-fzf
-      { plugin = mode-indicator;
+      {
+        plugin = mode-indicator;
         extraConfig = ''
           set -g @mode_indicator_empty_prompt  " "
           set -g @mode_indicator_empty_mode_style  bg=#98c379

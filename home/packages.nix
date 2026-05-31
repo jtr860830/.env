@@ -21,7 +21,7 @@
     go rustup zig
     lua
     nodejs deno uv
-    python312 python313
+    python313
     jdk
 
     # Editors
@@ -42,8 +42,8 @@
     _1password-gui
     discord element-desktop google-chrome slack
     telegram-desktop wireshark zed-editor
-    ghostty rustdesk tailscale
-    _1password-cli claude-code burpsuite firefox
+    tailscale
+    _1password-cli claude-code firefox
 
     # Multimedia
     ffmpeg mpv
@@ -53,4 +53,11 @@
     openvpn mas less
     llvm clang-tools
   ];
+
+  xdg.configFile."npm/npmrc".text = ''
+    prefix=''${XDG_DATA_HOME}/npm
+    cache=''${XDG_CACHE_HOME}/npm
+    init-module=''${XDG_CONFIG_HOME}/npm/config/npm-init.js
+    logs-dir=''${XDG_STATE_HOME}/npm/logs
+  '';
 }

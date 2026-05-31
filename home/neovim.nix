@@ -1,9 +1,10 @@
 { pkgs, config, ... }: {
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    viAlias = true;
-    vimAlias = true;
+  home.packages = [ pkgs.neovim ];
+
+  home.sessionVariables = {
+    EDITOR   = "nvim";
+    VISUAL   = "nvim";
+    MANPAGER = "nvim +Man!";
   };
 
   xdg.configFile."nvim".source =
