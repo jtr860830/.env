@@ -13,6 +13,7 @@
   system.primaryUser = "jtr860830";
 
   security.pam.services.sudo_local.touchIdAuth = true;
+  security.pam.services.sudo_local.reattach = true;
 
   nixpkgs.config.allowUnfree = true;
 
