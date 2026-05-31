@@ -1,7 +1,9 @@
 { pkgs, ... }: {
   imports = [ ./system.nix ./homebrew.nix ];
 
+  environment.shells = [ pkgs.fish ];
   programs.fish.enable = true;
+  
   users.users.jtr860830 = {
     shell       = pkgs.fish;
     description = "Josh Hsieh";
@@ -10,7 +12,7 @@
 
   system.primaryUser = "jtr860830";
 
-  security.pam.enableSudoTouchIdAuth = true;
+  security.pam.services.sudo_local.touchIdAuth = true;
 
   nixpkgs.config.allowUnfree = true;
 
