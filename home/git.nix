@@ -23,6 +23,9 @@
       };
       init.defaultBranch     = "main";
       pull.rebase            = true;
+      fetch.prune            = true;
+      push.autoSetupRemote   = true;
+      merge.conflictstyle    = "zdiff3";
       color.ui               = true;
       core.editor            = "nvim";
       gpg.format             = "ssh";

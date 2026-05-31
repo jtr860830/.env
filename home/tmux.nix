@@ -32,6 +32,8 @@
       setw -g pane-base-index 1
       set -g renumber-windows on
       set -g set-titles on
+      set -g escape-time 0
+      set -g focus-events on
 
       # Keybindings
       bind-key a send-prefix
