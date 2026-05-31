@@ -10,6 +10,8 @@
 
   system.primaryUser = "jtr860830";
 
+  security.pam.enableSudoTouchIdAuth = true;
+
   nixpkgs.config.allowUnfree = true;
 
   fonts.packages = [ pkgs.maple-mono."NF-CN" ];
