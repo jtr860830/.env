@@ -40,8 +40,6 @@
     docker docker-buildx docker-compose docker-credential-helpers
     colima podman skopeo crane podlet
     kubectl kubernetes-helm kind k6 clusterctl
-
-    # Lima
     lima
 
     # Multimedia
