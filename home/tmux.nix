@@ -44,8 +44,8 @@
       set -g pane-active-border-style "fg=#61afef"
 
       setw -g window-status-separator    " "
-      setw -g window-status-format         "#[fg=#5c6370] ○ "
-      setw -g window-status-current-format "#[fg=#c678dd,bold] ● #[fg=#abb2bf]#W "
+      setw -g window-status-format         "#{?#{==:#{session_windows},1},,#[fg=#5c6370] ○ }"
+      setw -g window-status-current-format "#{?#{==:#{session_windows},1},,#[fg=#c678dd,bold] ● }"
     '';
   };
 }
