@@ -31,7 +31,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("<leader>ca", vim.lsp.buf.code_action)
     map("<leader>td", vim.lsp.buf.type_definition)
 
-    if client.supports_method("textDocument/inlayHint") then
+    if client:supports_method("textDocument/inlayHint") then
       vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
       vim.api.nvim_create_autocmd("InsertEnter", {
         buffer   = bufnr,
