@@ -16,13 +16,21 @@ require("nvim-autopairs").setup({ check_ts = true })
 -- Surround
 require("mini.surround").setup()
 
+local function statusline_filename()
+  local path = vim.fn.expand("%:p")
+  if path == "" then return "[No Name]" end
+  local root = vim.fs.root(0, { ".git", ".hg", "package.json", "Makefile" })
+  local display = root and path:sub(#root + 2) or vim.fn.expand("%:~:.")
+  return display .. (vim.bo.modified and " [+]" or "")
+end
+
 -- Statusline
 require("mini.statusline").setup({
   use_icons = true,
   content = {
     active = function()
       local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 9999 })
-      local filename      = MiniStatusline.section_filename({ trunc_width = 140 })
+      local filename      = statusline_filename()
       local diagnostics   = MiniStatusline.section_diagnostics({ trunc_width = 75 })
 
       local ft    = vim.bo.filetype
