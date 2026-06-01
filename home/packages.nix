@@ -37,8 +37,8 @@
     claude-code
 
     # Container & Kubernetes
-    docker docker-buildx docker-compose
-    podman skopeo crane podlet
+    docker docker-buildx docker-compose docker-credential-helpers
+    colima lima podman skopeo crane podlet
     kubectl kubernetes-helm kind k6 clusterctl
 
     # Multimedia
@@ -49,7 +49,6 @@
     openvpn less
     llvm clang-tools
   ] ++ lib.optionals pkgs.stdenv.isDarwin [
-    colima lima docker-credential-helpers
     mas
   ];
 
