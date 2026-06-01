@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ ... }: {
   programs.tmux = {
     enable = true;
     mouse = true;
@@ -13,6 +13,7 @@
       set -g escape-time 0
       set -g focus-events on
       set -g set-clipboard on
+      set -g history-limit 50000
 
       # Keybindings
       bind-key a send-prefix
