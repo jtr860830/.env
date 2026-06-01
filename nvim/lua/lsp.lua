@@ -45,18 +45,18 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+local diag_icons = {
+  [vim.diagnostic.severity.ERROR] = vim.fn.nr2char(0xf057) .. " ",
+  [vim.diagnostic.severity.WARN]  = vim.fn.nr2char(0xf071) .. " ",
+  [vim.diagnostic.severity.HINT]  = vim.fn.nr2char(0xf0eb) .. " ",
+  [vim.diagnostic.severity.INFO]  = vim.fn.nr2char(0xf05a) .. " ",
+}
+
 vim.diagnostic.config({
   virtual_text     = true,
   underline        = true,
   update_in_insert = false,
   severity_sort    = true,
-  signs = {
-    text = {
-      [vim.diagnostic.severity.ERROR] = " ",
-      [vim.diagnostic.severity.WARN]  = " ",
-      [vim.diagnostic.severity.HINT]  = "󰠠 ",
-      [vim.diagnostic.severity.INFO]  = " ",
-    },
-  },
-  float = { border = "rounded", source = true },
+  signs            = { text = diag_icons },
+  float            = { border = "rounded", source = true },
 })

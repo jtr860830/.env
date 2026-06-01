@@ -18,15 +18,17 @@ require("mini.surround").setup()
 
 local function statusline_diagnostics()
   local counts = vim.diagnostic.count(0)
-  local parts  = {}
-  if (counts[vim.diagnostic.severity.ERROR] or 0) > 0 then
-    table.insert(parts, " " .. counts[vim.diagnostic.severity.ERROR])
-  end
-  if (counts[vim.diagnostic.severity.WARN] or 0) > 0 then
-    table.insert(parts, " " .. counts[vim.diagnostic.severity.WARN])
-  end
-  if (counts[vim.diagnostic.severity.INFO] or 0) > 0 then
-    table.insert(parts, " " .. counts[vim.diagnostic.severity.INFO])
+  if vim.tbl_isempty(counts) then return "" end
+  local cfg       = vim.diagnostic.config() or {}
+  local sign_text = type(cfg.signs) == "table" and cfg.signs.text or {}
+  local sev       = vim.diagnostic.severity
+  local parts     = {}
+  for _, s in ipairs({ sev.ERROR, sev.WARN, sev.INFO }) do
+    local count = counts[s] or 0
+    if count > 0 then
+      local icon = vim.trim(sign_text[s] or "")
+      table.insert(parts, (icon ~= "" and icon .. " " or "") .. count)
+    end
   end
   return table.concat(parts, " ")
 end
