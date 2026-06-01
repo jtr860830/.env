@@ -17,6 +17,8 @@
       vim = "nvim";
     };
 
+    functions.fish_greeting = "";
+
     interactiveShellInit = ''
       if not set -q TMUX
         tmux new-session -A -s main
