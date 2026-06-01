@@ -1,6 +1,12 @@
 require("onedarkpro").setup({
   styles = {
-    comments = "italic",
+    comments     = "italic",
+    virtual_text = "italic",
+  },
+  plugins = {
+    gitsigns         = true,
+    indentline       = true,
+    mini_indentscope = true,
   },
 })
 
