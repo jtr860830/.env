@@ -1,9 +1,12 @@
-{ pkgs, config, ... }: {
-  home.packages = [ pkgs.neovim ];
+{ config, ... }: {
+  programs.neovim = {
+    enable        = true;
+    defaultEditor = true;
+    viAlias       = true;
+    vimAlias      = true;
+  };
 
   home.sessionVariables = {
-    EDITOR   = "nvim";
-    VISUAL   = "nvim";
     MANPAGER = "nvim +Man!";
   };
 
