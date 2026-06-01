@@ -16,6 +16,21 @@ require("nvim-autopairs").setup({ check_ts = true })
 -- Surround
 require("mini.surround").setup()
 
+local function statusline_diagnostics()
+  local counts = vim.diagnostic.count(0)
+  local parts  = {}
+  if (counts[vim.diagnostic.severity.ERROR] or 0) > 0 then
+    table.insert(parts, " " .. counts[vim.diagnostic.severity.ERROR])
+  end
+  if (counts[vim.diagnostic.severity.WARN] or 0) > 0 then
+    table.insert(parts, " " .. counts[vim.diagnostic.severity.WARN])
+  end
+  if (counts[vim.diagnostic.severity.INFO] or 0) > 0 then
+    table.insert(parts, " " .. counts[vim.diagnostic.severity.INFO])
+  end
+  return table.concat(parts, " ")
+end
+
 local function statusline_filename()
   local path = vim.fn.expand("%:p")
   if path == "" then return "[No Name]" end
@@ -31,7 +46,7 @@ require("mini.statusline").setup({
     active = function()
       local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 9999 })
       local filename      = statusline_filename()
-      local diagnostics   = MiniStatusline.section_diagnostics({ trunc_width = 75 })
+      local diagnostics   = statusline_diagnostics()
 
       local ft    = vim.bo.filetype
       local ok, icon = pcall(function() return require("mini.icons").get("filetype", ft) end)
