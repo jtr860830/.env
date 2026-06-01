@@ -20,7 +20,7 @@
 
     interactiveShellInit = ''
       if not set -q TMUX
-        tmux new-session -A -s main
+        exec tmux new-session -A -s main
       end
 
       set -gx PATH \
