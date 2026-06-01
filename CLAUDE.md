@@ -50,3 +50,16 @@ One Dark Pro (`onedarkpro_onedark`) across all tools: Neovim (`nvim/lua/plugins/
 ## Key Keybinding Patterns
 
 Consistent vim-style navigation (`hjkl`) across Tmux panes and Ghostty splits. Ghostty uses `Ctrl+A` as prefix. Tmux prefix is `Ctrl+B`.
+
+## Tmux Quirks
+
+- tmux plugins that patch `status-left`/`status-right`: settings must be in the plugin's `extraConfig`, not main `extraConfig` — plugin reads them at `run-shell` time
+- Mode detection without plugins: `#{?client_prefix,...}` and `#{?pane_in_mode,...}` are built-in tmux format strings
+- `set -g set-clipboard on` enables OSC 52 clipboard sync (replaces yank plugin; requires terminal support e.g. Ghostty)
+- `status-justify absolute-centre` centers window list by terminal width; `centre` centers between left/right content
+
+## Cross-Platform Nix Patterns
+
+- Platform conditionals: `if pkgs.stdenv.isDarwin then ... else ...`
+- Conditional lists: `lib.optionals pkgs.stdenv.isDarwin [ ... ]`
+- 1Password SSH sign path: macOS `/Applications/1Password.app/Contents/MacOS/op-ssh-sign`, Linux `/opt/1Password/op-ssh-sign`
