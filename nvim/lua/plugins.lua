@@ -17,7 +17,34 @@ require("nvim-autopairs").setup({ check_ts = true })
 require("mini.surround").setup()
 
 -- Statusline
-require("mini.statusline").setup({ use_icons = true })
+require("mini.statusline").setup({
+  use_icons = true,
+  content = {
+    active = function()
+      local mode, mode_hl = MiniStatusline.section_mode({ trunc_width = 9999 })
+      local filename      = MiniStatusline.section_filename({ trunc_width = 140 })
+      local diagnostics   = MiniStatusline.section_diagnostics({ trunc_width = 75 })
+
+      local ft    = vim.bo.filetype
+      local ok, icon = pcall(function() return require("mini.icons").get("filetype", ft) end)
+      local filetype  = ft ~= "" and ((ok and icon .. " " or "") .. ft) or ""
+
+      return MiniStatusline.combine_groups({
+        { hl = mode_hl,                  strings = { mode } },
+        "%<",
+        { hl = "MiniStatuslineFilename", strings = { filename } },
+        "%=",
+        { hl = "MiniStatuslineDevinfo",  strings = { diagnostics } },
+        { hl = "MiniStatuslineFilename", strings = { filetype } },
+      })
+    end,
+    inactive = function()
+      return MiniStatusline.combine_groups({
+        { hl = "MiniStatuslineInactive", strings = { "%f" } },
+      })
+    end,
+  },
+})
 
 -- Indent scope (active scope highlight)
 require("mini.indentscope").setup({
