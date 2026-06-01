@@ -13,6 +13,11 @@
       wget = ''command wget --hsts-file="$XDG_CACHE_HOME/wget-hsts" $argv'';
     };
 
+    shellAbbrs = {
+      vi  = "nvim";
+      vim = "nvim";
+    };
+
     interactiveShellInit = ''
       if not set -q TMUX
         tmux new-session -A -s main
