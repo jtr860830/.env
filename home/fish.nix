@@ -101,7 +101,6 @@
     KUBECONFIG    = "${config.xdg.configHome}/kube";
     KUBECACHEDIR  = "${config.xdg.cacheHome}/kube";
     LIMA_HOME     = "${config.xdg.dataHome}/lima";
-    TART_HOME     = "${config.xdg.cacheHome}/tart";
 
     CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
     SSH_AUTH_SOCK = if pkgs.stdenv.isDarwin

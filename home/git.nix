@@ -18,8 +18,7 @@
         email = "josh.hsieh@linux.com";
       };
       alias = {
-        co = "commit";
-        lg = "log --color --graph --all --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --";
+        lg = "log --color --graph --all --pretty=tformat:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit";
       };
       init.defaultBranch     = "main";
       pull.rebase            = true;
