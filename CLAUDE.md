@@ -26,6 +26,7 @@ darwin-rebuild switch --flake ~/.config/env
 - `environment.shells = [ pkgs.fish ]` is **required** alongside `programs.fish.enable = true` — nix-darwin does not auto-add fish to `/etc/shells`
 - Touch ID for sudo: `security.pam.services.sudo_local.touchIdAuth = true`
 - nvim is symlinked via `mkOutOfStoreSymlink` (temporary until nvim is fully nix-managed): `home/neovim.nix`
+- `programs.neovim` conflicts with `xdg.configFile."nvim"` (`mkOutOfStoreSymlink`) — both try to manage `~/.config/nvim/`; use `home.packages = [ pkgs.neovim ]` until nvim config is fully nix-managed
 
 ## Neovim
 
@@ -60,6 +61,10 @@ Consistent vim-style navigation (`hjkl`) across Tmux panes and Ghostty splits. G
 - `#{client_user}` (tmux 3.4+) replaces `#(whoami)` — built-in, no shell spawn
 - `#[fg=...]` attributes inside `#{?condition,...}` conditionals can fail to parse; place them outside the conditional instead
 - `#{==:#{session_windows},1}` to detect single-window sessions (e.g. hide window list)
+
+## Fish Color Variables
+
+Valid fish color variables (fish 4.x): `fish_color_{normal,command,keyword,quote,redirection,end,option,error,param,comment,selection,search_match,operator,escape,autosuggestion,cwd,user,host,valid_path,prefix,history_current,status}`. Note: `fish_color_history_current_command` and `fish_color_history_duration` do NOT exist.
 
 ## Cross-Platform Nix Patterns
 
