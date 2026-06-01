@@ -1,8 +1,8 @@
 -- Git markers
 require("gitsigns").setup({
   signs = {
-    add          = { text = "│" },
-    change       = { text = "│" },
+    add          = { text = "▏" },
+    change       = { text = "▏" },
     delete       = { text = "_" },
     topdelete    = { text = "‾" },
     changedelete = { text = "~" },
@@ -21,13 +21,13 @@ require("mini.statusline").setup({ use_icons = true })
 
 -- Indent scope (active scope highlight)
 require("mini.indentscope").setup({
-  symbol  = "│",
+  symbol  = "▏",
   options = { try_as_border = true },
 })
 
 -- Indent lines (static)
 require("ibl").setup({
-  indent = { char = "│" },
+  indent = { char = "▏" },
   scope  = { enabled = false },
 })
 
