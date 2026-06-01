@@ -17,20 +17,27 @@ require("nvim-autopairs").setup({ check_ts = true })
 require("mini.surround").setup()
 
 local function statusline_diagnostics()
-  local counts = vim.diagnostic.count(0)
-  if vim.tbl_isempty(counts) then return "" end
+  local counts    = vim.diagnostic.count(0)
   local cfg       = vim.diagnostic.config() or {}
   local sign_text = type(cfg.signs) == "table" and cfg.signs.text or {}
   local sev       = vim.diagnostic.severity
-  local parts     = {}
+  local hl_map    = {
+    [sev.ERROR] = "MiniStatuslineDiagError",
+    [sev.WARN]  = "MiniStatuslineDiagWarn",
+    [sev.INFO]  = "MiniStatuslineDiagInfo",
+  }
+  local groups = {}
   for _, s in ipairs({ sev.ERROR, sev.WARN, sev.INFO }) do
     local count = counts[s] or 0
     if count > 0 then
       local icon = vim.trim(sign_text[s] or "")
-      table.insert(parts, (icon ~= "" and icon .. " " or "") .. count)
+      table.insert(groups, {
+        hl      = hl_map[s],
+        strings = { (icon ~= "" and icon .. " " or "") .. count },
+      })
     end
   end
-  return table.concat(parts, " ")
+  return groups
 end
 
 local function statusline_filename()
@@ -54,14 +61,17 @@ require("mini.statusline").setup({
       local ok, icon = pcall(function() return require("mini.icons").get("filetype", ft) end)
       local filetype  = ft ~= "" and ((ok and icon .. " " or "") .. ft) or ""
 
-      return MiniStatusline.combine_groups({
+      local groups = {
         { hl = mode_hl,                  strings = { mode } },
         "%<",
         { hl = "MiniStatuslineFilename", strings = { filename } },
         "%=",
-        { hl = "MiniStatuslineDevinfo",  strings = { diagnostics } },
-        { hl = "MiniStatuslineFilename", strings = { filetype } },
-      })
+      }
+      for _, g in ipairs(diagnostics) do
+        table.insert(groups, g)
+      end
+      table.insert(groups, { hl = "MiniStatuslineFilename", strings = { filetype } })
+      return MiniStatusline.combine_groups(groups)
     end,
     inactive = function()
       return MiniStatusline.combine_groups({
