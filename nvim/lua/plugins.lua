@@ -37,16 +37,19 @@ clue.setup({
   window = { delay = 300 },
 })
 
+local sev      = vim.diagnostic.severity
+local hl_map   = {
+  [sev.ERROR] = "MiniStatuslineDiagError",
+  [sev.WARN]  = "MiniStatuslineDiagWarn",
+  [sev.INFO]  = "MiniStatuslineDiagInfo",
+}
+local sign_text = (function()
+  local cfg = vim.diagnostic.config() or {}
+  return type(cfg.signs) == "table" and cfg.signs.text or {}
+end)()
+
 local function statusline_diagnostics()
-  local counts    = vim.diagnostic.count(0)
-  local cfg       = vim.diagnostic.config() or {}
-  local sign_text = type(cfg.signs) == "table" and cfg.signs.text or {}
-  local sev       = vim.diagnostic.severity
-  local hl_map    = {
-    [sev.ERROR] = "MiniStatuslineDiagError",
-    [sev.WARN]  = "MiniStatuslineDiagWarn",
-    [sev.INFO]  = "MiniStatuslineDiagInfo",
-  }
+  local counts = vim.diagnostic.count(0)
   local groups = {}
   for _, s in ipairs({ sev.ERROR, sev.WARN, sev.INFO }) do
     local count = counts[s] or 0
@@ -78,9 +81,9 @@ require("mini.statusline").setup({
       local filename      = statusline_filename()
       local diagnostics   = statusline_diagnostics()
 
-      local ft    = vim.bo.filetype
-      local ok, icon = pcall(function() return require("mini.icons").get("filetype", ft) end)
-      local filetype  = ft ~= "" and ((ok and icon .. " " or "") .. ft) or ""
+      local ft       = vim.bo.filetype
+      local icon     = ft ~= "" and require("mini.icons").get("filetype", ft) or ""
+      local filetype = ft ~= "" and (icon .. " " .. ft) or ""
 
       local groups = {
         { hl = mode_hl,                  strings = { mode } },
@@ -88,9 +91,7 @@ require("mini.statusline").setup({
         { hl = "MiniStatuslineFilename", strings = { filename } },
         "%=",
       }
-      for _, g in ipairs(diagnostics) do
-        table.insert(groups, g)
-      end
+      vim.list_extend(groups, diagnostics)
       table.insert(groups, { hl = "MiniStatuslineFilename", strings = { filetype } })
       return MiniStatusline.combine_groups(groups)
     end,
