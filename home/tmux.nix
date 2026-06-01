@@ -45,7 +45,7 @@
 
       setw -g window-status-separator    " "
       setw -g window-status-format         "#[fg=#5c6370]#{?#{==:#{session_windows},1},, ○ }"
-      setw -g window-status-current-format "#[fg=#c678dd,bold]#{?#{==:#{session_windows},1},, ● }"
+      setw -g window-status-current-format "#[fg=#61afef,bold]#{?#{==:#{session_windows},1},, ● }"
     '';
   };
 }
