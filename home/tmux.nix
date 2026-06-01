@@ -28,15 +28,23 @@
       bind -n S-Enter send-keys Escape "[13;2u"
 
       # Theme
-      set -g status-position bottom
+      set -g status-position       bottom
+      set -g status-justify        centre
       set -g status-style          "bg=#23272e"
-      set -g message-style         "bg=#61afef,fg=#2e323b"
-      set -g mode-style            "bg=#3e4452"
-      set -g status-left           ""
-      set -g status-right          "#[fg=#5c6370] #S "
-      setw -g window-status-separator    "  "
-      setw -g window-status-format         "#[fg=#5c6370]#I:#W"
-      setw -g window-status-current-format "#[fg=#abb2bf,bold]#I:#W"
+      set -g message-style         "bg=#61afef,fg=#23272e"
+      set -g mode-style            "bg=#3e4452,fg=#abb2bf"
+
+      set -g status-left-length    30
+      set -g status-right-length   30
+      set -g status-left           "#[fg=#c678dd,bold] #S "
+      set -g status-right          ""
+
+      set -g pane-border-style        "fg=#3e4452"
+      set -g pane-active-border-style "fg=#61afef"
+
+      setw -g window-status-separator    " "
+      setw -g window-status-format         " #[fg=#5c6370]#I "
+      setw -g window-status-current-format "#[bg=#3e4452] #[bold,fg=#56b6c2]#I #[fg=#abb2bf]#W #[default]"
     '';
   };
 }
