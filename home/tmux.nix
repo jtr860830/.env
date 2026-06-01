@@ -29,13 +29,12 @@
 
       # Theme
       set -g status-position       bottom
-      set -g status-justify        centre
+      set -g status-justify        absolute-centre
       set -g status-style          "bg=#23272e"
       set -g message-style         "bg=#61afef,fg=#23272e"
       set -g mode-style            "bg=#3e4452,fg=#abb2bf"
 
       set -g status-left-length    30
-      set -g status-right-length   30
       set -g status-left           "#[fg=#c678dd,bold] #S "
       set -g status-right          ""
 
