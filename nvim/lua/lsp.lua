@@ -21,16 +21,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if not client then return end
 
     local bufnr = ev.buf
-    local map   = function(keys, func) vim.keymap.set("n", keys, func, { buffer = bufnr }) end
+    local map   = function(keys, func, desc) vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc }) end
 
-    map("gd",         vim.lsp.buf.definition)
-    map("gD",         vim.lsp.buf.declaration)
-    map("gr",         vim.lsp.buf.references)
-    map("gi",         vim.lsp.buf.implementation)
-    map("K",          vim.lsp.buf.hover)
-    map("<leader>rn", vim.lsp.buf.rename)
-    map("<leader>ca", vim.lsp.buf.code_action)
-    map("<leader>td", vim.lsp.buf.type_definition)
+    map("gd",         vim.lsp.buf.definition,    "Go to definition")
+    map("gD",         vim.lsp.buf.declaration,   "Go to declaration")
+    map("gr",         vim.lsp.buf.references,    "References")
+    map("gi",         vim.lsp.buf.implementation,"Go to implementation")
+    map("K",          vim.lsp.buf.hover,         "Hover")
+    map("<leader>rn", vim.lsp.buf.rename,        "Rename")
+    map("<leader>ca", vim.lsp.buf.code_action,   "Code action")
+    map("<leader>td", vim.lsp.buf.type_definition,"Type definition")
 
     if client:supports_method("textDocument/inlayHint") then
       vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
