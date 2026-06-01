@@ -75,7 +75,7 @@ require("mini.statusline").setup({
     end,
     inactive = function()
       return MiniStatusline.combine_groups({
-        { hl = "MiniStatuslineInactive", strings = { "%f" } },
+        { hl = "MiniStatuslineInactive", strings = { statusline_filename() } },
       })
     end,
   },
