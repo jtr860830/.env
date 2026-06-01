@@ -18,6 +18,10 @@
     };
 
     interactiveShellInit = ''
+      if status is-interactive && not set -q TMUX
+        tmux new-session -A -s main
+      end
+
       set -gx PATH \
         $HOME/.local/bin \
         ${config.xdg.dataHome}/go/bin \
