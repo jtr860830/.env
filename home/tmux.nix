@@ -35,16 +35,17 @@
       set -g message-command-style "bg=#3e4452,fg=#c678dd"
       set -g mode-style            "bg=#3e4452,fg=#abb2bf"
 
-      set -g status-left-length    30
-      set -g status-left           "#{?client_prefix,#[fg=#e5c07b],#{?pane_in_mode,#[fg=#56b6c2],#[fg=#c678dd]}}#[bold] #S "
-      set -g status-right          ""
+      set -g status-left-length    40
+      set -g status-right-length   40
+      set -g status-left           " #[fg=#5c6370]#(whoami)#[fg=#3e4452]@#[fg=#abb2bf]#h "
+      set -g status-right          "#{?client_prefix,#[fg=#e5c07b],#{?pane_in_mode,#[fg=#56b6c2],#[fg=#c678dd]}}#[bold] #S "
 
       set -g pane-border-style        "fg=#3e4452"
       set -g pane-active-border-style "fg=#61afef"
 
       setw -g window-status-separator    " "
-      setw -g window-status-format         " #[fg=#5c6370]#I "
-      setw -g window-status-current-format "#[bg=#3e4452] #[bold,fg=#56b6c2]#I #[fg=#abb2bf]#W #[default]"
+      setw -g window-status-format         "#[fg=#5c6370] ○ "
+      setw -g window-status-current-format "#[fg=#c678dd,bold] ● #[fg=#abb2bf]#W "
     '';
   };
 }
