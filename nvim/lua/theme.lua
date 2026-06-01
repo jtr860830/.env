@@ -21,6 +21,6 @@ vim.api.nvim_set_hl(0, "MiniStatuslineModeCommand", { bg = c.yellow, fg = c.bg, 
 vim.api.nvim_set_hl(0, "MiniStatuslineModeOther",   { bg = c.cyan,   fg = c.bg,  bold = true })
 
 -- Statusline base (slightly elevated surface, like tmux status bar)
-vim.api.nvim_set_hl(0, "MiniStatuslineFilename", { bg = c.bg2, fg = c.fg })
-vim.api.nvim_set_hl(0, "MiniStatuslineDevinfo",  { bg = c.bg2, fg = c.gray })
-vim.api.nvim_set_hl(0, "MiniStatuslineInactive", { bg = c.bg2, fg = c.gray })
+vim.api.nvim_set_hl(0, "MiniStatuslineFilename", { bg = c.bg_statusline, fg = c.fg })
+vim.api.nvim_set_hl(0, "MiniStatuslineDevinfo",  { bg = c.bg_statusline, fg = c.gray })
+vim.api.nvim_set_hl(0, "MiniStatuslineInactive", { bg = c.bg_statusline, fg = c.gray })
