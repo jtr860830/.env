@@ -37,15 +37,15 @@
 
       set -g status-left-length    40
       set -g status-right-length   40
-      set -g status-left           " #[fg=#5c6370]#(whoami)#[fg=#3e4452]@#[fg=#abb2bf]#h "
+      set -g status-left           " #[fg=#5c6370]#{client_user}#[fg=#3e4452]@#[fg=#abb2bf]#h "
       set -g status-right          "#{?client_prefix,#[fg=#e5c07b],#{?pane_in_mode,#[fg=#56b6c2],#[fg=#c678dd]}}#[bold] #S "
 
       set -g pane-border-style        "fg=#3e4452"
       set -g pane-active-border-style "fg=#61afef"
 
       setw -g window-status-separator    " "
-      setw -g window-status-format         "#{?#{==:#{session_windows},1},,#[fg=#5c6370] ○ }"
-      setw -g window-status-current-format "#{?#{==:#{session_windows},1},,#[fg=#c678dd,bold] ● }"
+      setw -g window-status-format         "#[fg=#5c6370]#{?#{==:#{session_windows},1},, ○ }"
+      setw -g window-status-current-format "#[fg=#c678dd,bold]#{?#{==:#{session_windows},1},, ● }"
     '';
   };
 }
