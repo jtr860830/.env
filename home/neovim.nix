@@ -29,6 +29,7 @@
       bash-language-server
       yaml-language-server
       taplo
+      lua-language-server
       prettierd
       ruff
       shfmt

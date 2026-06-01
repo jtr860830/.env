@@ -12,6 +12,7 @@ vim.lsp.enable({
   "bashls",
   "yamlls",
   "taplo",
+  "lua_ls",
 })
 
 vim.api.nvim_create_autocmd("LspAttach", {
