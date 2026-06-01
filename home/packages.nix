@@ -46,7 +46,7 @@
     ffmpeg mpv
 
     # Misc
-    hugo buf
+    buf
     openvpn less
     llvm clang-tools
   ] ++ lib.optionals pkgs.stdenv.isDarwin [ mas ];
