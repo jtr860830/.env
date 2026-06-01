@@ -21,7 +21,6 @@
       autohide = true;
       show-recents = false;
       mru-spaces = false;
-      launchanim = true;
       # all hot corners disabled
       wvous-tl-corner = 1;
       wvous-tr-corner = 1;

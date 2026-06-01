@@ -26,7 +26,6 @@
       fetch.prune            = true;
       push.autoSetupRemote   = true;
       merge.conflictstyle    = "zdiff3";
-      color.ui               = true;
       core.editor            = "nvim";
       gpg.format             = "ssh";
       "gpg \"ssh\"".program  = if pkgs.stdenv.isDarwin

@@ -24,7 +24,7 @@
       end
 
       set -gx PATH \
-        $HOME/.local/bin \
+        ${config.home.homeDirectory}/.local/bin \
         ${config.xdg.dataHome}/go/bin \
         ${config.xdg.dataHome}/cargo/bin \
         /etc/profiles/per-user/${config.home.username}/bin \
