@@ -16,6 +16,27 @@ require("nvim-autopairs").setup({ check_ts = true })
 -- Surround
 require("mini.surround").setup()
 
+-- Key hints
+local clue = require("mini.clue")
+clue.setup({
+  triggers = {
+    { mode = "n", keys = "<leader>" },
+    { mode = "v", keys = "<leader>" },
+    { mode = "n", keys = "g" },
+    { mode = "n", keys = "[" },
+    { mode = "n", keys = "]" },
+    { mode = "n", keys = "<C-w>" },
+  },
+  clues = {
+    clue.gen_clues.g(),
+    clue.gen_clues.marks(),
+    clue.gen_clues.registers(),
+    clue.gen_clues.windows(),
+    clue.gen_clues.z(),
+  },
+  window = { delay = 300 },
+})
+
 local function statusline_diagnostics()
   local counts    = vim.diagnostic.count(0)
   local cfg       = vim.diagnostic.config() or {}
