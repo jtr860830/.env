@@ -7,6 +7,7 @@
     ];
 
     functions = {
+      fish_greeting = "";
       ls   = "eza --icons=auto --color=auto $argv";
       rm   = ''echo "Use 'rip' instead of rm. If you really need rm, use 'command rm'."'';
       wget = ''command wget --hsts-file="$XDG_CACHE_HOME/wget-hsts" $argv'';
@@ -16,8 +17,6 @@
       vi  = "nvim";
       vim = "nvim";
     };
-
-    functions.fish_greeting = "";
 
     interactiveShellInit = ''
       if not set -q TMUX

@@ -1,4 +1,4 @@
-{ ... }: {
+{ pkgs, ... }: {
   programs.git = {
     enable = true;
 
@@ -29,7 +29,9 @@
       color.ui               = true;
       core.editor            = "nvim";
       gpg.format             = "ssh";
-      "gpg \"ssh\"".program  = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign";
+      "gpg \"ssh\"".program  = if pkgs.stdenv.isDarwin
+        then "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+        else "/opt/1Password/op-ssh-sign";
       "delta \"decorations\"" = {
         commit-decoration-style = "bold yellow box ul";
         file-style              = "bold yellow ul";

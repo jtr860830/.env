@@ -1,9 +1,9 @@
-{ pkgs, config, ... }: {
+{ pkgs, lib, config, ... }: {
   programs.ssh = {
     enable = true;
     enableDefaultConfig = false;
 
-    includes = [
+    includes = lib.optionals pkgs.stdenv.isDarwin [
       "${config.xdg.dataHome}/lima/*/ssh.config"
     ];
 
