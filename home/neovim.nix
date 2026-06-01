@@ -31,7 +31,6 @@
       ruff
       shfmt
       stylua
-      clang-tools
     ];
   };
 

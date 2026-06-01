@@ -71,7 +71,6 @@
       set -g fish_color_valid_path        $green
       set -g fish_color_prefix            $blue
       set -g fish_color_history_current   $yellow
-      set -g fish_color_error_background  --background=$red
 
       set -g fish_pager_color_progress             $comment
       set -g fish_pager_color_prefix               $cyan

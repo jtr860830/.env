@@ -47,7 +47,7 @@
     background = #282c34
     foreground = #abb2bf
     cursor-color = #c678dd
-    selection-background = #3e4452
+    selection-background = #414858
     selection-foreground = #abb2bf
   '';
 }
