@@ -15,14 +15,14 @@
       {
         plugin = mode-indicator;
         extraConfig = ''
-          set -g @mode_indicator_empty_prompt  " "
-          set -g @mode_indicator_empty_mode_style  bg=#98c379
-          set -g @mode_indicator_prefix_prompt " "
-          set -g @mode_indicator_prefix_mode_style bg=#c678dd
-          set -g @mode_indicator_copy_prompt   " "
-          set -g @mode_indicator_copy_mode_style   bg=#e5c07b
-          set -g @mode_indicator_sync_prompt   " "
-          set -g @mode_indicator_sync_mode_style   bg=#61afef
+          set -g @mode_indicator_empty_prompt  " 󰕷 "
+          set -g @mode_indicator_empty_mode_style  "bg=#98c379,fg=#282c34"
+          set -g @mode_indicator_prefix_prompt " 󰌌 "
+          set -g @mode_indicator_prefix_mode_style "bg=#c678dd,fg=#282c34"
+          set -g @mode_indicator_copy_prompt   "  "
+          set -g @mode_indicator_copy_mode_style   "bg=#e5c07b,fg=#282c34"
+          set -g @mode_indicator_sync_prompt   " 󰓦 "
+          set -g @mode_indicator_sync_mode_style   "bg=#61afef,fg=#282c34"
         '';
       }
     ];
