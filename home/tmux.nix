@@ -5,8 +5,6 @@
     baseIndex = 1;
     terminal = "tmux-256color";
 
-    plugins = with pkgs.tmuxPlugins; [ tmux-fzf ];
-
     extraConfig = ''
       set -as terminal-overrides ",xterm*:RGB"
       setw -g pane-base-index 1
