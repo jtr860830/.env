@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, lib, ... }: {
   home.packages = with pkgs; [
     # CLI essentials
     bat eza fd fzf fzy ripgrep ripgrep-all zoxide
@@ -46,10 +46,10 @@
     ffmpeg mpv
 
     # Misc
-    hugo buf slides mdp
-    openvpn mas less
+    hugo buf
+    openvpn less
     llvm clang-tools
-  ];
+  ] ++ lib.optionals pkgs.stdenv.isDarwin [ mas ];
 
   xdg.configFile."npm/npmrc".text = ''
     prefix=''${XDG_DATA_HOME}/npm
