@@ -18,7 +18,7 @@
     };
 
     interactiveShellInit = ''
-      if status is-interactive && not set -q TMUX
+      if not set -q TMUX
         tmux new-session -A -s main
       end
 
