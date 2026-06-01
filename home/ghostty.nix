@@ -3,6 +3,7 @@
     window-padding-balance = true
     mouse-hide-while-typing = true
     quit-after-last-window-closed = true
+    confirm-close-surface = false
     selection-clear-on-copy = true
 
     ${lib.optionalString pkgs.stdenv.isDarwin ''
