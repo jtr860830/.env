@@ -39,6 +39,6 @@ map("n", "<S-h>", "<cmd>bprevious<CR>")
 map("n", "<leader>bd", "<cmd>bdelete<CR>")
 
 -- Diagnostics
-map("n", "[d",        vim.diagnostic.goto_prev)
-map("n", "]d",        vim.diagnostic.goto_next)
+map("n", "[d",        function() vim.diagnostic.jump({ count = -1 }) end)
+map("n", "]d",        function() vim.diagnostic.jump({ count = 1 }) end)
 map("n", "<leader>e", vim.diagnostic.open_float)

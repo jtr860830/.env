@@ -16,9 +16,6 @@ require("nvim-autopairs").setup({ check_ts = true })
 -- Surround
 require("mini.surround").setup()
 
--- Comment
-require("mini.comment").setup()
-
 -- Statusline
 require("mini.statusline").setup({ use_icons = true })
 
@@ -62,7 +59,7 @@ require("conform").setup({
     lua              = { "stylua" },
   },
   format_on_save = {
-    timeout_ms   = 500,
-    lsp_fallback = true,
+    timeout_ms = 500,
+    lsp_format = "fallback",
   },
 })

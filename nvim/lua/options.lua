@@ -12,8 +12,7 @@ opt.shiftwidth  = 2
 opt.expandtab   = true
 opt.smartindent = true
 
-opt.wrap      = false
-opt.linebreak = true
+opt.wrap = false
 
 opt.ignorecase = true
 opt.smartcase  = true
@@ -23,8 +22,7 @@ opt.incsearch  = true
 opt.splitbelow = true
 opt.splitright = true
 
-opt.termguicolors = true
-opt.showmode      = false
+opt.showmode = false
 opt.laststatus    = 3
 
 opt.undofile = true
