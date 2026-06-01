@@ -35,7 +35,7 @@ require("ibl").setup({
 })
 
 -- Hover highlight
-require("illuminate").setup({
+require("illuminate").configure({
   delay             = 200,
   large_file_cutoff = 2000,
 })
