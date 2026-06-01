@@ -22,8 +22,9 @@ opt.incsearch  = true
 opt.splitbelow = true
 opt.splitright = true
 
-opt.showmode = false
-opt.laststatus    = 3
+opt.showmode  = false
+opt.laststatus = 3
+opt.cmdheight  = 0
 
 opt.undofile = true
 opt.swapfile = false
