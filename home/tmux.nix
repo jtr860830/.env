@@ -31,9 +31,9 @@
       set -g status-position       bottom
       set -g status-justify        absolute-centre
       set -g status-style          "bg=#22262d"
-      set -g message-style         "bg=#414858,fg=#abb2bf"
-      set -g message-command-style "bg=#414858,fg=#c678dd"
-      set -g mode-style            "bg=#414858,fg=#abb2bf"
+      set -g message-style         "bg=#3d4350,fg=#abb2bf"
+      set -g message-command-style "bg=#3d4350,fg=#c678dd"
+      set -g mode-style            "bg=#3d4350,fg=#abb2bf"
 
       set -g status-left-length    40
       set -g status-right-length   40
