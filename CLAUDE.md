@@ -57,6 +57,9 @@ Consistent vim-style navigation (`hjkl`) across Tmux panes and Ghostty splits. G
 - Mode detection without plugins: `#{?client_prefix,...}` and `#{?pane_in_mode,...}` are built-in tmux format strings
 - `set -g set-clipboard on` enables OSC 52 clipboard sync (replaces yank plugin; requires terminal support e.g. Ghostty)
 - `status-justify absolute-centre` centers window list by terminal width; `centre` centers between left/right content
+- `#{client_user}` (tmux 3.4+) replaces `#(whoami)` — built-in, no shell spawn
+- `#[fg=...]` attributes inside `#{?condition,...}` conditionals can fail to parse; place them outside the conditional instead
+- `#{==:#{session_windows},1}` to detect single-window sessions (e.g. hide window list)
 
 ## Cross-Platform Nix Patterns
 
