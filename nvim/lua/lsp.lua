@@ -4,7 +4,7 @@ local capabilities = require("blink.cmp").get_lsp_capabilities()
 vim.lsp.config("*", { capabilities = capabilities })
 
 -- Enable servers (configs provided by nvim-lspconfig's lsp/ directory)
-vim.lsp.enable({
+vim.lsp.enable {
   "gopls",
   "clangd",
   "pyright",
@@ -13,7 +13,7 @@ vim.lsp.enable({
   "yamlls",
   "taplo",
   "lua_ls",
-})
+}
 
 vim.api.nvim_create_autocmd("LspAttach", {
   group = vim.api.nvim_create_augroup("UserLspAttach", { clear = true }),
@@ -22,25 +22,25 @@ vim.api.nvim_create_autocmd("LspAttach", {
     if not client then return end
 
     local bufnr = ev.buf
-    local map   = function(keys, func, desc) vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc }) end
+    local map = function(keys, func, desc) vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc }) end
 
-    map("gd",         vim.lsp.buf.definition,    "Go to definition")
-    map("gD",         vim.lsp.buf.declaration,   "Go to declaration")
-    map("gr",         vim.lsp.buf.references,    "References")
-    map("gi",         vim.lsp.buf.implementation,"Go to implementation")
-    map("K",          vim.lsp.buf.hover,         "Hover")
-    map("<leader>rn", vim.lsp.buf.rename,        "Rename")
-    map("<leader>ca", vim.lsp.buf.code_action,   "Code action")
-    map("<leader>td", vim.lsp.buf.type_definition,"Type definition")
+    map("gd", vim.lsp.buf.definition, "Go to definition")
+    map("gD", vim.lsp.buf.declaration, "Go to declaration")
+    map("gr", vim.lsp.buf.references, "References")
+    map("gi", vim.lsp.buf.implementation, "Go to implementation")
+    map("K", vim.lsp.buf.hover, "Hover")
+    map("<leader>rn", vim.lsp.buf.rename, "Rename")
+    map("<leader>ca", vim.lsp.buf.code_action, "Code action")
+    map("<leader>td", vim.lsp.buf.type_definition, "Type definition")
 
-    if client:supports_method("textDocument/inlayHint") then
+    if client:supports_method "textDocument/inlayHint" then
       vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
       vim.api.nvim_create_autocmd("InsertEnter", {
-        buffer   = bufnr,
+        buffer = bufnr,
         callback = function() vim.lsp.inlay_hint.enable(false, { bufnr = bufnr }) end,
       })
       vim.api.nvim_create_autocmd("InsertLeave", {
-        buffer   = bufnr,
+        buffer = bufnr,
         callback = function() vim.lsp.inlay_hint.enable(true, { bufnr = bufnr }) end,
       })
     end
@@ -49,16 +49,16 @@ vim.api.nvim_create_autocmd("LspAttach", {
 
 local diag_icons = {
   [vim.diagnostic.severity.ERROR] = vim.fn.nr2char(0xea87) .. " ",
-  [vim.diagnostic.severity.WARN]  = vim.fn.nr2char(0xea6c) .. " ",
-  [vim.diagnostic.severity.HINT]  = vim.fn.nr2char(0xea61) .. " ",
-  [vim.diagnostic.severity.INFO]  = vim.fn.nr2char(0xea74) .. " ",
+  [vim.diagnostic.severity.WARN] = vim.fn.nr2char(0xea6c) .. " ",
+  [vim.diagnostic.severity.HINT] = vim.fn.nr2char(0xea61) .. " ",
+  [vim.diagnostic.severity.INFO] = vim.fn.nr2char(0xea74) .. " ",
 }
 
-vim.diagnostic.config({
-  virtual_text     = true,
-  underline        = true,
+vim.diagnostic.config {
+  virtual_text = true,
+  underline = true,
   update_in_insert = false,
-  severity_sort    = true,
-  signs            = { text = diag_icons },
-  float            = { border = "rounded", source = true },
-})
+  severity_sort = true,
+  signs = { text = diag_icons },
+  float = { border = "rounded", source = true },
+}

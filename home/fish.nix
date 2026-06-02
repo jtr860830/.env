@@ -3,13 +3,16 @@
     enable = true;
 
     plugins = [
-      { name = "pure"; src = pkgs.fishPlugins.pure.src; }
+      {
+        name = "pure";
+        src = pkgs.fishPlugins.pure.src;
+      }
     ];
 
     functions = {
       fish_greeting = "";
-      ls   = "eza --icons=auto --color=auto $argv";
-      rm   = ''echo "Use 'rip' instead of rm. If you really need rm, use 'command rm'."'';
+      ls = "eza --icons=auto --color=auto $argv";
+      rm = ''echo "Use 'rip' instead of rm. If you really need rm, use 'command rm'."'';
       wget = ''command wget --hsts-file="$XDG_CACHE_HOME/wget-hsts" $argv'';
     };
 
@@ -76,29 +79,31 @@
   };
 
   home.sessionVariables = {
-    LANG     = "en_US.UTF-8";
+    LANG = "en_US.UTF-8";
     TERMINFO = "${config.xdg.dataHome}/terminfo";
 
-    NODE_REPL_HISTORY     = "${config.xdg.dataHome}/node_repl_history";
-    COREPACK_HOME         = "${config.xdg.dataHome}/corepack";
+    NODE_REPL_HISTORY = "${config.xdg.dataHome}/node_repl_history";
+    COREPACK_HOME = "${config.xdg.dataHome}/corepack";
     NPM_CONFIG_USERCONFIG = "${config.xdg.configHome}/npm/npmrc";
 
     GOPATH = "${config.xdg.dataHome}/go";
-    GOBIN  = "${config.xdg.dataHome}/go/bin";
+    GOBIN = "${config.xdg.dataHome}/go/bin";
 
     RUSTUP_HOME = "${config.xdg.dataHome}/rustup";
-    CARGO_HOME  = "${config.xdg.dataHome}/cargo";
+    CARGO_HOME = "${config.xdg.dataHome}/cargo";
 
-    WGETRC        = "${config.xdg.configHome}/wgetrc";
-    BAT_THEME     = "TwoDark";
+    WGETRC = "${config.xdg.configHome}/wgetrc";
+    BAT_THEME = "TwoDark";
     DOCKER_CONFIG = "${config.xdg.configHome}/docker";
-    KUBECONFIG    = "${config.xdg.configHome}/kube";
-    KUBECACHEDIR  = "${config.xdg.cacheHome}/kube";
-    LIMA_HOME     = "${config.xdg.dataHome}/lima";
+    KUBECONFIG = "${config.xdg.configHome}/kube";
+    KUBECACHEDIR = "${config.xdg.cacheHome}/kube";
+    LIMA_HOME = "${config.xdg.dataHome}/lima";
 
     CLAUDE_CONFIG_DIR = "${config.xdg.configHome}/claude";
-    SSH_AUTH_SOCK = if pkgs.stdenv.isDarwin
-      then "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
-      else "${config.home.homeDirectory}/.1password/agent.sock";
+    SSH_AUTH_SOCK =
+      if pkgs.stdenv.isDarwin then
+        "${config.home.homeDirectory}/Library/Group Containers/2BUA8C4S2C.com.1password/t/agent.sock"
+      else
+        "${config.home.homeDirectory}/.1password/agent.sock";
   };
 }

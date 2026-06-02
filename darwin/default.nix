@@ -1,29 +1,35 @@
 { pkgs, ... }: {
-  imports = [ ./system.nix ./homebrew.nix ];
+  imports = [
+    ./system.nix
+    ./homebrew.nix
+  ];
 
   environment.shells = [ pkgs.fish ];
   programs.fish.enable = true;
 
   users.users.jtr860830 = {
-    shell       = pkgs.fish;
+    shell = pkgs.fish;
     description = "Josh Hsieh";
-    home        = "/Users/jtr860830";
+    home = "/Users/jtr860830";
   };
 
   system.primaryUser = "jtr860830";
 
   security.pam.services.sudo_local = {
     touchIdAuth = true;
-    reattach    = true;
+    reattach = true;
   };
 
   fonts.packages = [ pkgs.maple-mono.NF-CN-unhinted ];
 
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.hostPlatform        = "aarch64-darwin";
+  nixpkgs.hostPlatform = "aarch64-darwin";
 
   nix.settings = {
-    experimental-features    = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
     use-xdg-base-directories = true;
   };
 

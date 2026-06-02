@@ -1,11 +1,11 @@
-vim.g.mapleader      = " "
+vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
-require("options")
-require("theme")
-require("keymaps")
-require("treesitter")
-require("lsp")
-require("completion")
-require("fzf")
-require("plugins")
+require "options"
+require "theme"
+require "keymaps"
+require "treesitter"
+require "lsp"
+require "completion"
+require "fzf"
+require "plugins"

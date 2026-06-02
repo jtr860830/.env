@@ -1,7 +1,7 @@
 { hostname, ... }: {
   networking = {
-    hostName      = hostname;
-    computerName  = hostname;
+    hostName = hostname;
+    computerName = hostname;
     localHostName = hostname;
   };
 

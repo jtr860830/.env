@@ -1,11 +1,11 @@
 { pkgs, ... }: {
   programs.neovim = {
-    enable      = true;
-    viAlias     = true;
-    vimAlias    = true;
-    withRuby    = false;
+    enable = true;
+    viAlias = true;
+    vimAlias = true;
+    withRuby = false;
     withPython3 = false;
-    initLua     = builtins.readFile ../nvim/init.lua;
+    initLua = builtins.readFile ../nvim/init.lua;
 
     plugins = with pkgs.vimPlugins; [
       nvim-treesitter.withAllGrammars
@@ -40,8 +40,8 @@
   xdg.configFile."nvim/lua".source = ../nvim/lua;
 
   home.sessionVariables = {
-    EDITOR   = "nvim";
-    VISUAL   = "nvim";
+    EDITOR = "nvim";
+    VISUAL = "nvim";
     MANPAGER = "nvim +Man!";
   };
 }
