@@ -9,6 +9,7 @@
     ${lib.optionalString pkgs.stdenv.isDarwin ''
       macos-icon = glass
       macos-titlebar-style = hidden
+      macos-option-as-alt = true
     ''}
     theme = onedarkpro_onedark
     adjust-cell-height = 24%
