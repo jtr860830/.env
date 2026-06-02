@@ -56,7 +56,7 @@
       nodejs
       deno
       uv
-      python313
+      python3
       jdk
 
       # Editors
