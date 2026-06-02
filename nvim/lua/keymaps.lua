@@ -20,16 +20,17 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search" })
 
-map({ "n", "i" }, "<C-s>", "<cmd>w<CR>")
+map({ "n", "i" }, "<C-s>", "<cmd>w<CR>", { desc = "Save" })
 map("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 
 map("n", "<leader>sv", "<cmd>vsplit<CR>", { desc = "Vertical split" })
 map("n", "<leader>sh", "<cmd>split<CR>", { desc = "Horizontal split" })
 
-map("n", "<S-l>", "<cmd>bnext<CR>")
-map("n", "<S-h>", "<cmd>bprevious<CR>")
+map("n", "<S-l>", "<cmd>bnext<CR>", { desc = "Next buffer" })
+map("n", "<S-h>", "<cmd>bprevious<CR>", { desc = "Prev buffer" })
 map("n", "<leader>bd", "<cmd>bdelete<CR>", { desc = "Delete buffer" })
 
 map("n", "[d", function() vim.diagnostic.jump { count = -1 } end, { desc = "Previous diagnostic" })
 map("n", "]d", function() vim.diagnostic.jump { count = 1 } end, { desc = "Next diagnostic" })
 map("n", "<leader>e", vim.diagnostic.open_float, { desc = "Show diagnostic" })
+map("n", "<leader>cf", function() require("conform").format { lsp_format = "fallback" } end, { desc = "Format" })
