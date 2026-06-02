@@ -171,3 +171,12 @@ Keymaps are split across files by dependency:
   ```
 - `fzf.lua` — fzf keymaps (uses top-level `local fzf = require "fzf-lua"`, so must stay with setup)
 - `lsp.lua` LspAttach — buffer-local LSP keymaps (`gd`, `gr`, `K`, etc.), registered only when a client attaches
+
+mini.clue group labels are declared in `clues` to show prefix descriptions at the first level:
+
+```lua
+{ mode = "n", keys = "<leader>f", desc = "+find" },
+{ mode = "n", keys = "<leader>c", desc = "+code" },
+```
+
+Current groups: `<leader>b` (+buffer), `<leader>c` (+code), `<leader>f` (+find), `<leader>s` (+split).
