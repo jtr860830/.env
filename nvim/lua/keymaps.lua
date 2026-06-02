@@ -10,7 +10,7 @@ map("v", "<A-k>", ":m '<-2<CR>gv=gv", { desc = "Move selection up" })
 
 map("n", "<Esc>", "<cmd>nohlsearch<CR>", { desc = "Clear search" })
 
-map({ "n", "i" }, "<C-s>", "<cmd>w<CR>", { desc = "Save" })
+map("n", "<leader>w", "<cmd>w<CR>", { desc = "Save" })
 map("n", "<leader>q", "<cmd>q<CR>", { desc = "Quit" })
 
 map("n", "[d", function() vim.diagnostic.jump { count = -1 } end, { desc = "Previous diagnostic" })
