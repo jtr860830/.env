@@ -13,7 +13,7 @@ Personal system configuration repository for macOS (ARM). Managed entirely with 
 | `flake.nix` | Entry point; defines `darwinConfigurations."pro-darwin"` |
 | `darwin/` | macOS system-level config (system defaults, homebrew, security) |
 | `home/` | home-manager modules (fish, git, tmux, ghostty, ssh, neovim, packages) |
-| `nvim/` | Neovim config (AstroNvim v6+); symlinked to `~/.config/nvim` via home-manager |
+| `nvim/` | Neovim config (custom minimal, fully nix-managed via `programs.neovim`) |
 
 ## Applying Changes
 
@@ -25,14 +25,44 @@ darwin-rebuild switch --flake ~/.config/env
 
 - `environment.shells = [ pkgs.fish ]` is **required** alongside `programs.fish.enable = true` — nix-darwin does not auto-add fish to `/etc/shells`
 - Touch ID for sudo: `security.pam.services.sudo_local.touchIdAuth = true`
-- nvim is symlinked via `mkOutOfStoreSymlink` (temporary until nvim is fully nix-managed): `home/neovim.nix`
-- `programs.neovim` conflicts with `xdg.configFile."nvim"` (`mkOutOfStoreSymlink`) — both try to manage `~/.config/nvim/`; use `home.packages = [ pkgs.neovim ]` until nvim config is fully nix-managed
+- Nix flakes only include git-tracked files — must `git add` new files before rebuild
 
 ## Neovim
 
-Built on **AstroNvim v6+** with Lazy.nvim. Plugin customizations live in `nvim/lua/plugins/`. Linting configs (`selene.toml`, `.stylua.toml`, `.luarc.json`, `.neoconf.json`) are at `nvim/`.
+Custom minimal config managed by `programs.neovim` in `home/neovim.nix`. No Lazy.nvim — plugins installed via `programs.neovim.plugins` (uses nixpkgs vimPlugins, placed in packpath).
 
-Update plugins intentionally with `:Lazy update` inside nvim (updates `nvim/lazy-lock.json`).
+- `initLua = builtins.readFile ../nvim/init.lua` — entry point
+- `xdg.configFile."nvim/lua".source = ../nvim/lua` — Lua modules sourced from repo; **requires rebuild to update**
+- Plugins land in `~/.local/share/nvim/site/pack/hm/start/` (picked up by default packpath)
+
+### LSP (neovim 0.11+ API)
+
+Uses `vim.lsp.config` + `vim.lsp.enable` — no `require("lspconfig")` needed. nvim-lspconfig provides `lsp/` directory configs read automatically by `vim.lsp.enable`.
+
+```lua
+vim.lsp.config("*", { capabilities = ... })   -- global config
+vim.lsp.config("lua_ls", { settings = ... })  -- per-server override
+vim.lsp.enable { "gopls", "ts_ls", ... }
+```
+
+### Neovim 0.12 API Patterns
+
+- `client:supports_method("textDocument/inlayHint")` — colon syntax (dot deprecated)
+- `vim.diagnostic.jump({ count = ±1 })` — replaces deprecated `goto_prev/next`
+- `vim.diagnostic.count(0)` — efficient per-buffer count
+- `vim.treesitter.start()` via FileType autocmd — nvim-treesitter 0.10+ removed configs module
+- `vim.fs.root(0, { ".git", ... })` — find project root without shell spawn
+
+### Nerd Font Icons
+
+The Edit tool cannot reliably embed nerd font unicode characters — they silently become spaces. Use `vim.fn.nr2char(codepoint)` instead:
+
+```lua
+vim.fn.nr2char(0xea87)  -- Codicon error
+vim.fn.nr2char(0xea6c)  -- Codicon warning
+vim.fn.nr2char(0xea74)  -- Codicon info
+vim.fn.nr2char(0xea61)  -- Codicon lightbulb
+```
 
 ## Homebrew
 
@@ -46,7 +76,26 @@ Casks and Mac App Store apps are declared in `darwin/homebrew.nix`. `cleanup = "
 
 ## Theme Consistency
 
-One Dark Pro (`onedarkpro_onedark`) across all tools: Neovim (`nvim/lua/plugins/theme.lua`), Tmux (inline in `home/tmux.nix`), Fish (inline in `home/fish.nix`), Ghostty (`home/ghostty.nix`).
+One Dark Pro (`onedarkpro_onedark`) across all tools: Neovim (`nvim/lua/theme.lua`), Tmux (inline in `home/tmux.nix`), Fish (inline in `home/fish.nix`), Ghostty (`home/ghostty.nix`).
+
+### onedarkpro Colors
+
+Access palette via `require("onedarkpro.helpers").get_colors()`. Key colors:
+
+- `c.bg_statusline` (`#22262d`) — statusline/tmux bar background
+- `c.selection` (`#414858`) — selection/highlight background
+- `c.fg_gutter` (`#3d4350`) — pane borders, dim separators
+- `c.indentline` (`#3b4048`) — static indent guide lines
+
+Tmux colors must be set manually (no Lua access) — align with palette values above.
+
+### onedarkpro Plugin Integrations
+
+Enable in `setup()` to let theme manage highlight groups:
+
+```lua
+plugins = { gitsigns = true, indentline = true, mini_indentscope = true }
+```
 
 ## Key Keybinding Patterns
 
@@ -54,7 +103,6 @@ Consistent vim-style navigation (`hjkl`) across Tmux panes and Ghostty splits. G
 
 ## Tmux Quirks
 
-- tmux plugins that patch `status-left`/`status-right`: settings must be in the plugin's `extraConfig`, not main `extraConfig` — plugin reads them at `run-shell` time
 - Mode detection without plugins: `#{?client_prefix,...}` and `#{?pane_in_mode,...}` are built-in tmux format strings
 - `set -g set-clipboard on` enables OSC 52 clipboard sync (replaces yank plugin; requires terminal support e.g. Ghostty)
 - `status-justify absolute-centre` centers window list by terminal width; `centre` centers between left/right content
@@ -64,10 +112,15 @@ Consistent vim-style navigation (`hjkl`) across Tmux panes and Ghostty splits. G
 
 ## Fish Color Variables
 
-Valid fish color variables (fish 4.x): `fish_color_{normal,command,keyword,quote,redirection,end,option,error,param,comment,selection,search_match,operator,escape,autosuggestion,cwd,user,host,valid_path,prefix,history_current,status}`. Note: `fish_color_history_current_command` and `fish_color_history_duration` do NOT exist.
+Valid fish color variables (fish 4.x): `fish_color_{normal,command,keyword,quote,redirection,end,option,error,param,comment,selection,search_match,operator,escape,autosuggestion,cwd,user,host,valid_path,prefix,history_current,status}`. Note: `fish_color_history_current_command`, `fish_color_history_duration`, and `fish_color_error_background` do NOT exist.
 
 ## Cross-Platform Nix Patterns
 
 - Platform conditionals: `if pkgs.stdenv.isDarwin then ... else ...`
 - Conditional lists: `lib.optionals pkgs.stdenv.isDarwin [ ... ]`
 - 1Password SSH sign path: macOS `/Applications/1Password.app/Contents/MacOS/op-ssh-sign`, Linux `/opt/1Password/op-ssh-sign`
+
+## Formatters
+
+- Lua: `stylua` (config at `nvim/.stylua.toml`)
+- Nix: `nixfmt` (`nix run nixpkgs#nixfmt -- <files>`)
