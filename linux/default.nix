@@ -6,14 +6,20 @@
 
   users.users.jtr860830 = {
     isNormalUser = true;
-    shell        = pkgs.fish;
-    extraGroups  = [ "wheel" "docker" ];
+    shell = pkgs.fish;
+    extraGroups = [
+      "wheel"
+      "docker"
+    ];
   };
 
   nix.settings = {
-    experimental-features = [ "nix-command" "flakes" ];
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
   };
 
   nixpkgs.hostPlatform = "x86_64-linux";
-  system.stateVersion   = "25.05";
+  system.stateVersion = "25.05";
 }

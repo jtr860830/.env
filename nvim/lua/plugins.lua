@@ -1,4 +1,3 @@
--- Git markers
 require("gitsigns").setup {
   signs = {
     add = { text = "▏" },
@@ -10,13 +9,10 @@ require("gitsigns").setup {
   },
 }
 
--- Autopairs
 require("nvim-autopairs").setup { check_ts = true }
 
--- Surround
 require("mini.surround").setup()
 
--- Key hints
 local clue = require "mini.clue"
 clue.setup {
   triggers = {
@@ -72,7 +68,6 @@ local function statusline_filename()
   return display .. (vim.bo.modified and " [+]" or "")
 end
 
--- Statusline
 require("mini.statusline").setup {
   use_icons = true,
   content = {
@@ -103,28 +98,23 @@ require("mini.statusline").setup {
   },
 }
 
--- Indent scope (active scope highlight)
 require("mini.indentscope").setup {
   symbol = "▏",
   options = { try_as_border = true },
 }
 
--- Indent lines (static)
 require("ibl").setup {
   indent = { char = "▏" },
   scope = { enabled = false },
 }
 
--- Hover highlight
 require("illuminate").configure {
   delay = 200,
   large_file_cutoff = 2000,
 }
 
--- Breadcrumb
 require("dropbar").setup()
 
--- Auto-format
 require("conform").setup {
   formatters_by_ft = {
     go = { "gofmt" },
