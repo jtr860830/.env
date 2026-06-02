@@ -42,9 +42,9 @@ vim.api.nvim_create_autocmd("LspAttach", {
     map("gr", vim.lsp.buf.references, "References")
     map("gi", vim.lsp.buf.implementation, "Go to implementation")
     map("K", vim.lsp.buf.hover, "Hover")
-    map("<leader>rn", vim.lsp.buf.rename, "Rename")
     map("<leader>ca", vim.lsp.buf.code_action, "Code action")
-    map("<leader>td", vim.lsp.buf.type_definition, "Type definition")
+    map("<leader>cr", vim.lsp.buf.rename, "Rename")
+    map("<leader>ct", vim.lsp.buf.type_definition, "Type definition")
 
     if client:supports_method "textDocument/inlayHint" then
       vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
