@@ -33,3 +33,8 @@ vim.api.nvim_set_hl(0, "MiniStatuslineInactive",  { bg = c.bg_statusline, fg = c
 vim.api.nvim_set_hl(0, "MiniStatuslineDiagError", { bg = c.bg_statusline, fg = c.red })
 vim.api.nvim_set_hl(0, "MiniStatuslineDiagWarn",  { bg = c.bg_statusline, fg = c.yellow })
 vim.api.nvim_set_hl(0, "MiniStatuslineDiagInfo",  { bg = c.bg_statusline, fg = c.blue })
+
+-- Illuminate: background highlight only, no underline
+vim.api.nvim_set_hl(0, "IlluminatedWordText",  { bg = c.selection, underline = false })
+vim.api.nvim_set_hl(0, "IlluminatedWordRead",  { bg = c.selection, underline = false })
+vim.api.nvim_set_hl(0, "IlluminatedWordWrite", { bg = c.selection, underline = false })
