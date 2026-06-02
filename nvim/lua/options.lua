@@ -39,3 +39,11 @@ if vim.fn.executable("rg") == 1 then
   opt.grepprg    = "rg --vimgrep"
   opt.grepformat = "%f:%l:%c:%m"
 end
+
+vim.filetype.add({
+  pattern = {
+    [".*/templates/.*%.yaml"] = "gotmpl",
+    [".*/templates/.*%.tpl"]  = "gotmpl",
+    [".*values.*%.yaml"]      = "yaml.helm-values",
+  },
+})
