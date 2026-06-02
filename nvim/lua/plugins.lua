@@ -54,7 +54,7 @@ local function statusline_diagnostics()
   for _, s in ipairs { sev.ERROR, sev.WARN, sev.INFO } do
     local count = counts[s] or 0
     if count > 0 then
-      local icon = vim.trim(sign_text[s] or "")
+      local icon = sign_text[s] or ""
       table.insert(groups, {
         hl = hl_map[s],
         strings = { (icon ~= "" and icon .. " " or "") .. count },
