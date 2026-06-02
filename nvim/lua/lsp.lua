@@ -4,6 +4,18 @@ local capabilities = require("blink.cmp").get_lsp_capabilities()
 vim.lsp.config("*", { capabilities = capabilities })
 
 -- Enable servers (configs provided by nvim-lspconfig's lsp/ directory)
+vim.lsp.config("lua_ls", {
+  settings = {
+    Lua = {
+      runtime = { version = "LuaJIT" },
+      workspace = {
+        checkThirdParty = false,
+        library = vim.api.nvim_get_runtime_file("", true),
+      },
+    },
+  },
+})
+
 vim.lsp.enable {
   "gopls",
   "clangd",
@@ -13,6 +25,7 @@ vim.lsp.enable {
   "yamlls",
   "taplo",
   "lua_ls",
+  "nixd",
 }
 
 vim.api.nvim_create_autocmd("LspAttach", {

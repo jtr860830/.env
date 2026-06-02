@@ -30,6 +30,8 @@
       yaml-language-server
       taplo
       lua-language-server
+      nixd
+      nixfmt
       prettierd
       ruff
       shfmt
