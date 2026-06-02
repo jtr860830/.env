@@ -158,3 +158,16 @@ set -g pure_color_git_dirty  (set_color $yellow)
 
 - Lua: `stylua` (config at `nvim/.stylua.toml`)
 - Nix: `nixfmt` (`nix run nixpkgs#nixfmt -- <files>`)
+
+conform is configured without `format_on_save` — format manually with `<leader>cf`.
+
+## Keymap Organisation
+
+Keymaps are split across files by dependency:
+
+- `keymaps.lua` — global keymaps. Plugin keymaps can also live here if they use a lazy `require` inside a function wrapper (the `require` runs at keypress time, not at startup):
+  ```lua
+  map("n", "<leader>cf", function() require("conform").format { lsp_format = "fallback" } end, ...)
+  ```
+- `fzf.lua` — fzf keymaps (uses top-level `local fzf = require "fzf-lua"`, so must stay with setup)
+- `lsp.lua` LspAttach — buffer-local LSP keymaps (`gd`, `gr`, `K`, etc.), registered only when a client attaches
