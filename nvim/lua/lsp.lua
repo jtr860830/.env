@@ -3,7 +3,7 @@ local capabilities = require("blink.cmp").get_lsp_capabilities()
 -- Global capabilities for all servers
 vim.lsp.config("*", { capabilities = capabilities })
 
--- Enable servers (configs provided by nvim-lspconfig's lsp/ directory)
+-- lua_ls: teach it about neovim runtime so `vim.*` globals are recognized
 vim.lsp.config("lua_ls", {
   settings = {
     Lua = {
@@ -16,6 +16,7 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+-- Enable servers (configs provided by nvim-lspconfig's lsp/ directory)
 vim.lsp.enable {
   "gopls",
   "clangd",
