@@ -4,11 +4,14 @@ fzf.setup {
   winopts = {
     height = 0.85,
     width = 0.80,
+    border = "rounded",
     preview = {
       layout = "flex",
       flip_columns = 120,
+      border = "rounded",
     },
   },
+  fzf_colors = true,
 }
 
 local map = vim.keymap.set
