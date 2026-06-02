@@ -179,6 +179,6 @@ mini.clue group labels are declared in `clues` to show prefix descriptions at th
 { mode = "n", keys = "<leader>c", desc = "+code" },
 ```
 
-Current groups: `<leader>b` (+buffer), `<leader>c` (+code), `<leader>f` (+find), `<leader>s` (+split).
+Current groups: `<leader>c` (+code), `<leader>f` (+find). Window/buffer/split keymaps are intentionally absent — terminal (tmux) handles that workflow.
 
 `<leader>c` contains: `ca` (code action), `cd` (diagnostic float), `cf` (format), `cr` (rename), `ct` (type definition). Conventional vim LSP keys (`gd`, `gD`, `gr`, `gi`, `K`) and bracket navigation (`[d`/`]d`) stay outside the group.
