@@ -42,8 +42,14 @@ end
 
 vim.filetype.add({
   pattern = {
-    [".*/templates/.*%.yaml"] = "gotmpl",
-    [".*/templates/.*%.tpl"]  = "gotmpl",
-    [".*values.*%.yaml"]      = "yaml.helm-values",
+    [".*/templates/.*%.yaml"]  = "gotmpl",
+    [".*/templates/.*%.tpl"]   = "gotmpl",
+    [".*values.*%.yaml"]       = "yaml.helm-values",
+    ["docker%-compose.*%.yaml"] = "yaml.docker-compose",
+    ["docker%-compose.*%.yml"]  = "yaml.docker-compose",
+    ["compose%.yaml"]           = "yaml.docker-compose",
+    ["compose%.yml"]            = "yaml.docker-compose",
+    ["%.gitlab%-ci%.yml"]       = "yaml.gitlab",
+    ["%.gitlab%-ci%.yaml"]      = "yaml.gitlab",
   },
 })
