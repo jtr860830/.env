@@ -75,6 +75,17 @@
       set -g fish_pager_color_completion           $foreground
       set -g fish_pager_color_description          $comment
       set -g fish_pager_color_selected_background  --background=$selection
+
+      # Pure prompt (onedarkpro)
+      set -g pure_color_primary   (set_color $blue)
+      set -g pure_color_success   (set_color $green)
+      set -g pure_color_danger    (set_color $red)
+      set -g pure_color_warning   (set_color $yellow)
+      set -g pure_color_info      (set_color $cyan)
+      set -g pure_color_mute      (set_color $comment)
+      set -g pure_color_normal    (set_color $foreground)
+      set -g pure_color_git_branch (set_color $cyan)
+      set -g pure_color_git_dirty  (set_color $yellow)
     '';
   };
 
