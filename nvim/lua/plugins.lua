@@ -29,8 +29,15 @@ clue.setup {
     clue.gen_clues.registers(),
     clue.gen_clues.windows(),
     clue.gen_clues.z(),
+    { mode = "n", keys = "<leader>b", desc = "+buffer" },
+    { mode = "n", keys = "<leader>c", desc = "+code" },
+    { mode = "n", keys = "<leader>f", desc = "+find" },
+    { mode = "n", keys = "<leader>s", desc = "+split" },
   },
-  window = { delay = 300 },
+  window = {
+    delay = 300,
+    config = { width = "auto", border = "rounded" },
+  },
 }
 
 local sev = vim.diagnostic.severity
