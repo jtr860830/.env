@@ -12,7 +12,6 @@
       nvim-lspconfig
       blink-cmp
       fzf-lua
-      gitsigns-nvim
       mini-nvim
       onedarkpro-nvim
       dropbar-nvim

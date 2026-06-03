@@ -1,11 +1,7 @@
-require("gitsigns").setup {
-  signs = {
-    add = { text = "▏" },
-    change = { text = "▏" },
-    delete = { text = "_" },
-    topdelete = { text = "‾" },
-    changedelete = { text = "~" },
-    untracked = { text = "┆" },
+require("mini.diff").setup {
+  view = {
+    style = "sign",
+    signs = { add = "▏", change = "▏", delete = "_" },
   },
 }
 

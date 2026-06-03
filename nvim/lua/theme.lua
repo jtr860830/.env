@@ -4,7 +4,6 @@ require("onedarkpro").setup {
     virtual_text = "italic",
   },
   plugins = {
-    gitsigns = true,
     indentline = true,
     mini_indentscope = true,
   },
