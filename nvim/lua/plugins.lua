@@ -99,19 +99,16 @@ require("mini.statusline").setup {
   },
 }
 
-require("mini.indentscope").setup {
-  symbol = "▏",
-  options = { try_as_border = true },
-}
-
-require("ibl").setup {
-  indent = { char = "▏" },
-  scope = { enabled = false },
-}
-
-require("illuminate").configure {
-  delay = 200,
-  large_file_cutoff = 2000,
+require("snacks").setup {
+  indent = {
+    enabled = true,
+    char = "▏",
+    scope = { char = "▏" },
+  },
+  words = {
+    enabled = true,
+    debounce = 200,
+  },
 }
 
 require("dropbar").setup()

@@ -15,8 +15,7 @@
       mini-nvim
       onedarkpro-nvim
       dropbar-nvim
-      vim-illuminate
-      indent-blankline-nvim
+      snacks-nvim
       conform-nvim
     ];
 
