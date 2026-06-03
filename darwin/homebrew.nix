@@ -22,6 +22,7 @@
       "k6-studio"
       "keyboardcleantool"
       "rustdesk"
+      "signal"
       "slack"
       "tailscale-app"
       "telegram"
