@@ -148,7 +148,13 @@ set -g pure_color_git_dirty  (set_color $yellow)
 
 ### snacks.nvim
 
-Used for indent guides (`snacks.indent`) and word highlighting (`snacks.words`), replacing vim-illuminate and indent-blankline-nvim. Both modules are modular — only enabled via `setup()`. onedarkpro `snacks = true` manages `SnacksIndent`/`SnacksIndentScope` highlight groups automatically.
+Used for indent guides, word highlighting, big file handling, notification UI, and input UI. Only modules explicitly set in `setup()` are enabled. onedarkpro `snacks = true` manages `SnacksIndent`/`SnacksIndentScope` highlight groups automatically.
+
+snacks.indent config structure — `char` must be nested under `indent`, not at the top level:
+```lua
+indent = { indent = { char = "▏" }, scope = { char = "▏" } }  -- correct
+indent = { char = "▏", scope = { char = "▏" } }               -- wrong, char ignored
+```
 
 ### fzf-lua Colors
 
