@@ -103,7 +103,7 @@ Tmux colors must be set manually (no Lua access) — align with palette values a
 Enable in `setup()` to let theme manage highlight groups:
 
 ```lua
-plugins = { gitsigns = true, indentline = true, mini_indentscope = true }
+plugins = { indentline = true, mini_indentscope = true }
 ```
 
 ## Key Keybinding Patterns
@@ -149,6 +149,16 @@ set -g pure_color_git_dirty  (set_color $yellow)
 ### fzf-lua Colors
 
 `fzf_colors = true` in `fzf.setup {}` auto-syncs all fzf UI colors (selection, highlights, prompt, border) from Neovim's current highlight groups — onedarkpro is picked up automatically.
+
+## Terminfo
+
+Managed via `pkgs.ncurses` in nix — no manual `~/.local/share/terminfo/` needed. Set in `home/fish.nix`:
+
+```nix
+TERMINFO_DIRS = "${pkgs.ncurses}/share/terminfo";
+```
+
+Referencing `${pkgs.ncurses}` in a nix expression automatically includes it in the closure — no need to add it to `home.packages`.
 
 ## Cross-Platform Nix Patterns
 
