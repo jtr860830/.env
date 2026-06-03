@@ -1,7 +1,7 @@
 require("mini.diff").setup {
   view = {
     style = "sign",
-    signs = { add = "▎", change = "▎", delete = "_" },
+    signs = { add = "▎", change = "▎", delete = "▎" },
   },
 }
 
