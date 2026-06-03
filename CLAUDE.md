@@ -103,7 +103,7 @@ Tmux colors must be set manually (no Lua access) — align with palette values a
 Enable in `setup()` to let theme manage highlight groups:
 
 ```lua
-plugins = { indentline = true, mini_indentscope = true }
+plugins = { blink_cmp = true, mini_diff = true, mini_icons = true, snacks = true, nvim_lsp = true, treesitter = true }
 ```
 
 ## Key Keybinding Patterns
@@ -145,6 +145,10 @@ set -g pure_color_git_dirty  (set_color $yellow)
 ### EZA Colors
 
 `EZA_COLORS` uses the same format as `LS_COLORS`: `key=attrs:key=attrs:...`. Use truecolor ANSI codes (`38;2;R;G;B`), `2;38;2;R;G;B` for dim variants. Set via `builtins.concatStringsSep ":" [...]` in `home.sessionVariables` for readability. Key names: `di` (dir), `ln` (symlink), `ex` (executable), `or` (broken symlink), `da` (date), `sn`/`sb` (size number/unit), `hd` (header), `ur`/`uw`/`ux` (user perms), `gr`/`gw`/`gx` (group perms, use dim), `ga`/`gm`/`gd`/`gv`/`gt` (git added/modified/deleted/renamed/type).
+
+### snacks.nvim
+
+Used for indent guides (`snacks.indent`) and word highlighting (`snacks.words`), replacing vim-illuminate and indent-blankline-nvim. Both modules are modular — only enabled via `setup()`. onedarkpro `snacks = true` manages `SnacksIndent`/`SnacksIndentScope` highlight groups automatically.
 
 ### fzf-lua Colors
 
