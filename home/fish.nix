@@ -91,7 +91,7 @@
 
   home.sessionVariables = {
     LANG = "en_US.UTF-8";
-    TERMINFO_DIRS = "${pkgs.ncurses}/share/terminfo:${config.xdg.dataHome}/terminfo";
+    TERMINFO_DIRS = "${pkgs.ncurses}/share/terminfo";
 
     NODE_REPL_HISTORY = "${config.xdg.dataHome}/node_repl_history";
     COREPACK_HOME = "${config.xdg.dataHome}/corepack";
