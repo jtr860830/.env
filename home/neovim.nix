@@ -13,7 +13,6 @@
       blink-cmp
       fzf-lua
       gitsigns-nvim
-      nvim-autopairs
       mini-nvim
       onedarkpro-nvim
       dropbar-nvim
