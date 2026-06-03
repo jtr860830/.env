@@ -25,12 +25,6 @@
       bind j select-pane -D
       bind k select-pane -U
       bind l select-pane -R
-      bind -r H resize-pane -L 5
-      bind -r J resize-pane -D 5
-      bind -r K resize-pane -U 5
-      bind -r L resize-pane -R 5
-      bind -n S-Left  previous-window
-      bind -n S-Right next-window
       bind -n S-Enter send-keys Escape "[13;2u"
 
       # Theme
