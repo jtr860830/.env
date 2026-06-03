@@ -101,8 +101,7 @@ require("mini.statusline").setup {
 
 require("snacks").setup {
   indent = {
-    enabled = true,
-    char = "▏",
+    indent = { char = "▏" },
     scope = { char = "▏" },
   },
   words = {
