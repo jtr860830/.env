@@ -15,7 +15,6 @@ vim.lsp.config("lua_ls", {
   },
 })
 
--- Enable servers (configs provided by nvim-lspconfig's lsp/ directory)
 vim.lsp.enable {
   "gopls",
   "clangd",

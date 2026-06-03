@@ -40,10 +40,8 @@ local hl_map = {
   [sev.WARN] = "MiniStatuslineDiagWarn",
   [sev.INFO] = "MiniStatuslineDiagInfo",
 }
-local sign_text = (function()
-  local cfg = vim.diagnostic.config() or {}
-  return type(cfg.signs) == "table" and cfg.signs.text or {}
-end)()
+local cfg = vim.diagnostic.config() or {}
+local sign_text = type(cfg.signs) == "table" and cfg.signs.text or {}
 
 local function statusline_diagnostics()
   local counts = vim.diagnostic.count(0)
@@ -100,6 +98,9 @@ require("mini.statusline").setup {
 }
 
 require("snacks").setup {
+  bigfile = { enabled = true },
+  input = { enabled = true },
+  notifier = { enabled = true },
   indent = {
     indent = { char = "▏" },
     scope = { char = "▏" },

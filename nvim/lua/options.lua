@@ -17,7 +17,6 @@ opt.wrap = false
 opt.ignorecase = true
 opt.smartcase = true
 opt.hlsearch = true
-opt.incsearch = true
 
 opt.splitbelow = true
 opt.splitright = true
@@ -28,7 +27,6 @@ opt.cmdheight = 0
 
 opt.undofile = true
 opt.swapfile = false
-opt.backup = false
 
 opt.updatetime = 250
 opt.timeoutlen = 300
