@@ -5,10 +5,7 @@
       cleanup = "zap";
       autoUpdate = true;
       upgrade = true;
-      extraFlags = [
-        "--force-cleanup"
-        "--greedy"
-      ];
+      extraFlags = [ "--force-cleanup" ];
     };
 
     casks = [
