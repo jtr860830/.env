@@ -188,6 +188,12 @@ Referencing `${pkgs.ncurses}` in a nix expression automatically includes it in t
 - Conditional lists: `lib.optionals pkgs.stdenv.isDarwin [ ... ]`
 - 1Password SSH sign path: macOS `/Applications/1Password.app/Contents/MacOS/op-ssh-sign`, Linux `/opt/1Password/op-ssh-sign`
 
+## Startup Performance
+
+Profile: `nvim --startuptime /tmp/nvim-startup.log +qa && cat /tmp/nvim-startup.log`
+Baseline (no config): ~24ms. Current setup: ~96ms. Largest contributor: fzf-lua (~15ms).
+fzf-lua has no native lazy loading — requires lazy.nvim; not worth adding at current speed.
+
 ## Formatters
 
 - Lua: `stylua` (config at `nvim/.stylua.toml`)
