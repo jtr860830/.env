@@ -146,6 +146,18 @@ set -g pure_color_git_dirty  (set_color $yellow)
 
 `EZA_COLORS` uses the same format as `LS_COLORS`: `key=attrs:key=attrs:...`. Use truecolor ANSI codes (`38;2;R;G;B`), `2;38;2;R;G;B` for dim variants. Set via `builtins.concatStringsSep ":" [...]` in `home.sessionVariables` for readability. Key names: `di` (dir), `ln` (symlink), `ex` (executable), `or` (broken symlink), `da` (date), `sn`/`sb` (size number/unit), `hd` (header), `ur`/`uw`/`ux` (user perms), `gr`/`gw`/`gx` (group perms, use dim), `ga`/`gm`/`gd`/`gv`/`gt` (git added/modified/deleted/renamed/type).
 
+### LSP Status
+
+- `:checkhealth lsp` — check LSP status with native API (`:LspInfo` is nvim-lspconfig's command, not native)
+- `:lua vim.print(vim.lsp.get_clients({ bufnr = 0 }))` — list clients attached to current buffer
+- `:Inspect` — verify treesitter is active (look for `@`-prefixed highlight groups)
+
+### Sign Column
+
+- `signcolumn = "yes"` — matches AstroNvim v6; 1 column, always visible
+- Diagnostic signs have higher priority than mini.diff git signs — diagnostics win on conflict
+- No need for `"yes:2"` or snacks.statuscolumn given current plugin set
+
 ### snacks.nvim
 
 Used for indent guides, word highlighting, big file handling, notification UI, and input UI. Only modules explicitly set in `setup()` are enabled. onedarkpro `snacks = true` manages `SnacksIndent`/`SnacksIndentScope` highlight groups automatically.
