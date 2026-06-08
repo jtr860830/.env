@@ -172,6 +172,12 @@ indent = { char = "▏", scope = { char = "▏" } }               -- wrong, char
 
 `fzf_colors = true` in `fzf.setup {}` auto-syncs all fzf UI colors (selection, highlights, prompt, border) from Neovim's current highlight groups — onedarkpro is picked up automatically.
 
+## Ghostty Shell Integration
+
+`shell-integration = none` — disabled; tmux handles working directory and pane management, making all features redundant.
+Check active features: `echo $GHOSTTY_SHELL_FEATURES`
+Available features: `cursor`, `sudo`, `title`, `ssh-env`, `ssh-terminfo`, `path`. In tmux `TERM=tmux-256color` so `ssh-env` TERM conversion does not trigger.
+
 ## Terminfo
 
 Managed via `pkgs.ncurses` in nix — no manual `~/.local/share/terminfo/` needed. Set in `home/fish.nix`:
@@ -222,3 +228,5 @@ mini.clue group labels are declared in `clues` to show prefix descriptions at th
 Current groups: `<leader>c` (+code), `<leader>f` (+find). Window/buffer/split keymaps are intentionally absent — terminal (tmux) handles that workflow.
 
 `<leader>c` contains: `ca` (code action), `cd` (diagnostic float), `cf` (format), `cr` (rename), `ct` (type definition). Conventional vim LSP keys (`gd`, `gD`, `gr`, `gi`, `K`) and bracket navigation (`[d`/`]d`) stay outside the group.
+
+`K` hover uses `function() vim.lsp.buf.hover { border = "rounded" } end` — must be wrapped in a function to pass options; bare `vim.lsp.buf.hover` as a keymap value ignores opts.
