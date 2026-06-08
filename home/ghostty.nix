@@ -5,6 +5,7 @@
     quit-after-last-window-closed = true
     confirm-close-surface = false
     selection-clear-on-copy = true
+    shell-integration = none
 
     ${lib.optionalString pkgs.stdenv.isDarwin ''
       macos-icon = glass
