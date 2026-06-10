@@ -219,7 +219,7 @@ Keymaps are split across files by dependency:
   map("n", "<leader>cf", function() require("conform").format { lsp_format = "fallback" } end, ...)
   ```
 - `fzf.lua` — fzf keymaps (uses top-level `local fzf = require "fzf-lua"`, so must stay with setup)
-- `lsp.lua` LspAttach — buffer-local LSP keymaps (`gd`, `gr`, `K`, etc.), registered only when a client attaches
+- `lsp.lua` LspAttach — only registers `K` (hover with border); all other LSP keymaps use Neovim 0.12 defaults
 
 mini.clue group labels are declared in `clues` to show prefix descriptions at the first level:
 
@@ -228,8 +228,10 @@ mini.clue group labels are declared in `clues` to show prefix descriptions at th
 { mode = "n", keys = "<leader>c", desc = "+code" },
 ```
 
-Current groups: `<leader>c` (+code), `<leader>f` (+find). Window/buffer/split keymaps are intentionally absent — terminal (tmux) handles that workflow.
+Current groups: `<leader>c` (+code), `<leader>f` (+find), `gr` (+lsp). Window/buffer/split keymaps are intentionally absent — terminal (tmux) handles that workflow.
 
-`<leader>c` contains: `ca` (code action), `cd` (diagnostic float), `cf` (format), `cr` (rename), `ct` (type definition). Conventional vim LSP keys (`gd`, `gD`, `gr`, `gi`, `K`) and bracket navigation (`[d`/`]d`) stay outside the group.
+`<leader>c` contains: `cd` (diagnostic float), `cf` (format). Conventional vim LSP keys (`gd`, `gD`, `K`) and bracket navigation (`[d`/`]d`) stay outside the group.
+
+Neovim 0.12 default LSP keys: `grr` (references), `gri` (implementation), `gra` (code action), `grn` (rename), `grt` (type definition), `gO` (symbols).
 
 `K` hover uses `function() vim.lsp.buf.hover { border = "rounded" } end` — must be wrapped in a function to pass options; bare `vim.lsp.buf.hover` as a keymap value ignores opts.
