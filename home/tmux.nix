@@ -42,8 +42,6 @@
 
       set -g pane-border-style        "fg=#3d4350"
       set -g pane-active-border-style "fg=#3d4350"
-      set -g window-style             "dim"
-      set -g window-active-style      "default"
 
       setw -g window-status-separator    ""
       setw -g window-status-format         "#[fg=#5c6370]#{?#{==:#{session_windows},1},, ○ }"
