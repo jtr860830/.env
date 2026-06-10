@@ -75,7 +75,7 @@ vim.fn.nr2char(0xea61)  -- Codicon lightbulb
 
 ## Homebrew
 
-Casks and Mac App Store apps are declared in `darwin/homebrew.nix`. `cleanup = "zap"` is intentional — removes anything not listed.
+Casks and Mac App Store apps are declared in `darwin/homebrew.nix`. `cleanup = "zap"` is intentional — removes anything not listed. Generates `Warning: --cleanup is deprecated` from Homebrew; nix-darwin upstream issue, functional but unfixable without upstream change.
 
 ## Git Conventions
 
@@ -154,13 +154,13 @@ set -g pure_color_git_dirty  (set_color $yellow)
 
 ### Sign Column
 
-- `signcolumn = "yes"` — matches AstroNvim v6; 1 column, always visible
-- Diagnostic signs have higher priority than mini.diff git signs — diagnostics win on conflict
-- No need for `"yes:2"` or snacks.statuscolumn given current plugin set
+- snacks.statuscolumn enabled — layout is `[diagnostic] [line number] [git]` left to right
+- `signcolumn = "yes"` still set; snacks.statuscolumn overrides it with its own rendering
+- Diagnostic signs use `●` (U+25CF, `vim.fn.nr2char(0x25cf)`) for all severities — same character as tmux current window indicator. Color only distinguishes severity via `DiagnosticSign*` highlight groups.
 
 ### snacks.nvim
 
-Used for indent guides, word highlighting, big file handling, notification UI, and input UI. Only modules explicitly set in `setup()` are enabled. onedarkpro `snacks = true` manages `SnacksIndent`/`SnacksIndentScope` highlight groups automatically.
+Used for indent guides, word highlighting, big file handling, notification UI, input UI, and statuscolumn. Only modules explicitly set in `setup()` are enabled. onedarkpro `snacks = true` manages `SnacksIndent`/`SnacksIndentScope` highlight groups automatically.
 
 snacks.indent config structure — `char` must be nested under `indent`, not at the top level:
 ```lua
@@ -175,8 +175,8 @@ indent = { char = "▏", scope = { char = "▏" } }               -- wrong, char
 ## Ghostty Shell Integration
 
 `shell-integration = none` — disabled; tmux handles working directory and pane management, making all features redundant.
-Check active features: `echo $GHOSTTY_SHELL_FEATURES`
 Available features: `cursor`, `sudo`, `title`, `ssh-env`, `ssh-terminfo`, `path`. In tmux `TERM=tmux-256color` so `ssh-env` TERM conversion does not trigger.
+Verify integration is actually loaded: `fish -c 'functions __ghostty_setup'` — returns "not loaded" if disabled correctly. `$GHOSTTY_SHELL_FEATURES` is set by Ghostty process itself and is not a reliable indicator.
 
 ## Terminfo
 
