@@ -115,6 +115,9 @@ Ghostty requires `macos-option-as-alt = true` (set under `lib.optionalString pkg
 ## Tmux Quirks
 
 - Mode detection without plugins: `#{?client_prefix,...}` and `#{?pane_in_mode,...}` are built-in tmux format strings
+- `pane-border-style` and `pane-active-border-style` set to same color (`fg_gutter #3d4350`) — avoids half-active half-inactive visual artifact on shared border line
+- Split keybinds need `-c "#{pane_current_path}"` to inherit current directory; omitting it always opens in `$HOME`
+- `window-style = "dim"` does NOT work with truecolor apps — SGR dim only affects 16-color ANSI; truecolor RGB values are unaffected. Background color difference is the only reliable inactive-pane visual cue, but Neovim overrides it too.
 - `set -g set-clipboard on` enables OSC 52 clipboard sync (replaces yank plugin; requires terminal support e.g. Ghostty)
 - `status-justify absolute-centre` centers window list by terminal width; `centre` centers between left/right content
 - `#{client_user}` (tmux 3.4+) replaces `#(whoami)` — built-in, no shell spawn
