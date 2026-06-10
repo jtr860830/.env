@@ -19,14 +19,6 @@
     font-size = 14
     font-feature = calt
     font-feature = ss11
-
-    keybind = ctrl+a>shift+;=toggle_command_palette
-    keybind = ctrl+a>-=new_split:down
-    keybind = ctrl+a>shift+\=new_split:right
-    keybind = ctrl+a>h=goto_split:left
-    keybind = ctrl+a>j=goto_split:bottom
-    keybind = ctrl+a>k=goto_split:top
-    keybind = ctrl+a>l=goto_split:right
   '';
 
   xdg.configFile."ghostty/themes/onedarkpro_onedark".text = ''

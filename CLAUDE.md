@@ -108,7 +108,7 @@ plugins = { blink_cmp = true, mini_diff = true, mini_icons = true, snacks = true
 
 ## Key Keybinding Patterns
 
-Consistent vim-style navigation (`hjkl`) across Tmux panes and Ghostty splits. Ghostty uses `Ctrl+A` as prefix. Tmux prefix is `Ctrl+B`.
+Tmux handles all split and pane management. No custom Ghostty keybindings — tmux workflow makes them redundant. Tmux prefix is `Ctrl+B`.
 
 Ghostty requires `macos-option-as-alt = true` (set under `lib.optionalString pkgs.stdenv.isDarwin`) for `<A-*>` keybindings to work in Neovim on macOS — without it, Option sends special characters instead.
 
