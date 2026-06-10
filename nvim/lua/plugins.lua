@@ -27,6 +27,7 @@ clue.setup {
     clue.gen_clues.z(),
     { mode = "n", keys = "<leader>c", desc = "+code" },
     { mode = "n", keys = "<leader>f", desc = "+find" },
+    { mode = "n", keys = "gr", desc = "+lsp" },
   },
   window = {
     delay = 300,

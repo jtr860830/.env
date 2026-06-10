@@ -36,14 +36,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
     local bufnr = ev.buf
     local map = function(keys, func, desc) vim.keymap.set("n", keys, func, { buffer = bufnr, desc = desc }) end
 
-    map("gd", vim.lsp.buf.definition, "Go to definition")
-    map("gD", vim.lsp.buf.declaration, "Go to declaration")
-    map("gr", vim.lsp.buf.references, "References")
-    map("gi", vim.lsp.buf.implementation, "Go to implementation")
     map("K", function() vim.lsp.buf.hover { border = "rounded" } end, "Hover")
-    map("<leader>ca", vim.lsp.buf.code_action, "Code action")
-    map("<leader>cr", vim.lsp.buf.rename, "Rename")
-    map("<leader>ct", vim.lsp.buf.type_definition, "Type definition")
 
     if client:supports_method "textDocument/inlayHint" then
       vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
