@@ -41,7 +41,9 @@
       set -g status-right          "#{?client_prefix,#[fg=#e5c07b],#{?pane_in_mode,#[fg=#56b6c2],#[fg=#c678dd]}}#[bold] #S "
 
       set -g pane-border-style        "fg=#3d4350"
-      set -g pane-active-border-style "fg=#61afef"
+      set -g pane-active-border-style "fg=#3d4350"
+      set -g window-style             "dim"
+      set -g window-active-style      "default"
 
       setw -g window-status-separator    ""
       setw -g window-status-format         "#[fg=#5c6370]#{?#{==:#{session_windows},1},, ○ }"
