@@ -62,11 +62,12 @@ vim.api.nvim_create_autocmd("LspAttach", {
   end,
 })
 
+local dot = vim.fn.nr2char(0x25cf)
 local diag_icons = {
-  [vim.diagnostic.severity.ERROR] = vim.fn.nr2char(0xea87),
-  [vim.diagnostic.severity.WARN] = vim.fn.nr2char(0xea6c),
-  [vim.diagnostic.severity.HINT] = vim.fn.nr2char(0xea61),
-  [vim.diagnostic.severity.INFO] = vim.fn.nr2char(0xea74),
+  [vim.diagnostic.severity.ERROR] = dot,
+  [vim.diagnostic.severity.WARN] = dot,
+  [vim.diagnostic.severity.HINT] = dot,
+  [vim.diagnostic.severity.INFO] = dot,
 }
 
 vim.diagnostic.config {

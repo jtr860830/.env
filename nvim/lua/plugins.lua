@@ -101,6 +101,7 @@ require("snacks").setup {
   bigfile = { enabled = true },
   input = { enabled = true },
   notifier = { enabled = true },
+  statuscolumn = { enabled = true },
   indent = {
     indent = { char = "▏" },
     scope = { char = "▏" },
