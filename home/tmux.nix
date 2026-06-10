@@ -19,8 +19,8 @@
       bind-key a send-prefix
       bind r source-file "$XDG_CONFIG_HOME/tmux/tmux.conf"
       bind w kill-window
-      bind - split-window -v
-      bind | split-window -h
+      bind - split-window -v -c "#{pane_current_path}"
+      bind | split-window -h -c "#{pane_current_path}"
       bind h select-pane -L
       bind j select-pane -D
       bind k select-pane -U
