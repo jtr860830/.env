@@ -64,7 +64,7 @@ vim.api.nvim_create_autocmd("InsertEnter", { group = hint_group, buffer = bufnr,
 
 ### Nerd Font Icons
 
-The Edit tool cannot reliably embed nerd font unicode characters — they silently become spaces. Use `vim.fn.nr2char(codepoint)` instead:
+The Edit tool cannot reliably embed nerd font unicode characters — they silently become spaces. Use `vim.fn.nr2char(codepoint)` instead. Note: `string.char()` is NOT a valid replacement — it only handles 0–255; codepoints like U+25CF (9679) will error.
 
 ```lua
 vim.fn.nr2char(0xea87)  -- Codicon error
