@@ -200,7 +200,7 @@ Referencing `${pkgs.ncurses}` in a nix expression automatically includes it in t
 ## Startup Performance
 
 Profile: `nvim --startuptime /tmp/nvim-startup.log +qa && cat /tmp/nvim-startup.log`
-Baseline (no config): ~24ms. Current setup: ~65ms (stable). Largest contributor: fzf-lua (~10ms).
+Baseline (no config): ~24ms. Current setup: ~60ms (stable). Largest contributor: onedarkpro (~1.4ms plugin load); most of the time is Neovim runtime + ShaDa.
 fzf-lua has no native lazy loading — requires lazy.nvim; not worth adding at current speed.
 
 ## Formatters
