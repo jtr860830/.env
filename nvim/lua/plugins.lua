@@ -62,10 +62,10 @@ local function statusline_diagnostics()
 end
 
 local function statusline_filename()
-  local path = vim.fn.expand "%:p"
+  local path = vim.api.nvim_buf_get_name(0)
   if path == "" then return "[No Name]" end
   local root = vim.fs.root(0, { ".git", ".hg", "package.json", "Makefile" })
-  local display = root and path:sub(#root + 2) or vim.fn.expand "%:~:."
+  local display = root and path:sub(#root + 2) or vim.fn.fnamemodify(path, ":~:.")
   return display .. (vim.bo.modified and " [+]" or "")
 end
 
