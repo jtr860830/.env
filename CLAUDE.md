@@ -222,6 +222,10 @@ Keymaps are split across files by dependency:
 - `lsp.lua` LspAttach — only registers `K` (hover with border); all other LSP keymaps use Neovim 0.12 defaults
 
 mini.clue group labels are declared in `clues` to show prefix descriptions at the first level:
+- Each mode needs a separate trigger entry — `{ mode, keys }` cannot combine modes in one object
+- While popup is visible, key timeout is paused; without a trigger in that mode, pure `timeoutlen` applies
+- Available `gen_clues`: `g`, `marks`, `registers`, `windows`, `z`, `square_brackets`, `builtin_completion`
+- `gen_clues.g()` on nvim 0.11+ auto-includes visual mode `gr = '+LSP'` clue
 
 ```lua
 { mode = "n", keys = "<leader>f", desc = "+find" },
