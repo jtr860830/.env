@@ -102,6 +102,7 @@
     ]
     ++ lib.optionals pkgs.stdenv.isDarwin [
       mas
+      container
     ];
 
   xdg.configFile."npm/npmrc".text = ''
